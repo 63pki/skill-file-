@@ -5,6 +5,14 @@
 > the V7.0 tree rather than V7.8.0 Release 6. The single bundled runner that executes the
 > current suite is `dev/run_v780_release6_tests.py`; results land in
 > `dev/V7_8_0_RELEASE_6_RESULTS.json`. Do not cite the checks below as current coverage.
+>
+> *Adjacent spec (not part of this package):* this treatment follows **INV-10 (K05)**,
+> "Retired names appear only as structured metadata values under `dev/provenance/`", from
+> the separate v10 capability-rebuild kernel (`10.0.0-rc1-capability-complete`,
+> `production_final: false`) — see also its locked decision "Historical material/provenance
+> is metadata-only, never active authority." That invariant registry belongs to the v10
+> lineage and is **not** ported into V7.8.0 Release 6; it is cited here only as the doctrine
+> this banner conforms to.
 
 1. SKILL.md remains compact enough to function as a mandatory kernel.
 2. Production runtime requires one read target: `rules/RUNTIME.md`.

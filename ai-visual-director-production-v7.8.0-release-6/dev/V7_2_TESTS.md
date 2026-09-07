@@ -5,6 +5,14 @@
 > run through the single bundled suite: `python3 dev/run_v780_release6_tests.py` (see the
 > `regression-fixture-coverage` check below). The standalone `run_v72_tests.py` this document
 > once implied was retired at Release 6 and never shipped in this archive.
+>
+> *Adjacent spec (not part of this package):* this treatment follows **INV-10 (K05)**,
+> "Retired names appear only as structured metadata values under `dev/provenance/`", from
+> the separate v10 capability-rebuild kernel (`10.0.0-rc1-capability-complete`,
+> `production_final: false`) — see also its locked decision "Historical material/provenance
+> is metadata-only, never active authority." That invariant registry belongs to the v10
+> lineage and is **not** ported into V7.8.0 Release 6; it is cited here only as the doctrine
+> this banner conforms to.
 
 The three V7.1 Milo runs are encoded as failure fixtures. They verify tool substitution, missing artifacts/world rules, anatomy/face drift, and timing contradictions. These fixtures are concise evidence records, not claimed full-model replays.
 
