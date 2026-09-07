@@ -1,0 +1,12 @@
+# Generated distributions — reproducible via:
+#   python3 ai-visual-director-production-v7.8.0-release-6/dev/build_distributions.py --zip
+dist/
+
+# Python bytecode. Never commit: it pollutes PACKAGE_MANIFEST.json and the
+# release-consistency audit. See dev/UPDATE_WORKFLOW.md.
+__pycache__/
+*.pyc
+
+# OS noise
+.DS_Store
+Thumbs.db

@@ -1,0 +1,58 @@
+{
+  "STYLE_BIBLE": [
+    "visual family",
+    "shape language",
+    "line",
+    "palette",
+    "composition",
+    "motion",
+    "signature",
+    "exclusions"
+  ],
+  "STORYBOARD": [
+    "shot id",
+    "duration",
+    "location",
+    "composition",
+    "action",
+    "reaction",
+    "hold",
+    "audio",
+    "start state",
+    "end state"
+  ],
+  "ASSET_REGISTRY": [
+    "asset id",
+    "version",
+    "asset class",
+    "reference role",
+    "locks",
+    "status",
+    "dependencies"
+  ],
+  "VOICE_PLAN": [
+    "exact script",
+    "speaker",
+    "word count",
+    "wpm",
+    "pause",
+    "hold",
+    "measured status"
+  ],
+  "ANIMATION_PROMPTS": [
+    "persistent locks",
+    "shot delta",
+    "action",
+    "endpoint",
+    "acceptance",
+    "fallback"
+  ],
+  "ASSEMBLY_PLAN": [
+    "track",
+    "timing",
+    "caption",
+    "audio",
+    "export",
+    "inspection"
+  ]
+}

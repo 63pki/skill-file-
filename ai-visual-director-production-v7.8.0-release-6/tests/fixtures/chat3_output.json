@@ -1,0 +1,131 @@
+{
+  "projectId": "MILO_CHAT3",
+  "artifactsPresent": [
+    "STYLE_BIBLE",
+    "ASSET_REGISTRY",
+    "STORYBOARD",
+    "VOICE_PLAN",
+    "ANIMATION_PROMPTS",
+    "ASSEMBLY_PLAN"
+  ],
+  "artifacts": [
+    {
+      "artifactId": "STYLE_BIBLE",
+      "body": "Family: flat 2D vector. Shape language: rounded single-volume body, no limbs. Line: 2px uniform warm-black outline. Shading: two-step cel shadow, no gradient. Palette: leaf green, terracotta pot, ash shadow. Forbidden drift: no added limbs, no photoreal shading.",
+      "bodyChars": 300
+    },
+    {
+      "artifactId": "ASSET_REGISTRY",
+      "body": "MILO v01 character, identity anchor, no limbs, two eyes. SHADOW v01 effect asset, no face, no eyes, cast only by an occluder. WALL v01 environment, static. POT v01 prop, terracotta, one piece.",
+      "bodyChars": 199
+    },
+    {
+      "artifactId": "STORYBOARD",
+      "body": "G1 0-9.5s orient: Milo on the windowsill, sun camera-left. G2 9.5-19.5s problem: leaf edge curling. G3 19.5-29.3s arrival: SHADOW drifts in frame-right. G4 29.3-40.8s turn: shade slips, Milo tips the pot. G5 40.8-48.3s payoff: wide, pot behind the wall.",
+      "bodyChars": 254
+    },
+    {
+      "artifactId": "VOICE_PLAN",
+      "body": "Off-camera narration only, five lines at 120 WPM with comprehension holds. Timing is carried by the cue sheet and must be re-measured from a real read before motion lock.",
+      "bodyChars": 171
+    },
+    {
+      "artifactId": "ANIMATION_PROMPTS",
+      "body": "Use MILO v01 and SHADOW v01 as on-model sources. Preserve silhouette, proportions, outline, and palette. Staging: Milo frame-left, shadow entering frame-right. Action: one drift. Camera: locked. Timing: held. Audio: room tone only.",
+      "bodyChars": 231
+    },
+    {
+      "artifactId": "ASSEMBLY_PLAN",
+      "body": "V1 main picture G1-G5. V2 shade overlay. A1 narration. A2 room tone. A3 score bed, ducked under narration. Captions: burn-in narration text, proofread. Export: verified destination settings.",
+      "bodyChars": 173
+    }
+  ],
+  "shots": [
+    {
+      "id": "G1",
+      "durationSeconds": 9.5,
+      "line": "Milo sits on the warm windowsill while the afternoon sun climbs slowly higher above the garden wall",
+      "narrationWords": 17,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 1
+    },
+    {
+      "id": "G2",
+      "durationSeconds": 10,
+      "line": "A single leaf at the far edge of the pot begins to curl and dry in the heat",
+      "narrationWords": 18,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 1
+    },
+    {
+      "id": "G3",
+      "durationSeconds": 9.8,
+      "line": "A soft grey shadow drifts in from the right and settles gently over the tired little leaf today",
+      "narrationWords": 18,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0.8
+    },
+    {
+      "id": "G4",
+      "durationSeconds": 11.5,
+      "line": "The sun keeps moving across the sky so the shade slips away and Milo decides to tip the whole pot",
+      "narrationWords": 20,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 1.5
+    },
+    {
+      "id": "G5",
+      "durationSeconds": 7.5,
+      "line": "Behind the wall the leaves stay green and the sun stays high",
+      "narrationWords": 12,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 1.5
+    }
+  ],
+  "lockUses": [
+    {
+      "assetId": "SHADOW",
+      "parts": {
+        "arms": 0,
+        "legs": 0,
+        "eyes": 0
+      },
+      "face": "UNTIL_REVEAL",
+      "speech": "NO"
+    }
+  ],
+  "story": {
+    "worldRule": "",
+    "durableResolution": {
+      "originalProblem": "Milo's leaf scorches in the direct afternoon sun",
+      "temporaryHelp": "the shadow drifts across and shades the leaf",
+      "permanentChange": "Milo tips the pot behind the garden wall so the wall casts the shade",
+      "visualProofShot": "G5 wide: pot behind the wall, leaves uncurled, sun still high",
+      "recurrencePrevented": true
+    },
+    "finalProof": "extra unexplained shade patches"
+  },
+  "toolUse": {
+    "stillGeneration": "UNASSIGNED",
+    "videoGeneration": "UNASSIGNED",
+    "postSurfaces": [
+      "platform-neutral editing surface"
+    ]
+  },
+  "statusMetadata": {
+    "maturity": "PLAN_PASS",
+    "media": "NOT_GENERATED",
+    "delivery": "SINGLE_PASS_BLUEPRINT"
+  },
+  "evidence": {
+    "visual": [],
+    "motion": [],
+    "audio": [],
+    "humanReview": []
+  },
+  "maturity": "PLAN-PASS",
+  "claims": [],
+  "packageFiles": [
+    "blueprint.zip"
+  ]
+}

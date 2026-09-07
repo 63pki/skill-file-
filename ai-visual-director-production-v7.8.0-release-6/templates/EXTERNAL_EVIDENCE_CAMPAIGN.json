@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "campaignId": "CAMPAIGN_ID",
+  "status": "NOT_RUN",
+  "evidenceRoot": "external-evidence",
+  "campaignScope": [
+    "ALL_TRACKS"
+  ],
+  "minimums": {
+    "crossModelReplay": {
+      "models": 3,
+      "providers": 2,
+      "runsPerModel": 3
+    },
+    "nanoOmniAB": {
+      "matchedPairs": 1,
+      "blindIndependentRatingsPerTrial": 2
+    },
+    "productionPilot": {
+      "stages": [
+        "BRIEF",
+        "DESIGN",
+        "ANIMATIC",
+        "ASSET",
+        "MOTION",
+        "DELIVERY"
+      ],
+      "independentFinalReviews": 2
+    }
+  },
+  "trials": [],
+  "ratings": [],
+  "claims": [],
+  "honestStatus": {
+    "liveCrossModelReplay": "NOT_RUN",
+    "nanoOmniABGeneration": "NOT_RUN",
+    "completeProductionPilot": "NOT_RUN"
+  }
+}

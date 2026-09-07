@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "7.8.0",
+  "fixture": "V7.1 Milo run 3 — shot durations overrun the runtime, face-lock drift, missing world rule",
+  "expectedErrorCodes": [
+    "SHOT_TOTAL",
+    "WORLD_RULE_FIELD",
+    "LOCK_DRIFT"
+  ],
+  "forbiddenErrorCodes": [
+    "MISSING_ARTIFACT",
+    "POST_AS_GENERATOR",
+    "TOOL_ROLE_DRIFT",
+    "VOICE_WINDOW",
+    "SHOT_COUNT_DRIFT",
+    "CONTRACT_FIELD",
+    "CONTRACT_SCHEMA_ERROR"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/ROUTING_CONTRACT.schema.json",
+  "title": "AI Visual Director Routing Contract",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "routingId",
+    "projectClass",
+    "assuranceProfile",
+    "mode",
+    "deliveryMode",
+    "tools"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "routingId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "projectClass": {
+      "enum": [
+        "SUBSTANTIAL",
+        "QUICK_SHOT"
+      ]
+    },
+    "assuranceProfile": {
+      "enum": [
+        "VERIFIED_RUNTIME",
+        "PORTABLE_ASSURANCE",
+        "PORTABLE_REFERENCE",
+        "UNSUPPORTED_EXECUTION"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "A_PHOTOREAL_COMMERCIAL",
+        "B_ANIMATION",
+        "C_MOTION_GRAPHICS",
+        "D_HYBRID_COMPOSITING"
+      ]
+    },
+    "deliveryMode": {
+      "type": "string"
+    },
+    "tools": {
+      "type": "object"
+    },
+    "productionTriggers": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "FACTUAL_DOCUMENTARY",
+          "LOCALIZATION",
+          "ARCHITECTURAL_CONTINUITY",
+          "UGC_ADVERTISING",
+          "CINEMATIC_SCENE"
+        ]
+      },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": true
+}

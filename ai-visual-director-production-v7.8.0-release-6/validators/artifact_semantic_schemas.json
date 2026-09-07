@@ -1,0 +1,31 @@
+{
+  "STYLE_BIBLE": [
+    "paletteRoles",
+    "contrastPurpose",
+    "shapeSystem",
+    "silhouetteRule",
+    "lineBehavior",
+    "compositionRules",
+    "motionGrammar",
+    "signatureDevice",
+    "recurrenceRule",
+    "forbiddenElements"
+  ],
+  "STORYBOARD": [
+    "shotIds",
+    "continuityRules",
+    "visualProofShots"
+  ],
+  "ANIMATION_PROMPTS": [
+    "persistentLocks",
+    "shotDeltas",
+    "endpointChecks",
+    "fallbacks"
+  ],
+  "ASSEMBLY_PLAN": [
+    "trackMap",
+    "timingRules",
+    "audioChecks",
+    "exportChecks"
+  ]
+}

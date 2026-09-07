@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "7.8.0",
+  "packageVersion": "7.8.0",
+  "modules": [
+    {
+      "id": "MODE_A_PHOTOREAL_COMMERCIAL",
+      "path": "rules/production/MODE_A_PHOTOREAL_COMMERCIAL.md",
+      "authority": "PRODUCTION_OWNER",
+      "dependencies": [
+        "adapters/generation/NANO_BANANA_PRO.md",
+        "adapters/generation/GEMINI_OMNI_FLASH.md",
+        "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md"
+      ],
+      "generationOwnership": {
+        "stills": "NANO_BANANA_PRO",
+        "motion": "GEMINI_OMNI_FLASH",
+        "post": "PLATFORM_NEUTRAL_HANDOFF"
+      }
+    },
+    {
+      "id": "MODE_B_ANIMATION",
+      "path": "rules/production/2D_ANIMATION.md",
+      "authority": "PRODUCTION_OWNER",
+      "dependencies": [
+        "adapters/generation/NANO_BANANA_PRO.md",
+        "adapters/generation/GEMINI_OMNI_FLASH.md",
+        "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md"
+      ],
+      "generationOwnership": {
+        "stills": "NANO_BANANA_PRO",
+        "motion": "GEMINI_OMNI_FLASH",
+        "post": "PLATFORM_NEUTRAL_HANDOFF"
+      }
+    },
+    {
+      "id": "MODE_C_MOTION_GRAPHICS",
+      "path": "rules/production/MODE_C_MOTION_GRAPHICS.md",
+      "authority": "PRODUCTION_OWNER",
+      "dependencies": [
+        "adapters/generation/NANO_BANANA_PRO.md",
+        "adapters/generation/GEMINI_OMNI_FLASH.md",
+        "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md"
+      ],
+      "generationOwnership": {
+        "stills": "NANO_BANANA_PRO",
+        "motion": "GEMINI_OMNI_FLASH",
+        "post": "PLATFORM_NEUTRAL_HANDOFF"
+      }
+    },
+    {
+      "id": "MODE_D_HYBRID_COMPOSITING",
+      "path": "rules/production/MODE_D_HYBRID_COMPOSITING.md",
+      "authority": "PRODUCTION_OWNER",
+      "dependencies": [
+        "adapters/generation/NANO_BANANA_PRO.md",
+        "adapters/generation/GEMINI_OMNI_FLASH.md",
+        "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md"
+      ],
+      "generationOwnership": {
+        "stills": "NANO_BANANA_PRO",
+        "motion": "GEMINI_OMNI_FLASH",
+        "post": "PLATFORM_NEUTRAL_HANDOFF"
+      }
+    }
+  ],
+  "referencePolicy": "Only active authority is loaded; superseded history is excluded from the package."
+}

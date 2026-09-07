@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "campaignId": "HUMAN_CAMPAIGN_ID",
+  "status": "NOT_RUN",
+  "campaignScope": [
+    "BEGINNER_OPERATOR",
+    "AUDIENCE_COMPREHENSION"
+  ],
+  "minimums": {
+    "beginnerOperator": {
+      "completedIndependentSessions": 5
+    },
+    "audienceComprehension": {
+      "completedConsentedSessions": 3
+    }
+  },
+  "sessions": [],
+  "honestStatus": {
+    "beginnerOperatorPilot": "NOT_RUN",
+    "audienceComprehensionReview": "NOT_RUN"
+  }
+}

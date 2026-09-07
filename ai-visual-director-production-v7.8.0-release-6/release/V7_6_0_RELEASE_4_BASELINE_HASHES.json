@@ -1,0 +1,1511 @@
+{
+  "schemaVersion": "7.8.0",
+  "baselineVersion": "7.6.0",
+  "baselineRelease": "Release 4",
+  "derivedFrom": "v7.6.0-release-4.zip",
+  "hashAlgorithm": "SHA-256",
+  "fileCount": 293,
+  "requiredPathCount": 293,
+  "immutablePaths": [],
+  "retiredPaths": {
+    "adapters/generation/NANO_BANANA.md": {
+      "reason": "Release 6 replaced the still-generation owner: Nano Banana -> Nano Banana Pro (Gemini 3 Pro Image). See release/RELEASE.json generationStack.stillOwner and removedSurfaces.",
+      "successor": "adapters/generation/NANO_BANANA_PRO.md"
+    },
+    "adapters/generation/NANO_BANANA_VEO_PIPELINE.md": {
+      "reason": "Pipeline adapter renamed with its two constituent owners. See adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md.",
+      "successor": "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md"
+    },
+    "adapters/generation/VEO_3_1.md": {
+      "reason": "Release 6 replaced the video-generation owner: Veo 3.1 -> Gemini Omni Flash. See release/RELEASE.json generationStack.videoOwner and removedSurfaces \"superseded video-model guidance\".",
+      "successor": "adapters/generation/GEMINI_OMNI_FLASH.md"
+    },
+    "dev/MERGE_NOTES.md": {
+      "reason": "Superseded per-version dev document; Release 6 consolidates audits and protocols into dev/CONFLICT_AUDIT.md and rules/validation/.",
+      "successor": null
+    },
+    "dev/NANO_VEO_AB_PROTOCOL.md": {
+      "reason": "A/B protocol for the retired Veo stack.",
+      "successor": "rules/validation/EXTERNAL_EVIDENCE.md"
+    },
+    "dev/V7_1_TESTS.md": {
+      "reason": "Superseded per-version dev document; Release 6 consolidates audits and protocols into dev/CONFLICT_AUDIT.md and rules/validation/.",
+      "successor": null
+    },
+    "dev/V7_3_1_CONFLICT_AUDIT.md": {
+      "reason": "Superseded per-version dev document; Release 6 consolidates audits and protocols into dev/CONFLICT_AUDIT.md and rules/validation/.",
+      "successor": null
+    },
+    "dev/V7_3_CONFLICT_RESOLUTIONS.md": {
+      "reason": "Superseded per-version dev document; Release 6 consolidates audits and protocols into dev/CONFLICT_AUDIT.md and rules/validation/.",
+      "successor": null
+    },
+    "dev/V7_3_LIVE_REPLAY_PROTOCOL.md": {
+      "reason": "Superseded per-version dev document; Release 6 consolidates audits and protocols into dev/CONFLICT_AUDIT.md and rules/validation/.",
+      "successor": null
+    },
+    "dev/V7_3_TESTS.md": {
+      "reason": "Superseded per-version dev document; Release 6 consolidates audits and protocols into dev/CONFLICT_AUDIT.md and rules/validation/.",
+      "successor": null
+    },
+    "dev/V7_4_FINALIZATION.md": {
+      "reason": "Superseded per-version dev document; Release 6 consolidates audits and protocols into dev/CONFLICT_AUDIT.md and rules/validation/.",
+      "successor": null
+    },
+    "dev/V7_4_PHASE_D.md": {
+      "reason": "Superseded per-version dev document; Release 6 consolidates audits and protocols into dev/CONFLICT_AUDIT.md and rules/validation/.",
+      "successor": null
+    },
+    "dev/history/run_bootstrap_v731_tests.py": {
+      "reason": "Archived historical test runner; consolidated with the other per-version runners.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/history/run_phase_d_tests_v74_phase_d.py": {
+      "reason": "Archived historical test runner; consolidated with the other per-version runners.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/results/V7_1_STATIC_RESULTS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_2_1_PROMPT_ALIGNMENT_RESULTS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_2_HISTORICAL_FIXTURE_RESULTS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_2_STATIC_RESULTS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_2_TEST_RESULTS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_3_1_BOOTSTRAP_RESULTS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_3_1_PRESERVATION_CONFLICT_BUG_AUDIT.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_3_GUIDE_FRESHNESS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_3_HOST_PROBE.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_3_PRESERVATION_CONFLICT_BUG_AUDIT.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_3_PROMPT_ALIGNMENT_RESULTS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_3_STATIC_RESULTS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_3_TEST_RESULTS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_4_1_GENERATION_RESULTS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_4_PHASE_A_PRESERVATION_AUDIT.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/results/V7_4_PHASE_D_RESULTS.json": {
+      "reason": "Superseded per-version test result file. Release 6 writes dev/V7_8_0_RELEASE_6_RESULTS.json.",
+      "successor": "dev/V7_8_0_RELEASE_6_RESULTS.json"
+    },
+    "dev/run_bootstrap_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_finalization_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_mode_fixture_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_phase_a_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_phase_b_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_phase_c_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_phase_d_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_prompt_alignment_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_static_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v72_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v73_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v741_generation_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v742_final_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v742_phase_a_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v742_phase_b_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v742_phase_c_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v742_phase_d_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v743_release1_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v744_release2_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v750_release3_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "dev/run_v760_release4_tests.py": {
+      "reason": "Per-version test runner consolidated. Release 6 ships a single bundled suite.",
+      "successor": "dev/run_v780_release6_tests.py"
+    },
+    "release/V7_4_1_BASELINE_HASHES.json": {
+      "reason": "Superseded upgrade baseline. Release 6 derives its baseline directly from V7.6.0 Release 4.",
+      "successor": "release/V7_6_0_RELEASE_4_BASELINE_HASHES.json"
+    },
+    "release/V7_4_2_BASELINE_HASHES.json": {
+      "reason": "Superseded upgrade baseline. Release 6 derives its baseline directly from V7.6.0 Release 4.",
+      "successor": "release/V7_6_0_RELEASE_4_BASELINE_HASHES.json"
+    },
+    "release/V7_4_2_PHASE_D_BASELINE_HASHES.json": {
+      "reason": "Superseded upgrade baseline. Release 6 derives its baseline directly from V7.6.0 Release 4.",
+      "successor": "release/V7_6_0_RELEASE_4_BASELINE_HASHES.json"
+    },
+    "release/V7_4_3_RELEASE_1_BASELINE_HASHES.json": {
+      "reason": "Superseded upgrade baseline. Release 6 derives its baseline directly from V7.6.0 Release 4.",
+      "successor": "release/V7_6_0_RELEASE_4_BASELINE_HASHES.json"
+    },
+    "release/V7_4_4_RELEASE_2_BASELINE_HASHES.json": {
+      "reason": "Superseded upgrade baseline. Release 6 derives its baseline directly from V7.6.0 Release 4.",
+      "successor": "release/V7_6_0_RELEASE_4_BASELINE_HASHES.json"
+    },
+    "release/V7_5_0_RELEASE_3_BASELINE_HASHES.json": {
+      "reason": "Superseded upgrade baseline. Release 6 derives its baseline directly from V7.6.0 Release 4.",
+      "successor": "release/V7_6_0_RELEASE_4_BASELINE_HASHES.json"
+    },
+    "rules/history/V7_2_1_RUNTIME.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_2_1_SKILL.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_3_0_CORE_CONTROLLER.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_3_0_RUNTIME.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_3_0_SKILL.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_3_1_CORE_CONTROLLER.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_3_1_RUNTIME.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_3_1_SKILL.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_4_PHASE_A_CORE_CONTROLLER.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_4_PHASE_A_RUNTIME.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_4_PHASE_A_SKILL.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_4_PHASE_B_CORE_CONTROLLER.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_4_PHASE_B_RUNTIME.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_4_PHASE_B_SKILL.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_4_PHASE_C_CORE_CONTROLLER.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_4_PHASE_C_RUNTIME.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/V7_4_PHASE_C_SKILL.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__canva__MOBILE.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__canva__README.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__canva__WEB.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__capcut__DESKTOP.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__capcut__MOBILE.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__capcut__README.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/rules__detailed__34_capcut_canva_execution_recipes.md": {
+      "reason": "Archived prior-version authority retained for V7.6.0 history only. Release 6 keeps current authorities under rules/ and rules/detailed/.",
+      "successor": null
+    }
+  },
+  "files": {
+    "ARCHITECTURE.md": {
+      "bytes": 5608,
+      "sha256": "507e68223b1696d739b7f633444e5c12e0bca7eaa008bc3ac63699c45fa47bd1"
+    },
+    "DISTRIBUTIONS.md": {
+      "bytes": 688,
+      "sha256": "0a7f867f86bff206bb90318f7d92579814c9553f96fa213d9b69c017fc9b40a3"
+    },
+    "QUICKSTART.md": {
+      "bytes": 1978,
+      "sha256": "6f9b693041417ef742638cf56f41457597f7a6d289cf0a020e98449162e88f2b"
+    },
+    "SKILL.md": {
+      "bytes": 11902,
+      "sha256": "58d9eea0e444872d530418c921bb3d0ee72178c9ec0fa77d15f929b738e71cfc"
+    },
+    "adapters/README.md": {
+      "bytes": 269,
+      "sha256": "4b4659da3fee80ea9ac65e8d56d1f4fede1db5436b56ed90f6e5a44e5f4a6ec9"
+    },
+    "adapters/generation/NANO_BANANA.md": {
+      "bytes": 7274,
+      "sha256": "9efa457882400b295ef660c2409d6c47e555b7d9132813af8db79d4f02312103"
+    },
+    "adapters/generation/NANO_BANANA_VEO_PIPELINE.md": {
+      "bytes": 2307,
+      "sha256": "089f774fa972d3777ff22008b2b13b0136f86ccf406ed95164db3daa266f9d08"
+    },
+    "adapters/generation/README.md": {
+      "bytes": 756,
+      "sha256": "28b55c5a05ab2e0bbcc250e710e48234eb60b634a0a5f5bbc396111de7359921"
+    },
+    "adapters/generation/VEO_3_1.md": {
+      "bytes": 7459,
+      "sha256": "7f77c8a121415f7a7a3045a5240e03dafcdbc3c0bb4eca179cdd6187a4fa46d2"
+    },
+    "adapters/hermes/AGENTS.md": {
+      "bytes": 1129,
+      "sha256": "ca44bb5afca0162f58006933d34d204b3bee5ef6136372fe796a411daed651f1"
+    },
+    "adapters/hermes/MIGRATION.md": {
+      "bytes": 1162,
+      "sha256": "6bdefe3014c931257c69d12414d491f1c1ef5bd3c5cef90d63e72d20e7a4595d"
+    },
+    "adapters/hermes/VISION_SETUP.md": {
+      "bytes": 1363,
+      "sha256": "ea2f52405ee1da6c908f1ba47cbeca44982ff9a5f9128b966496bf9454139e5d"
+    },
+    "bootstrap/README.md": {
+      "bytes": 1143,
+      "sha256": "5a3b4164235d69799f1ab6c668cabefbc0ab95ab1444733c4514bf505bdf7568"
+    },
+    "bootstrap/bootstrap_runtime.py": {
+      "bytes": 4418,
+      "sha256": "afbfa618f6253d91d88918661b69670e9675a47bc356233fa57eadabdc726506"
+    },
+    "bootstrap/build_runtime_manifest.py": {
+      "bytes": 2939,
+      "sha256": "d2fec5c32195505654b606e7556c56b1dde1b39b08a92718bb85c83749786772"
+    },
+    "bootstrap/finalize_contract_binding.py": {
+      "bytes": 3012,
+      "sha256": "ec687300a6df6654658dc141752b57043b1da6e919ea90268da079cee3bee32f"
+    },
+    "bootstrap/runtime_load_manifest.json": {
+      "bytes": 6449,
+      "sha256": "e4bd8584758e7859e40acbe853251a19f2ba42e985edfbf4e840ce32503117a8"
+    },
+    "bootstrap/runtime_selection.py": {
+      "bytes": 4913,
+      "sha256": "0fa6d90100e21c629599deaff52d140a5d1096c9eb86940f009349e7ffbd0781"
+    },
+    "dev/ACTIVATION_TESTS.md": {
+      "bytes": 2542,
+      "sha256": "ab1353b42f7cacea97f69d721bc511a6444b7fd8bb9a1dcb1cb48b0a765c08d4"
+    },
+    "dev/BENCHMARK_SUITE.md": {
+      "bytes": 5069,
+      "sha256": "745a9873e038ad38a4ea58d0f10c16d67c44daade0713b63281084ac94ceaa8b"
+    },
+    "dev/BUILD_VALIDATION.md": {
+      "bytes": 1829,
+      "sha256": "a8af2f151745187aca237230c450bd5d24bedb928a384b7ecf82ceca78895493"
+    },
+    "dev/CONFLICT_AUDIT.md": {
+      "bytes": 5043,
+      "sha256": "02e702d719990f60f93b50ac6003ba63d717a14fcec8a73d979caba71f6e95bc"
+    },
+    "dev/CONSOLIDATION_TESTS.md": {
+      "bytes": 1020,
+      "sha256": "1de1f458abe4a6ef71f421616b87e51105a1262af6979303a5e4e46fd8db94dd"
+    },
+    "dev/CROSS_MODEL_TESTS.md": {
+      "bytes": 2438,
+      "sha256": "87e5041a1e65b8c933128f940ee414d53ee91cab049ce6a10037c8eb04213de4"
+    },
+    "dev/GENERATION_STACK_TESTS.md": {
+      "bytes": 1276,
+      "sha256": "f34443136b98020f73d76bcabe0008d6bb9caf20ee2589e0dd44288cdde8f006"
+    },
+    "dev/LIVE_EVIDENCE_STATUS.json": {
+      "bytes": 284,
+      "sha256": "39e0e3cc2e9bc0e81abc822ca2a4b027e98c578ac3cb5bb5798fe4a19c79cda9"
+    },
+    "dev/LIVE_REPLAY_PROTOCOL.md": {
+      "bytes": 1138,
+      "sha256": "e54fc6a80a3c1efeac960ee71510fb8e205a3e9345a7f17d4e6747ac5839684f"
+    },
+    "dev/MANIFEST.json": {
+      "bytes": 51223,
+      "sha256": "5cb325631b0e73dd7294d5c2fa0813c8ab5261874b99c1381183862b6028bee0"
+    },
+    "dev/MERGE_NOTES.md": {
+      "bytes": 930,
+      "sha256": "2758f69db08d87663a5b66f7d4f7c10084989c02263f38bb18691ea623d51e29"
+    },
+    "dev/NANO_VEO_AB_PROTOCOL.md": {
+      "bytes": 495,
+      "sha256": "83a703f588e2adb0f0adde1c91acb493638f687783c19c7b2d9d5a15847c9653"
+    },
+    "dev/OFFICIAL_PROMPT_GUIDE_ALIGNMENT.md": {
+      "bytes": 3618,
+      "sha256": "29d197b9b791446295a5fb02f0cd023593311d256395ea3f6e24eee45ad82d3c"
+    },
+    "dev/PERFORMANCE_TESTS.md": {
+      "bytes": 2698,
+      "sha256": "d9b8f32840224c790629034d64101d30aa9bb724817735b69c54eb42ece9f843"
+    },
+    "dev/PRODUCTION_PILOT_PROTOCOL.md": {
+      "bytes": 456,
+      "sha256": "d38de586edda5ac06f9f143b6a9500e7703e562991ed83e7a223822fa77588d0"
+    },
+    "dev/PRODUCTION_TESTS.md": {
+      "bytes": 2132,
+      "sha256": "b4df4641fa10c5fe5dc0d69208b03ed2c435a7e64f70eeb97fc64b1bdcfb487f"
+    },
+    "dev/QUALITY_TESTS.md": {
+      "bytes": 2212,
+      "sha256": "8458a6e11902c2cf286d3476f0f77580dc2de1cc65a2669909b1125a2e76c8e9"
+    },
+    "dev/REGRESSION_TESTS.md": {
+      "bytes": 48768,
+      "sha256": "b5b1c81258e8ac110ca100f47ba633ce643a92676e416b6dd11005ca4cf1137f"
+    },
+    "dev/UPDATE_WORKFLOW.md": {
+      "bytes": 10064,
+      "sha256": "329737030135d4def51a83df7e893d1a693fe5d1de996ef808b541e22b0d85e0"
+    },
+    "dev/V7_1_TESTS.md": {
+      "bytes": 1097,
+      "sha256": "c36f844736b6424e3eeaa1528e42e91ed28da168fc492d57df178fb0b8b5ce78"
+    },
+    "dev/V7_2_TESTS.md": {
+      "bytes": 517,
+      "sha256": "6767d31674418b018db3b52b36f1e6465c91a86158cadb533fcfe6bb57271b6e"
+    },
+    "dev/V7_3_1_BOOTSTRAP.md": {
+      "bytes": 451,
+      "sha256": "010bb28d4ffe1e06103082cbfc537d51eaa968f8457988f5af0974c84eed9ce3"
+    },
+    "dev/V7_3_1_CONFLICT_AUDIT.md": {
+      "bytes": 1195,
+      "sha256": "3716dd2422121993e16bc259ea54d0ac6722f217583fcfc43b9829ead7295298"
+    },
+    "dev/V7_3_CONFLICT_RESOLUTIONS.md": {
+      "bytes": 1027,
+      "sha256": "a9fbec51ec40626e5b8fdd58d985aafa1f8f4468d93631faf48c2a76ea065ad7"
+    },
+    "dev/V7_3_LIVE_REPLAY_PROTOCOL.md": {
+      "bytes": 537,
+      "sha256": "8e0b517685a14005213d5a6e6ed47bc2caca2bfbc3687c4f02187d89d18b07fa"
+    },
+    "dev/V7_3_TESTS.md": {
+      "bytes": 541,
+      "sha256": "840ba1640692fe1b4acbdccb73bfc1c6ca0975748c1c5779b33602a01cd62494"
+    },
+    "dev/V7_4_FINALIZATION.md": {
+      "bytes": 730,
+      "sha256": "755c5f96f042e3f362c17feb7fc5577afe07442379b38eb6f1af80f4f01853dc"
+    },
+    "dev/V7_4_PHASE_A.md": {
+      "bytes": 510,
+      "sha256": "e0ca415fa7dea1d463f4bdcb042bf760b1caef7607048339e7aecef13aa1fabc"
+    },
+    "dev/V7_4_PHASE_B.md": {
+      "bytes": 308,
+      "sha256": "7d301a4ee359e83b3892b76635fa7eb92ba12b3439da32b57e37a0562e34be2c"
+    },
+    "dev/V7_4_PHASE_C.md": {
+      "bytes": 422,
+      "sha256": "aa9dc1a253837149e5fc45bc01626fbca3d1ac965947db960fb66648b2ee2172"
+    },
+    "dev/V7_4_PHASE_D.md": {
+      "bytes": 414,
+      "sha256": "00305e7e365316bd48107d9c7e20e4043be3d7f8ae9f4132632dd6e484acd32d"
+    },
+    "dev/history/run_bootstrap_v731_tests.py": {
+      "bytes": 5265,
+      "sha256": "249397d9ce02c06b45b931ef31d28f99c51868a1179033dadf447c0e95069725"
+    },
+    "dev/history/run_phase_d_tests_v74_phase_d.py": {
+      "bytes": 5300,
+      "sha256": "08021fbd303184fc8bac217b4239e3bdb01f1be4d25366a14836d4f7ea874e7b"
+    },
+    "dev/results/V7_1_STATIC_RESULTS.json": {
+      "bytes": 524,
+      "sha256": "928d08c13004663f923733b6edc5577e1f0abc52208f2b17cd67430235c048e2"
+    },
+    "dev/results/V7_2_1_PROMPT_ALIGNMENT_RESULTS.json": {
+      "bytes": 535,
+      "sha256": "8ea9d02b822ea6379f0359e2938049bcb915c54b2bca4c37a038bff483dd451d"
+    },
+    "dev/results/V7_2_HISTORICAL_FIXTURE_RESULTS.json": {
+      "bytes": 901,
+      "sha256": "39a0d70b50de019936aa82c49af24512ecd596499bdbfaf4c89259ed1034067d"
+    },
+    "dev/results/V7_2_STATIC_RESULTS.json": {
+      "bytes": 566,
+      "sha256": "5de0f4960d61b450f50051c2df150a4a982f92d9c28fdc637800833ca477f9b9"
+    },
+    "dev/results/V7_2_TEST_RESULTS.json": {
+      "bytes": 1064,
+      "sha256": "b06426304890890e713fd7032a4aa4a8a94cb620589443e5ad91cc7197c72a18"
+    },
+    "dev/results/V7_3_1_BOOTSTRAP_RESULTS.json": {
+      "bytes": 834,
+      "sha256": "5c57ac7f8d0570a23754db4443c541237c5dd16b26d3d15332e6d88e73a0ef27"
+    },
+    "dev/results/V7_3_1_PRESERVATION_CONFLICT_BUG_AUDIT.json": {
+      "bytes": 285,
+      "sha256": "739c2557a699a3b2c234cb80329746c1040973515ae63f4a7e764d97ddaf1e3f"
+    },
+    "dev/results/V7_3_GUIDE_FRESHNESS.json": {
+      "bytes": 242,
+      "sha256": "ea81e5930b2f6a936f0c9221f69e9310fb27a0fa0975b6896db99f510d35798b"
+    },
+    "dev/results/V7_3_HOST_PROBE.json": {
+      "bytes": 2715,
+      "sha256": "bac526fb43e986a60d602ac372e9a65287200a2813289814ba32784bc062dab6"
+    },
+    "dev/results/V7_3_MODE_FIXTURE_RESULTS.json": {
+      "bytes": 931,
+      "sha256": "f40bc172bec22dd8e019de45a0e572f10826980ebd61cb8c80d3c483b1115f40"
+    },
+    "dev/results/V7_3_PRESERVATION_CONFLICT_BUG_AUDIT.json": {
+      "bytes": 296,
+      "sha256": "5c87ae455c0f7ef0bd0dec63acd8b1cc007518591eea3fc2677bd61c37da0c06"
+    },
+    "dev/results/V7_3_PROMPT_ALIGNMENT_RESULTS.json": {
+      "bytes": 607,
+      "sha256": "79e2c0523bff129a9782080e981b20fd16da83fe7d1b2c8ad0206de1b59df1cf"
+    },
+    "dev/results/V7_3_STATIC_RESULTS.json": {
+      "bytes": 887,
+      "sha256": "80b60679b5bd1df545d935cc8bf9a94948747290f54db1d3a5e56a3093519250"
+    },
+    "dev/results/V7_3_TEST_RESULTS.json": {
+      "bytes": 2919,
+      "sha256": "9c95a71481387ed5512c1fcc563d85821ffb304a8dbc069a60038b5e2c87e2bf"
+    },
+    "dev/results/V7_4_1_GENERATION_RESULTS.json": {
+      "bytes": 985,
+      "sha256": "b8f4244898e705b9f4d45df13856f63ef179803215cb6cc4c875777df4efbaea"
+    },
+    "dev/results/V7_4_FINALIZATION_RESULTS.json": {
+      "bytes": 946,
+      "sha256": "276a37c4ba2f66b5f43bd9b6a60bf06e0b5fd5a2e30d3e1a2d1bb95f754bd890"
+    },
+    "dev/results/V7_4_PHASE_A_PRESERVATION_AUDIT.json": {
+      "bytes": 285,
+      "sha256": "756b022349feaf5cc6ccdbf2224d1b18d8a9fb10dcc4fc55c6971d104e508d0a"
+    },
+    "dev/results/V7_4_PHASE_A_RESULTS.json": {
+      "bytes": 1450,
+      "sha256": "ded06dcbbcf0199dbe6ec9cd9773b4c0ed7149956cb2b30bb5a56334893bfe6c"
+    },
+    "dev/results/V7_4_PHASE_B_RESULTS.json": {
+      "bytes": 948,
+      "sha256": "bf508b1e53d50339027c4923d0c3ac5926def393b69814f2435dc1a00d6bdef2"
+    },
+    "dev/results/V7_4_PHASE_C_RESULTS.json": {
+      "bytes": 1040,
+      "sha256": "f405cea7e33513322ebf9cc81ff7aa55dc028bfe6c65a3d2411a4d7a65f5bec0"
+    },
+    "dev/results/V7_4_PHASE_D_RESULTS.json": {
+      "bytes": 1152,
+      "sha256": "d27a83ad1bb8d7ed95c0aa9fb63d1c608bd4607a4aff3cc2735f1141c4983a4f"
+    },
+    "dev/run_bootstrap_tests.py": {
+      "bytes": 138,
+      "sha256": "18637303d48c13d4ed5e224e9d42b9a2616c842b7fb2e0aad1eb09cd850000e0"
+    },
+    "dev/run_finalization_tests.py": {
+      "bytes": 6580,
+      "sha256": "59560c431c6721c0029f504ef1ca93735115824359bd73478f379afc1e312f99"
+    },
+    "dev/run_mode_fixture_tests.py": {
+      "bytes": 2865,
+      "sha256": "e0f9877ac02a7e401fb27eae6a30c6cdbfac80ab0bca09068646d6443e8223b6"
+    },
+    "dev/run_phase_a_tests.py": {
+      "bytes": 6822,
+      "sha256": "e71c512f6e2e8770038ada23c638f8a5554af657ed7a482906f34d51397c2fd5"
+    },
+    "dev/run_phase_b_tests.py": {
+      "bytes": 6128,
+      "sha256": "cb289d9b70150599cba7c3a35abf85bb585dfd73555f399dff0fa69ef14bf9f3"
+    },
+    "dev/run_phase_c_tests.py": {
+      "bytes": 5166,
+      "sha256": "172582e91d579169c259d1246320d3a37ce4564dc04e5f38fbe40f6e9b53ea99"
+    },
+    "dev/run_phase_d_tests.py": {
+      "bytes": 153,
+      "sha256": "ce1802c9004b219836091b53130d6a14aed45b4ebd84791d6a8ebc46888b199a"
+    },
+    "dev/run_prompt_alignment_tests.py": {
+      "bytes": 2292,
+      "sha256": "2c695d26b5a3108b5a6f9de45ce09ec8cf27242f5f2c5f061715bdb693071081"
+    },
+    "dev/run_static_tests.py": {
+      "bytes": 4009,
+      "sha256": "678d509784f2bfd75bf135c3b76a3128f3c667d135e80dd109179fbfd75e80a5"
+    },
+    "dev/run_v72_tests.py": {
+      "bytes": 2062,
+      "sha256": "bc3ab8c789071413978ad0872e034108dbccadcab04e427b6720043f54a23f8c"
+    },
+    "dev/run_v73_tests.py": {
+      "bytes": 10573,
+      "sha256": "cc0e600e5720d4b1513d7488a50b903ffee09e47620a89b7632e0a89e5c7aedc"
+    },
+    "dev/run_v741_generation_tests.py": {
+      "bytes": 5474,
+      "sha256": "ad93eb2b698b3b88ec002e93b3f7de0474e449aac0b09ae91e2dde21d301ca7d"
+    },
+    "dev/run_v742_final_tests.py": {
+      "bytes": 4184,
+      "sha256": "791a662ba980075873126295e060fc6252461f2a3a2ddb11458c60e0d60f055b"
+    },
+    "dev/run_v742_phase_a_tests.py": {
+      "bytes": 3858,
+      "sha256": "4cd37f039d2db395ab0e924cc5e6177eccae1e07c83cfea1df632c577f05e3be"
+    },
+    "dev/run_v742_phase_b_tests.py": {
+      "bytes": 6596,
+      "sha256": "b4117dff7d5021aef7befd01f267f7d527984ceb21484c4dbceb2a5ff315e63d"
+    },
+    "dev/run_v742_phase_c_tests.py": {
+      "bytes": 4922,
+      "sha256": "aba85f2ea6a52f60aee5c7e5cb0033c470e9b41b0b5933bae65c70fc426d9f7e"
+    },
+    "dev/run_v742_phase_d_tests.py": {
+      "bytes": 7345,
+      "sha256": "d5f7c25a2b3bf90c6b65f39688f53498c5215df0cb4b3d94eaa1f798fa16a2f1"
+    },
+    "dev/run_v743_release1_tests.py": {
+      "bytes": 3022,
+      "sha256": "b02494c729c8153bfa8b972ee01383666887cf7d145e0324a859d8fe0f8cc9f7"
+    },
+    "dev/run_v744_release2_tests.py": {
+      "bytes": 5010,
+      "sha256": "52fc04fffa436ec9d552fc02a2d043f6bfa4ec7bf95d8379dc5b78220ca22626"
+    },
+    "dev/run_v750_release3_tests.py": {
+      "bytes": 6767,
+      "sha256": "50527092f71bf0e69a97597ee5d6c0c31f1fbf88c12ef4476ca6f3b2618af5c8"
+    },
+    "dev/run_v760_release4_tests.py": {
+      "bytes": 8231,
+      "sha256": "6bac61ba2749236c0a274aa2eea5704f99ee58d5758ef744d87cdc6772aebab2"
+    },
+    "exports/README.md": {
+      "bytes": 950,
+      "sha256": "ddbb99f92f38807a44a457ca329bd2fd3e4e4d6792658baa6f14344bae506e13"
+    },
+    "profiles/PORTABLE_REFERENCE.md": {
+      "bytes": 2711,
+      "sha256": "8bea76bf3ea1f71f51ed2324b06d0aacc6f051ea6be62e75c47e6068ab65aa2b"
+    },
+    "profiles/PORTABLE_REFERENCE_MANIFEST.json": {
+      "bytes": 1141,
+      "sha256": "f1c634d2f7037ba0ef0fc98baa1ee59243a325584948d1161dd934b67baea605"
+    },
+    "references/README.md": {
+      "bytes": 346,
+      "sha256": "3083d3441f62256addec1c053fe874cf6876772cad09d830a541f235b24d9010"
+    },
+    "release/RELEASE.json": {
+      "bytes": 2921,
+      "sha256": "6cfa93af8344e9a970242254ac22a0ae924fe8c0d2aefb0109b6e8650373bdea"
+    },
+    "release/V7_4_1_BASELINE_HASHES.json": {
+      "bytes": 49140,
+      "sha256": "c63c4a99df3a0cc412e798e41acdbac6c7c5f23c9acacc4884ba084fcb9b3bc7"
+    },
+    "release/V7_4_2_BASELINE_HASHES.json": {
+      "bytes": 53328,
+      "sha256": "f86a47b4b5a1f7196ba492030e2c8cf920639bb4fc8ce8604ba6a85a0354a7b0"
+    },
+    "release/V7_4_2_PHASE_D_BASELINE_HASHES.json": {
+      "bytes": 52917,
+      "sha256": "9e6d255b5e32ba8eda8e069239324cd4a4239ae2e3b3bc80c710c9be54ed1640"
+    },
+    "release/V7_4_3_RELEASE_1_BASELINE_HASHES.json": {
+      "bytes": 53968,
+      "sha256": "f230b149d16a19a28113a685669f2333419d7c080d3375b405d49d6cd433e915"
+    },
+    "release/V7_4_4_RELEASE_2_BASELINE_HASHES.json": {
+      "bytes": 55863,
+      "sha256": "8eec7c0e81c9987dcf906d58726efb4333958a9f2c3db19b927445c4e70c197f"
+    },
+    "release/V7_5_0_RELEASE_3_BASELINE_HASHES.json": {
+      "bytes": 59234,
+      "sha256": "746c32d6e443d83260f5df7633c7d996b5d44a1629b6cdcd7a67b3c64a7980df"
+    },
+    "routing/ACTIVE_MODULE_MANIFEST.json": {
+      "bytes": 4908,
+      "sha256": "15fd44dcfa7fb353aceaaeb9c007a9467ff389e64d57d2d2bef59724aca13c62"
+    },
+    "routing/HOST_CAPABILITY_ROUTING.json": {
+      "bytes": 990,
+      "sha256": "c4c4157787667f765378c56b8ea98fd329962d56cd7a98677fa1c4bfd2bd5a55"
+    },
+    "rules/CORE_CONTROLLER.md": {
+      "bytes": 4489,
+      "sha256": "f0858c4d44bd60f95c0a341660a9042bff0d10425306f2949c80ef58522b46b9"
+    },
+    "rules/RUNTIME.md": {
+      "bytes": 19478,
+      "sha256": "1e41adeb45f586800965babc29fc3b408c63eaa9db1349a49e585caea82ceda1"
+    },
+    "rules/audience/ACCESSIBILITY.md": {
+      "bytes": 648,
+      "sha256": "21e89e369b19a4f03336777346a91da832b40ef3650acc16cbb65c5a3f492b2a"
+    },
+    "rules/audience/CHILDREN_6_9.md": {
+      "bytes": 788,
+      "sha256": "b17c4f88f8809b81d5bbe9fc71a8aa5d5bc88efb8affd62551dbc298e2f4ee3e"
+    },
+    "rules/audience/EXPERT_TECHNICAL.md": {
+      "bytes": 635,
+      "sha256": "a17e49988c01105fa3656a5eb9d53ca1eea03725cc22dfc386890f3cb26e6cfb"
+    },
+    "rules/audience/MULTILINGUAL.md": {
+      "bytes": 638,
+      "sha256": "f9e9e0f057a8f8f117de9e1cad6d4453d5f93d151b4fd1b7b6354083b7f75e7c"
+    },
+    "rules/audience/REGULATED_CLAIMS.md": {
+      "bytes": 648,
+      "sha256": "7d9b6c05b246165ec0bfa6f3ccf5b41c5759e3e81f7e09761e394e5e735fca59"
+    },
+    "rules/audience/VULNERABLE_AUDIENCES.md": {
+      "bytes": 614,
+      "sha256": "b97e15981d793dfea5aa7fe35cc979d5236a9086f26ab6da5dc86bee6c2b3557"
+    },
+    "rules/detailed/00_operating_rules.md": {
+      "bytes": 3877,
+      "sha256": "bd9e31ef5a6c3e1730aeeb08e03e25cad0a1b2e9d3e5575a581b58d5ca2eeb06"
+    },
+    "rules/detailed/00a_router.md": {
+      "bytes": 7223,
+      "sha256": "bb983917d816229c1ba1c1851de3b86f9c5717362ad0378aca53c853e990a6e0"
+    },
+    "rules/detailed/00b_output_contracts.md": {
+      "bytes": 4538,
+      "sha256": "1a6ba840ad10cf0f9d8290141447100ef0dfea9deb13654af74677164ef2bd44"
+    },
+    "rules/detailed/01_first_project_walkthrough.md": {
+      "bytes": 4528,
+      "sha256": "2a8df652cadc84f447dbfd14701d531e8d11738ea118e8f774bf312817867800"
+    },
+    "rules/detailed/02_brief_and_workflow.md": {
+      "bytes": 4076,
+      "sha256": "cd747a5195d6e90cfe8f9807d4c19d872ee41345fb6325932866f3626e5f1349"
+    },
+    "rules/detailed/03_capability_verification.md": {
+      "bytes": 3430,
+      "sha256": "375c17e0340da297e60431b5a201c88117a5f69c06e948384f6cacc0512fdbbe"
+    },
+    "rules/detailed/04_image_prompt_manual.md": {
+      "bytes": 2997,
+      "sha256": "8bef6b8642e68ee16b3e926fc19401849db600b6adb8ea914e18f44a328e6eb7"
+    },
+    "rules/detailed/05_video_prompt_manual.md": {
+      "bytes": 3191,
+      "sha256": "4aa1138fb505c0ffea04d69a00f40e88d929fc9fe763c7a76aefc5906b18c3e9"
+    },
+    "rules/detailed/06_anchor_pipeline.md": {
+      "bytes": 1761,
+      "sha256": "2802354f53fb32b710a7127caaf41ae7130fbcaad33a77c960c249aca313d57c"
+    },
+    "rules/detailed/07_reference_and_asset_bibles.md": {
+      "bytes": 3177,
+      "sha256": "3bcee41ea847446aaf9e0f33480e045a7624dca26ceaccac845bc23d03aa52e9"
+    },
+    "rules/detailed/08_directing_and_editing_grammar.md": {
+      "bytes": 3273,
+      "sha256": "0f01f3f9d5f7aa76dacff87b8030b2a1c652e7f296dae329fd204704ab0bfe58"
+    },
+    "rules/detailed/09_storyboard_and_animatic.md": {
+      "bytes": 4369,
+      "sha256": "622aa04ac300c9d0bbfa436849982400c73faab99be59f9a8b1dd57b9233c8a7"
+    },
+    "rules/detailed/10_voice_and_dialogue.md": {
+      "bytes": 3009,
+      "sha256": "6e8ffea514cf10d90abc6389f20022a92774f190d49614e81edf2504d2de34f3"
+    },
+    "rules/detailed/11_sound_design.md": {
+      "bytes": 1600,
+      "sha256": "563e24148e09473025684470fbb3a0bc2c64610a8a492bb0ec7468c7edb0ea4a"
+    },
+    "rules/detailed/12_post_and_delivery.md": {
+      "bytes": 3895,
+      "sha256": "14cf9dee3c1631f1434a0e5c2874dfc42497d888a4f6e2efe713acc986e89bfa"
+    },
+    "rules/detailed/13_animation_manual.md": {
+      "bytes": 3834,
+      "sha256": "eb37836d13a63e9aff2a5db29c8c4a2722c4eb87f7ab6e582a81ee80fa0baf34"
+    },
+    "rules/detailed/14_faceless_longform.md": {
+      "bytes": 1443,
+      "sha256": "950d0c7afcbbea1a0f087db2fe2f972f7f86df9b75c57b7cabba7b54c68a745b"
+    },
+    "rules/detailed/15_motion_graphics.md": {
+      "bytes": 1440,
+      "sha256": "43d5539c9a70e2ffd1dee80a68eb6c0f708e92fd7ef3ad15b757a439099f372b"
+    },
+    "rules/detailed/16_hybrid_compositing.md": {
+      "bytes": 1353,
+      "sha256": "22e50396e69f761457189a77a812bd7afce7b2a22e55ee788ad540e9cce1b22e"
+    },
+    "rules/detailed/17_prompt_iteration_and_repair.md": {
+      "bytes": 3093,
+      "sha256": "4f49b70b2a12352e2ceae6ee80a03092e38f7fe10ce071432d39e52f4ae1a44a"
+    },
+    "rules/detailed/18_output_diagnostic_and_qa.md": {
+      "bytes": 3978,
+      "sha256": "14e6cebba5f28a3d8c19423482561d8833fd89ef8f120d011420285393c71bf2"
+    },
+    "rules/detailed/19_production_memory.md": {
+      "bytes": 2650,
+      "sha256": "2771b168f666801661ec03a361a45914313e396eacb44d7f6e8cc1c1b0612fb8"
+    },
+    "rules/detailed/20_cost_and_budget.md": {
+      "bytes": 1133,
+      "sha256": "36f4db265e902523894f2e7d08816c6b3d6f6cb5242bd48c4ad71480871e563b"
+    },
+    "rules/detailed/21_rights_and_claims.md": {
+      "bytes": 2936,
+      "sha256": "2ca87b829ef208d1f4737b45ffde58c1ad4b19a44523115df7f12a3c3e8c185f"
+    },
+    "rules/detailed/22_localization.md": {
+      "bytes": 1337,
+      "sha256": "20bfa799294c21acd41173eec9da2c5c3e5d071c74fd799f4e6d6911f496404c"
+    },
+    "rules/detailed/23_hooks_and_packaging.md": {
+      "bytes": 1560,
+      "sha256": "26a024c5bf5d57c23df293a727f4189094bfb2f4c4cc9b64d68187231439bd81"
+    },
+    "rules/detailed/24_client_delivery.md": {
+      "bytes": 1267,
+      "sha256": "1a5eff4374a41c6ca4cd4e5ca66ca9d59be7ceb28553ae8d7cc06ba43391c104"
+    },
+    "rules/detailed/25_examples.md": {
+      "bytes": 1834,
+      "sha256": "30ba13646b416d389c2c676477438fe1fa21db0eeafc877f4b5ee034ff6297cc"
+    },
+    "rules/detailed/26_reference_analysis.md": {
+      "bytes": 991,
+      "sha256": "e6884ecf43960617d965ae01a418941004cc3c92823cc64100f1a59c4cf35bc2"
+    },
+    "rules/detailed/27_evidence_registry.md": {
+      "bytes": 826,
+      "sha256": "9cd285634d0c9ae49f96b0e9b9ec42930e6d1dcb088bf548f53030d579d66817"
+    },
+    "rules/detailed/28_adaptive_next_protocol.md": {
+      "bytes": 5447,
+      "sha256": "d5c6b3851d01d73471238eb14535d5212a06aa646a0b6218f14d532166c2bb21"
+    },
+    "rules/detailed/29_concept_divergence.md": {
+      "bytes": 1325,
+      "sha256": "9f3d33ae1e04ff41823316484badbadd6a90d7d58be5d7b2cae060c85ffe6d6b"
+    },
+    "rules/detailed/30_factual_visual_protocol.md": {
+      "bytes": 875,
+      "sha256": "7750461351ca6a97a1ee4ad6eb66457dfab411f54f34eb831d3292d591160fd5"
+    },
+    "rules/detailed/31_commercial_excellence_autopilot.md": {
+      "bytes": 8025,
+      "sha256": "1d76209568fb63befd134bad5e625bd3f599a936eab35cb11c4c193f22fa0043"
+    },
+    "rules/detailed/32_visual_taste_and_reference_calibration.md": {
+      "bytes": 4737,
+      "sha256": "edc71fee9777f3ed46f796dfe140f6740c6782f01181acff268d1026f1b9197f"
+    },
+    "rules/detailed/33_beginner_operator_mode.md": {
+      "bytes": 3714,
+      "sha256": "33945138ece0ad7470531a79f65176097e503a3d0f12f54aeec8e170bac1fe53"
+    },
+    "rules/detailed/34_audio_attaching_to_clips.md": {
+      "bytes": 2002,
+      "sha256": "c1a3883972d4af2231853869272f186aa87b80c18dc8c8f9689031d15d36b3e3"
+    },
+    "rules/detailed/35_reliability_gate_controller.md": {
+      "bytes": 7527,
+      "sha256": "a3217cad65d322e9781125e550c1b4c12ab91b271c87ae5d6bbb29978458f1e3"
+    },
+    "rules/detailed/36_runtime_activation_compiler.md": {
+      "bytes": 6056,
+      "sha256": "2c85e1b6d78e2fa8b1bcee72ec168f67bdb3cd0fd4ecb4e3b79e0d2fd27f29ee"
+    },
+    "rules/detailed/37_audience_comprehension_and_suitability.md": {
+      "bytes": 2300,
+      "sha256": "3c5437a0c1438f28119a7a2562c441b45397005728d542adfd784b1c1d7ceeda"
+    },
+    "rules/detailed/38_cross_model_quality_floor.md": {
+      "bytes": 4072,
+      "sha256": "e7693618761bcc70a11a70ffb1a3da4ee70b9369ae6501a646141879d60e6dbc"
+    },
+    "rules/detailed/39_mandatory_next_step_protocol.md": {
+      "bytes": 3312,
+      "sha256": "b50df4212e3f9003b355088e7526d8fdca5b10c37322112e417d5273950bcbdd"
+    },
+    "rules/detailed/README.md": {
+      "bytes": 497,
+      "sha256": "d0b7009047f1be43c76bb9872bf3869d9de8fb97b5c7f0f080750f7c4c683676"
+    },
+    "rules/detailed/optional/00_optional_library_index.md": {
+      "bytes": 1403,
+      "sha256": "7797f74f42fe7d1bbeb83e0316db8f5de85f5dd3496d8cd0ff86eea9b4e920b1"
+    },
+    "rules/detailed/optional/01_cinematic_look_library.md": {
+      "bytes": 3189,
+      "sha256": "0d6ccb71e26095935c614906923e163a60f10bf81b402f50284a73f508d88130"
+    },
+    "rules/detailed/optional/02_animation_style_families.md": {
+      "bytes": 2024,
+      "sha256": "d7d631d3855c240d33e8d548f113690a004b08c788c21a47df342b2559cb8a26"
+    },
+    "rules/detailed/optional/03_stack_prompt_cookbook.md": {
+      "bytes": 3194,
+      "sha256": "6a2f16dc366e5564c6886821a0725c53f201834f8559b4d2f5f4737fe258e756"
+    },
+    "rules/detailed/optional/04_examples_ads_and_products.md": {
+      "bytes": 2875,
+      "sha256": "e8f1192bf025a31a585b4a38585c3d145f75564dae2a0cf74ae4d6966af33986"
+    },
+    "rules/detailed/optional/05_examples_story_and_design.md": {
+      "bytes": 2190,
+      "sha256": "4cac990374dc53535e87b50cb606abcca0c6c6e7dae6cb7a7595daad4a28f9e4"
+    },
+    "rules/detailed/optional/06_examples_faceless_longform.md": {
+      "bytes": 1520,
+      "sha256": "af00467c2f1a363dd58ff949e87bae22bd53f95f23f750cd557c37127765f7fd"
+    },
+    "rules/detailed/optional/07_niche_visual_vocabulary.md": {
+      "bytes": 2218,
+      "sha256": "4dd849d87395b5b44eadfd84ea22f81bd51ae67cb87c837ff0e8a3b8b9da42ef"
+    },
+    "rules/detailed/optional/08_hook_pattern_library.md": {
+      "bytes": 1567,
+      "sha256": "88b276b00cbb404b1b35e89f6c852f58041320bd3dc168e56694bed7cd60ff6b"
+    },
+    "rules/history/V7_2_1_RUNTIME.md": {
+      "bytes": 37755,
+      "sha256": "f8140d76f4a1ff0bbe59398aa4308124b40c35d8a2cc274670cca91664f34386"
+    },
+    "rules/history/V7_2_1_SKILL.md": {
+      "bytes": 15266,
+      "sha256": "09835f5297e3ab4d0824ebbc1e7ac8192e0fcd61aba5b986445e84129df287fe"
+    },
+    "rules/history/V7_3_0_CORE_CONTROLLER.md": {
+      "bytes": 2266,
+      "sha256": "f3be2d3f0bc77533b2a08e6bb142f099342387bc5f0e42cfa850fcad8419ad0e"
+    },
+    "rules/history/V7_3_0_RUNTIME.md": {
+      "bytes": 13456,
+      "sha256": "900ab606e907ee89a7124fbaa2edee20157462e2c5e07753f78d2271a67d9fa7"
+    },
+    "rules/history/V7_3_0_SKILL.md": {
+      "bytes": 5311,
+      "sha256": "f9de9ca7ef9232ed17615b69dffea9dd31756c50bfe3112c7de21aac00b97136"
+    },
+    "rules/history/V7_3_1_CORE_CONTROLLER.md": {
+      "bytes": 2754,
+      "sha256": "e3dd08e4b1933521d93480c90791b8cf9882524394987e51abafb581a1aab8ff"
+    },
+    "rules/history/V7_3_1_RUNTIME.md": {
+      "bytes": 14850,
+      "sha256": "99f4b1a83112bface377e46c2484c99613258be7c093cc28c9e0785fcb347218"
+    },
+    "rules/history/V7_3_1_SKILL.md": {
+      "bytes": 6407,
+      "sha256": "82a73f71244b4641000a9377cfe406bd44db0b2f27707873ca1f3f8b28134f31"
+    },
+    "rules/history/V7_4_PHASE_A_CORE_CONTROLLER.md": {
+      "bytes": 2812,
+      "sha256": "be30f1a10ce3f4f62b8b2cd66d816963febb1c1e86e6258636a02640d08263c1"
+    },
+    "rules/history/V7_4_PHASE_A_RUNTIME.md": {
+      "bytes": 14836,
+      "sha256": "66ec026c9fc1d7b799e1611a6fc39b4f47c8fb9d0d1a6be9a5ac677453ccd050"
+    },
+    "rules/history/V7_4_PHASE_A_SKILL.md": {
+      "bytes": 7011,
+      "sha256": "749069a407d4fda64c935c66ec4fde3f86ff477e0c0dd0749c86c6cfbb5c02c6"
+    },
+    "rules/history/V7_4_PHASE_B_CORE_CONTROLLER.md": {
+      "bytes": 2957,
+      "sha256": "c5ce7c737728a70bccc7da582c420b8d5035824b76fdf0f23cd8a84d3377c876"
+    },
+    "rules/history/V7_4_PHASE_B_RUNTIME.md": {
+      "bytes": 15513,
+      "sha256": "f7bc3d659b82d4c81a6ff8b1105cbec10a3b107db09f21e5a9e12406279a4bb1"
+    },
+    "rules/history/V7_4_PHASE_B_SKILL.md": {
+      "bytes": 7265,
+      "sha256": "7bda6adbd7d031904f282774665e4066fafa220cf1ca0674bc99b30e10309846"
+    },
+    "rules/history/V7_4_PHASE_C_CORE_CONTROLLER.md": {
+      "bytes": 3708,
+      "sha256": "fb7f445688267569eb9533e059601a680a2c31eb1ba2b4d06c2e439cc2d51d76"
+    },
+    "rules/history/V7_4_PHASE_C_RUNTIME.md": {
+      "bytes": 16035,
+      "sha256": "b08c6d5b4c5c992ec88aff9abc3c5f945f65f8130b44b6d17d5b5197df7122a2"
+    },
+    "rules/history/V7_4_PHASE_C_SKILL.md": {
+      "bytes": 7711,
+      "sha256": "6e254487209e2759cf1131c43b0f0bde960767c150f2f1aa4e3acdd87678a941"
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__canva__MOBILE.md": {
+      "bytes": 1021,
+      "sha256": "d31eea5c62cfdb880cfe1634380f5af91c54bcaa00208c4b9c2577fea9beda8c"
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__canva__README.md": {
+      "bytes": 197,
+      "sha256": "c10585bd60d6fefe472ee254692a4077ffad5bb0fd0e769955dd486c0a2a657b"
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__canva__WEB.md": {
+      "bytes": 814,
+      "sha256": "3244cbcef21036d14531ab790dc42aa80e54deba43c868d18189b1e2a596cd35"
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__capcut__DESKTOP.md": {
+      "bytes": 837,
+      "sha256": "5dd33b04b43f5b3dc6fe276576ba1d063dc7ce6166b90ee21c67644eb1d4b82e"
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__capcut__MOBILE.md": {
+      "bytes": 1012,
+      "sha256": "adb97160c01a66371f3cabec1074f0d4d817773c6c8b136e11946d883e14565f"
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/adapters__capcut__README.md": {
+      "bytes": 172,
+      "sha256": "6cbf9053f4d3e28e9dc73cd0f95da0b49a8e14902d3172e27c5a8ec9c0a6f668"
+    },
+    "rules/history/v7.4.0-removed-editor-guidance/rules__detailed__34_capcut_canva_execution_recipes.md": {
+      "bytes": 5810,
+      "sha256": "39003ae1051590b3ded4db305b59a229aa4553ab2ec93b5519d57c25a0dc5f47"
+    },
+    "rules/production/2D_ANIMATION.md": {
+      "bytes": 6001,
+      "sha256": "01c911f3eaf90b2b741e9d983b91df52874ebdb5244ab183acf1fdc5194085fb"
+    },
+    "rules/production/ARCHITECTURAL_CONTINUITY.md": {
+      "bytes": 1135,
+      "sha256": "8e2de3ca46681cd267ff212356d2d5681380747b580c69edc693681a1ccdf265"
+    },
+    "rules/production/AUDIENCE_SUITABILITY.md": {
+      "bytes": 840,
+      "sha256": "4c07377f4ef3a4c1aeebf88d9b534a487c9d5b8c2cec32bab39e60f4bba8b225"
+    },
+    "rules/production/AUDIO_ATTACHMENT.md": {
+      "bytes": 2002,
+      "sha256": "c1a3883972d4af2231853869272f186aa87b80c18dc8c8f9689031d15d36b3e3"
+    },
+    "rules/production/CINEMATIC_SCENE.md": {
+      "bytes": 1105,
+      "sha256": "bbfd7d13b5350994f9fae2ce3408b453bcb154d157badb34dbd02ae2de108ac3"
+    },
+    "rules/production/FACTUAL_DOCUMENTARY.md": {
+      "bytes": 1191,
+      "sha256": "96f9955033e78821ba40682de8c9e708bf2748235eccc9c3ae5b81b1f615788a"
+    },
+    "rules/production/LOCALIZATION.md": {
+      "bytes": 1141,
+      "sha256": "7e402ed149033448f59d8b13d040e851a28704c01ab2c317a757559a0a26750b"
+    },
+    "rules/production/MODE_A_PHOTOREAL_COMMERCIAL.md": {
+      "bytes": 1607,
+      "sha256": "b836fa8af7cb924e23103f7166f0d36f8cdef9b3a7f3ccf5a0c4a8c7f81459d7"
+    },
+    "rules/production/MODE_C_MOTION_GRAPHICS.md": {
+      "bytes": 1465,
+      "sha256": "5028088fc14b1ae4c076a67911dac5bec130001bd6266205fa3f7cfe1fe6897f"
+    },
+    "rules/production/MODE_D_HYBRID_COMPOSITING.md": {
+      "bytes": 1523,
+      "sha256": "baf784be00d0145a5775a9a16f2e6473d096d2863060644a8c381c203f823e64"
+    },
+    "rules/production/README.md": {
+      "bytes": 228,
+      "sha256": "7efd40f98970fa646c8f325ed2919000c62a9fb5584739dab89a5cdc7662f593"
+    },
+    "rules/production/UGC_ADVERTISING.md": {
+      "bytes": 1156,
+      "sha256": "f415dc0f19f029e596bdd06b0027c59e61587526a7b1a9707e2e69942a70178d"
+    },
+    "rules/validation/CROSS_MODEL_EXECUTION.md": {
+      "bytes": 1901,
+      "sha256": "a249f1b5ff0187daf9c43e5bfa8572ee2b3d6a9fb63fe584835f9ff015488153"
+    },
+    "rules/validation/EXTERNAL_EVIDENCE.md": {
+      "bytes": 1904,
+      "sha256": "22ba9b1b8ef136ac4a806fa7f0e4926abb5aeeccfbd393167744f6609b3abc52"
+    },
+    "rules/validation/LIVE_EVIDENCE_EXECUTION.md": {
+      "bytes": 1876,
+      "sha256": "ea7bc7d4789a2bdaf93fc21b7f7eb8f70865926f500b5271907f88ef2221f1ba"
+    },
+    "schemas/PROJECT_CONTRACT.schema.json": {
+      "bytes": 2590,
+      "sha256": "222af319aa678be7126742c8668ec6abb3bfc55a6a6932d20c4e9e3c3a944e6a"
+    },
+    "schemas/PROJECT_INDEX.schema.json": {
+      "bytes": 2084,
+      "sha256": "bc66797c2a13490743a9b061e9b2cab1f8de3dfe84ef31aa762f74854cfccf74"
+    },
+    "schemas/ROUTING_CONTRACT.schema.json": {
+      "bytes": 1357,
+      "sha256": "8d17380b78d6f339f5c6f03f32b528780ba09d96fa06226d84a1a66b907cf14a"
+    },
+    "templates/2D_RIG_SPEC.md": {
+      "bytes": 802,
+      "sha256": "df9657771076fe3fb51780ac4e7c0d637223cad864ea9744145b28a3c12ab010"
+    },
+    "templates/ACTUAL_OUTPUT_MARKERS.md": {
+      "bytes": 1708,
+      "sha256": "b18d43422201b101703ab149d46093a814fa271d01f43e46b58b27cdee06cabd"
+    },
+    "templates/AUDIO_INSPECTION.md": {
+      "bytes": 893,
+      "sha256": "899c5947ceca403ada29dd2a1d953e9a9b52ee5b61f626889e292d2b9dd2b640"
+    },
+    "templates/COLOR_SCRIPT.md": {
+      "bytes": 710,
+      "sha256": "87949ac3eb0f04f62d8491b9c7bb013b78dac7bba8dd91c240aea8b3fffcea08"
+    },
+    "templates/CONTRACT_FIELD_GUIDE.md": {
+      "bytes": 845,
+      "sha256": "8679b3cc86389ff1054e83a2c2884159a84f0a249acbface61a1b6f78133d6c0"
+    },
+    "templates/EVIDENCE_BINDER.md": {
+      "bytes": 613,
+      "sha256": "57c28c4f8c5b31fa950087778b92bb04513c5bc33a6cc2363dd023c244eb228c"
+    },
+    "templates/EVIDENCE_IMPORT_MANIFEST.json": {
+      "bytes": 198,
+      "sha256": "10bfaab17667b77ee29a3bf7628c95f3fb6a9fe92e63c6a565bec48dd17a31f6"
+    },
+    "templates/EVIDENCE_MEDIA_INVENTORY.md": {
+      "bytes": 482,
+      "sha256": "b7c5a201626b977d4d7dc81cf5ab899a2cb9e5c0737597e98e08d38b6f7427d0"
+    },
+    "templates/EVIDENCE_RECORD.json": {
+      "bytes": 429,
+      "sha256": "c733d0c47ccb3b2ff41cc7944b43f2f46c1cc884b2730c724d9d071fe349d658"
+    },
+    "templates/EXPORT_MANIFEST.md": {
+      "bytes": 901,
+      "sha256": "364e2c23544aace0c0254e1eb714c063306a5f34e9ff507215b20832f4971b24"
+    },
+    "templates/EXPOSURE_SHEET.md": {
+      "bytes": 519,
+      "sha256": "5db56436b22fb751a165b3f78e1957024331603be4a7e8085ac5c1b448e24e9b"
+    },
+    "templates/EXTERNAL_EVIDENCE_CAMPAIGN.json": {
+      "bytes": 796,
+      "sha256": "9ba69392838e8fb2475771c290a01bd6d52443349619f9cbd05b1c3b1229aed6"
+    },
+    "templates/EXTERNAL_RATING_RECORD.json": {
+      "bytes": 470,
+      "sha256": "dd6eb1c6ae0da33d1025129f08b5684c2f23fe3319fe33e334bc134e0a17f018"
+    },
+    "templates/EXTERNAL_TRIAL_RECORD.json": {
+      "bytes": 1283,
+      "sha256": "2aac6a004c667fa6e693265a1632b12b619be6199c6bc438f0b95a7cb9a516ea"
+    },
+    "templates/FINAL_COMPILATION.md": {
+      "bytes": 3356,
+      "sha256": "0bba6d675b9b341746ec830b53cbff5bb713f4381e8257577502df3d5c676173"
+    },
+    "templates/GATE_MATURITY_LEDGER.md": {
+      "bytes": 600,
+      "sha256": "08c56978487998c66ba9161448576c7b0cd274110e3dfb21829b442f60b9e654"
+    },
+    "templates/GENERATION_PROMPT_MARKERS.md": {
+      "bytes": 1800,
+      "sha256": "7d508d048788f833e87434e9a99b067fa398831bb07a930ef4299990c307389c"
+    },
+    "templates/GENERATION_STACK.md": {
+      "bytes": 514,
+      "sha256": "4ab0ae8fcbc2d860e500e113f173995d363b186cb87d314953c5eac3c3d04975"
+    },
+    "templates/HUMAN_EVIDENCE_CAMPAIGN.json": {
+      "bytes": 454,
+      "sha256": "02092e9dd2de453f20567d22fe7b55c26de92e04910c908336a10e6ce844a0aa"
+    },
+    "templates/HUMAN_EVIDENCE_SESSION.json": {
+      "bytes": 913,
+      "sha256": "c4aca787c5da4ea156fcba2859dec0f425f185b70c2bf515adb6bfaabe26c9c8"
+    },
+    "templates/HUMAN_REVIEW.md": {
+      "bytes": 837,
+      "sha256": "d5d9303f36915b18151877b7bc38abae661efe5dc4a1dc38cf5bdaaf36dafd12"
+    },
+    "templates/INSTRUCTION_COMPLIANCE_RECEIPT.json": {
+      "bytes": 3018,
+      "sha256": "d3bfaf49817e252991bf2fb243f968d6dcb7481c0257bde9a93ff47388689592"
+    },
+    "templates/MEASURED_VOICE_CHECKPOINT.md": {
+      "bytes": 449,
+      "sha256": "bdd2bbb75bb8e5969efd7bb3f55425f918ee59dca0fd74120ccf34073ab59992"
+    },
+    "templates/MOTION_PROOF.md": {
+      "bytes": 680,
+      "sha256": "de759ca971a5350a46b0dd3f3c86f903dffbf00eb9c1ff31be7257c3bcef0ee1"
+    },
+    "templates/OUTPUT_RECORD.json": {
+      "bytes": 633,
+      "sha256": "2a5689132c4f4f9ab576395accca3ed615a65cee38a81f3d3a40502cf8264763"
+    },
+    "templates/PILOT_STAGE_RECEIPT.json": {
+      "bytes": 475,
+      "sha256": "281b86ac67cbb6b8f283a07684729c9961e47fe528a80406d22c8ca6aa48e876"
+    },
+    "templates/PORTABLE_EXECUTION_RECORD.json": {
+      "bytes": 1585,
+      "sha256": "31fc70fed4b54b1efe4c7d5921207b20e2f6d1485af8600955de4425bdd72f36"
+    },
+    "templates/PROJECT_ASSET_REGISTRY.md": {
+      "bytes": 570,
+      "sha256": "9665dd59fa1c2d89106d520c4d616f2af32a0726d953c03163da3814bbff3a86"
+    },
+    "templates/PROJECT_CONTRACT.json": {
+      "bytes": 5352,
+      "sha256": "2b8d08930809aa25b7d80de6ba5f6abfece6f0bb3064a3e16c17fc29f55cd265"
+    },
+    "templates/PROJECT_CONTRACT_PORTABLE.json": {
+      "bytes": 5067,
+      "sha256": "f1d9ce84e9fae0c16144de12cf3f16337bb69a4e26a5055b572acc8d90bdab6f"
+    },
+    "templates/PROJECT_EXECUTION_CONTRACT.md": {
+      "bytes": 635,
+      "sha256": "7f20be2b3a22128ef9dc0db5ee80d2541c38a62cb06752063aede092378aed78"
+    },
+    "templates/PROJECT_INDEX.json": {
+      "bytes": 508,
+      "sha256": "dde37bb3107bbf4c9e4bd8e696d8877148fae1c81608162962ded059a7f6415d"
+    },
+    "templates/QUALITY_SCORECARD.md": {
+      "bytes": 994,
+      "sha256": "d257e3d21e861014b497989f06e50e0353226b3d3cde528c7c8efc56244cdd99"
+    },
+    "templates/REPAIR_PLAN.json": {
+      "bytes": 341,
+      "sha256": "a20ace3eefee195d26e0ffbc0d0cd8f0de84f8e7b1a2cc93bf450c5845d07090"
+    },
+    "templates/ROUTING_CONTRACT.json": {
+      "bytes": 1225,
+      "sha256": "03ae75d70501fc8b955404a196fbf4323db40d2c749a7cfafb3c67ca10e7b49f"
+    },
+    "templates/SEMANTIC_REVIEW.json": {
+      "bytes": 4749,
+      "sha256": "c47b7a8a5ccfb2c2bee906fa0878913146a8117ec67fb2c1735c67edfea2f27c"
+    },
+    "templates/SIGNATURE_TEST.md": {
+      "bytes": 620,
+      "sha256": "c00b7bd5f11f3ca09943794b01c2ffd509edb15789824861322337fa7b895f7c"
+    },
+    "templates/SILHOUETTE_COMPARISON.md": {
+      "bytes": 731,
+      "sha256": "69bd766966fd5053c7728f89c287ef2144cc4a1b5298bc7cd97b211f8f64f491"
+    },
+    "templates/USABILITY_PROFILE.json": {
+      "bytes": 200,
+      "sha256": "ecd4bdcc12803e80df0a700db3bd0a4f2faeb5f2497c4da49950f600a2b54e9e"
+    },
+    "templates/VISUAL_EXPLORATION_MATRIX.md": {
+      "bytes": 997,
+      "sha256": "3a8cff501214f8eb567b10f9189569bc064683db08272d8d3d04326d702ee2ad"
+    },
+    "templates/VISUAL_INSPECTION.md": {
+      "bytes": 839,
+      "sha256": "d63521290cf28de4442948159e0b71afbc569c01efa05b4a9a48123f30c9df55"
+    },
+    "tests/fixtures/chat1_contract.json": {
+      "bytes": 1670,
+      "sha256": "5a7094628604d6a3877260bb211f54b349f4cb41bd118f73ee522fd7aa4c9758"
+    },
+    "tests/fixtures/chat1_expected.json": {
+      "bytes": 126,
+      "sha256": "52e1ab77475ccca0d03be15fc42bb8538f2bba10db5105fb898da857f1d2f724"
+    },
+    "tests/fixtures/chat1_output.json": {
+      "bytes": 2098,
+      "sha256": "25729283866c74bd5944a4d29120d5ebb3a54dd5fc1245805eaaa14915b6a83b"
+    },
+    "tests/fixtures/chat2_contract.json": {
+      "bytes": 1655,
+      "sha256": "84d2c55f376eb20a375caca85b1a22010028ee0b927362b465f46db868bc0795"
+    },
+    "tests/fixtures/chat2_expected.json": {
+      "bytes": 83,
+      "sha256": "552f01764bdc21611a5c0a9a57c5f5068caffdf1f632528200282f481e5e83e3"
+    },
+    "tests/fixtures/chat2_output.json": {
+      "bytes": 1940,
+      "sha256": "eb1be1c848689f17f72454f72f9d13e521398d6c1dc0b162ee81288593474477"
+    },
+    "tests/fixtures/chat3_contract.json": {
+      "bytes": 1655,
+      "sha256": "2858cbcfa15948e07bff2c3e5c7b3c144db8d506712f7cbb3e7d25be97b3b513"
+    },
+    "tests/fixtures/chat3_expected.json": {
+      "bytes": 95,
+      "sha256": "f318174d628652f2cff4589232a9de627990030c40deab94f4fa6993e419a695"
+    },
+    "tests/fixtures/chat3_output.json": {
+      "bytes": 1603,
+      "sha256": "9381d4baae1ca9ca3c4120373ee8248de623aabd78491e7bc22d7623f4eb9233"
+    },
+    "validators/README.md": {
+      "bytes": 1341,
+      "sha256": "df34add4b796454a2d4ae1d51e75e7756a06767c82fe052f3d42a5bf7781d2be"
+    },
+    "validators/artifact_schemas.json": {
+      "bytes": 869,
+      "sha256": "b35e9e53cf4a2697574c8cda75fb7139dd082b3534ba5287e0fc52f437f03cc3"
+    },
+    "validators/artifact_semantic_schemas.json": {
+      "bytes": 537,
+      "sha256": "65a25364a71d851791ccc93e66374c1dbd9670108deb1431b28014ae0516f99e"
+    },
+    "validators/avd_parser.py": {
+      "bytes": 3542,
+      "sha256": "56dda3b878d583d71a1ec7ba06691254d4d74662fd2fb8b874976f17d32ec928"
+    },
+    "validators/build_evidence_manifest.py": {
+      "bytes": 1026,
+      "sha256": "3369e7926e905801905d69010a3c8e6679b9ed61e427ebe6793a55faa8ffaf5c"
+    },
+    "validators/build_package_manifest.py": {
+      "bytes": 1010,
+      "sha256": "ffa2ab281c06d803e273f49be8db9f9ff4e0dc2b2a0dc1624422400c06afb538"
+    },
+    "validators/check_guide_staleness.py": {
+      "bytes": 797,
+      "sha256": "783fe0728fe58fedd12b675a21a2931486daa49c9a72c1b3eac6ce2dd946d215"
+    },
+    "validators/compile_and_validate.py": {
+      "bytes": 7424,
+      "sha256": "caea6c2498b22e1a954c11eace6911543a87cfce727576c1b5759dea63c2fe35"
+    },
+    "validators/compile_live_evidence_status.py": {
+      "bytes": 1502,
+      "sha256": "c9a9232f88c85f856e75f1c1ccf683c15fca57405279e9d4adbcaceaf0110e5a"
+    },
+    "validators/extract_actual_output.py": {
+      "bytes": 15783,
+      "sha256": "1568389290547594ed85abece540713cc83b749afde4016a31260c45239b787b"
+    },
+    "validators/history/compile_and_validate_v74_phase_c.py": {
+      "bytes": 1901,
+      "sha256": "e97d5ce5f4330d23f219b46faee882f779a6b4906d18293409b4278b283034ed"
+    },
+    "validators/history/extract_actual_output_v74_phase_b.py": {
+      "bytes": 10056,
+      "sha256": "8ff04d731f7decdb1a3265ba804f2319c9fcc577430bcc5f912961398e292762"
+    },
+    "validators/history/phase_b_quality_v74.py": {
+      "bytes": 2375,
+      "sha256": "2d0d9c89048b5f38d3a77a3aa41fe4deb1b68d723dd1bbe757f2a200c6fea789"
+    },
+    "validators/history/phase_c_usability_v74.py": {
+      "bytes": 5903,
+      "sha256": "dc17f39bad1b40fa2820b394255a130695f5502649ced71d390d5f51c78f0472"
+    },
+    "validators/history/validate_project_v72.py": {
+      "bytes": 5198,
+      "sha256": "f66db241e9dce10f28e6860d3553e4cdfa533778ceccd4cfeb837241bfab6b7d"
+    },
+    "validators/history/validate_project_v74_phase_b.py": {
+      "bytes": 9952,
+      "sha256": "ef8fadd0513975b6840949aee01c678064be2b509357699f831fca6b3b6aa9ed"
+    },
+    "validators/history/validate_project_v74_phase_c.py": {
+      "bytes": 10063,
+      "sha256": "9b3de8ce5cca7bc3c4124e2844e55947614bfcfbe7242c733560ba5505da4e91"
+    },
+    "validators/history/validate_semantic_review_v74_phase_c.py": {
+      "bytes": 2827,
+      "sha256": "c3064b76625664ab92064d6162d2e69a0560b1e24278ee525928c9466bb29f37"
+    },
+    "validators/phase_b_quality.py": {
+      "bytes": 2729,
+      "sha256": "2ad68ed88a2b3df6413f528b4d20e74e669d40261caea9e678809ef70a89b5be"
+    },
+    "validators/phase_c_usability.py": {
+      "bytes": 5932,
+      "sha256": "1121941f9c8cc214dccd78836e5f75bca38aad4355162e06604021c9a1dcbfe3"
+    },
+    "validators/probe_host.py": {
+      "bytes": 1119,
+      "sha256": "f6f16b4b1509055f0ec9b5c45f702191ad637ef0c170b0fc1fd6b4ae9b8fca1c"
+    },
+    "validators/select_host_profile.py": {
+      "bytes": 1129,
+      "sha256": "27f98e9714b06d2c212e5c1bc74298a91cbd77b1bd06e1522c787904931ee085"
+    },
+    "validators/validate_clean_zip.py": {
+      "bytes": 3265,
+      "sha256": "7c6965096fd6989f7b4f8ed567e517f5c15dc134a38c1373878202bb5a42860e"
+    },
+    "validators/validate_contract_schema.py": {
+      "bytes": 4609,
+      "sha256": "6f14c05b3e492a8bbc1797acb05821bcb53517b12765c7a1794f82e0dfc78138"
+    },
+    "validators/validate_delivery_package.py": {
+      "bytes": 4744,
+      "sha256": "ce2f06124b679726d45ad659eeb549d74179e5765f82ffeaae79c148f1070b7c"
+    },
+    "validators/validate_evidence_manifest.py": {
+      "bytes": 2234,
+      "sha256": "74745443cd3c87876b13c29cbd48ee14f3422eb91aff1c29e77827930140c4d4"
+    },
+    "validators/validate_external_evidence.py": {
+      "bytes": 9638,
+      "sha256": "c8da5b57e39cb0817f47117d7bcc5d4771c9b23adb6a7b1050d4409a90b1b651"
+    },
+    "validators/validate_generation_prompts.py": {
+      "bytes": 4895,
+      "sha256": "fa85924c9a21cd251ec3ec47767b8ea23f29ec7d486b88c108ac1b0837830d64"
+    },
+    "validators/validate_human_evidence.py": {
+      "bytes": 5561,
+      "sha256": "e429b66cb612642457d3f4a821b2529ecffea0726700b2cc48e6c610ff92d8c8"
+    },
+    "validators/validate_instruction_compliance.py": {
+      "bytes": 3587,
+      "sha256": "4c8bd62613c33364227666882c4597a925f327a2a889e946bb5749513a49c688"
+    },
+    "validators/validate_portable_record.py": {
+      "bytes": 4841,
+      "sha256": "8a395fa166917685d626e3f97ba8227a97099319f5b22b8505f010fcba3b0572"
+    },
+    "validators/validate_project.py": {
+      "bytes": 12733,
+      "sha256": "96ce9bda4176c8c4904705e43390b92b300fccc67a50b072c5386714c1e4f6f6"
+    },
+    "validators/validate_release_consistency.py": {
+      "bytes": 4217,
+      "sha256": "31a322fb23e08092b626687d36f15e871c8deec9573c7bb1cdd2213231cb992d"
+    },
+    "validators/validate_runtime_load.py": {
+      "bytes": 4535,
+      "sha256": "3168abe3363f16d56be3687950d432253d9677f27bc38a89bacf06631a18f4c7"
+    },
+    "validators/validate_semantic_review.py": {
+      "bytes": 4129,
+      "sha256": "9f13979ff4fb2d48ad7e5cbe4762657c46ad2a0529e766825e1c0dbc5124b7c6"
+    }
+  },
+  "provenance": "Derived from the actual bytes of the supplied V7.6.0 Release 4 archive. Not reconstructed from a later release."
+}

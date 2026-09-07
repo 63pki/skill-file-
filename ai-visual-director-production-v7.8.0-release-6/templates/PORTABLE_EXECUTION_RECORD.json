@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "projectId": "REPLACE_ME",
+  "profile": "PORTABLE_REFERENCE",
+  "hostCapabilities": {
+    "coreReadable": true,
+    "structuredOutput": true,
+    "selectedOwnerReadable": true,
+    "limitationsDisclosable": true,
+    "filesystem": false,
+    "codeExecution": false,
+    "hashing": false,
+    "persistentArtifacts": false
+  },
+  "selectedFiles": [],
+  "selectedProductionOwner": "REPLACE_ME",
+  "selectedAudienceOwners": [],
+  "selectedAdapters": [],
+  "steps": [
+    {
+      "id": "ROUTE",
+      "status": "COMPLETE",
+      "artifact": "routing declaration"
+    },
+    {
+      "id": "LOAD",
+      "status": "COMPLETE",
+      "artifact": "selectedFiles list"
+    },
+    {
+      "id": "CONTRACT",
+      "status": "COMPLETE",
+      "artifact": "portable contract"
+    },
+    {
+      "id": "EXECUTE",
+      "status": "COMPLETE",
+      "artifact": "requested deliverables"
+    },
+    {
+      "id": "SELF_CHECK",
+      "status": "COMPLETE",
+      "artifact": "portable self-check"
+    },
+    {
+      "id": "REPORT",
+      "status": "COMPLETE",
+      "artifact": "compact status"
+    }
+  ],
+  "assurance": "PORTABLE_REFERENCE",
+  "deterministicRuntimeVerification": "NOT_AVAILABLE",
+  "instructionCompliance": "NOT_VERIFIED",
+  "mediaEvidence": "NOT_RUN",
+  "externalEvidenceClaimed": false,
+  "maturityCeiling": "PLAN-PASS",
+  "limitations": [
+    "No cryptographic runtime verification",
+    "No deterministic validator execution",
+    "No media evidence unless separately produced and recorded"
+  ],
+  "selectedProductionOwners": []
+}

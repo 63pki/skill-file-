@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "status": "TEMPLATE_NOT_EXECUTED",
+  "fromVersion": "7.8.0",
+  "toVersion": "7.6.0",
+  "priorArchivePath": "PATH_TO_V7_6_0_ARCHIVE",
+  "priorArchiveSha256": "REQUIRED_AT_DEPLOYMENT",
+  "rollbackOwner": "ASSIGN_AT_DEPLOYMENT",
+  "triggers": [
+    "candidate consistency failure",
+    "runtime bootstrap regression",
+    "generation-owner drift",
+    "package integrity failure",
+    "evidence-status overclaim"
+  ],
+  "steps": [
+    "Stop new candidate executions.",
+    "Preserve affected project and evidence records.",
+    "Verify the prior archive SHA-256.",
+    "Restore the prior archive in a clean location.",
+    "Run all bundled tests from the restored archive.",
+    "Rebind active projects to the restored runtime receipt.",
+    "Record incident scope and remediation owner."
+  ],
+  "verification": [
+    "Prior release identity matches 7.6.0.",
+    "All prior bundled suites pass after extraction.",
+    "Nano Banana Pro and Gemini Omni Flash ownership remains intact.",
+    "Live-evidence status is not upgraded by rollback."
+  ],
+  "evidenceDisposition": "PRESERVE_AND_MARK_AFFECTED",
+  "executedAt": null,
+  "executionReceiptSha256": null
+}

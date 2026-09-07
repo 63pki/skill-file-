@@ -1,0 +1,61 @@
+{
+  "release": "7.4.0-phase-d",
+  "scope": "routing-first bootstrap, final contract binding, dual assurance",
+  "results": [
+    {
+      "case": "routing_preload_first",
+      "pass": true
+    },
+    {
+      "case": "final_contract_binding",
+      "pass": true
+    },
+    {
+      "case": "verified_runtime_valid",
+      "pass": false,
+      "returnCode": 1,
+      "codes": [
+        "RUNTIME_TRIGGER_COVERAGE_MISMATCH"
+      ],
+      "receipt": "Status: Single Pass Blueprint \u00b7 Assurance VERIFIED-RUNTIME \u00b7 Contract compiled \u00b7 Artifacts 1/1 \u00b7 Validator BLOCKED \u00b7 Ceiling PLAN-PASS \u00b7 Media NOT_GENERATED"
+    },
+    {
+      "case": "project_change_requires_rebind",
+      "pass": true
+    },
+    {
+      "case": "routing_drift_blocks",
+      "pass": true
+    },
+    {
+      "case": "portable_no_hard_block",
+      "pass": true
+    },
+    {
+      "case": "portable_plan_check",
+      "pass": false,
+      "returnCode": 1,
+      "codes": [
+        "STILL_OWNER_DRIFT",
+        "VIDEO_OWNER_DRIFT"
+      ],
+      "receipt": "Status: Single Pass Blueprint \u00b7 Assurance PORTABLE-ASSURANCE \u00b7 Contract compiled \u00b7 Artifacts 1/1 \u00b7 Validator REVISE \u00b7 Ceiling PLAN-PASS \u00b7 Media NOT_GENERATED"
+    },
+    {
+      "case": "portable_maturity_block",
+      "pass": true,
+      "returnCode": 1,
+      "codes": [
+        "ASSET_EVIDENCE",
+        "BLUEPRINT_MATURITY",
+        "EVIDENCE_CEILING",
+        "MOTION_EVIDENCE",
+        "PORTABLE_MATURITY_CEILING",
+        "STILL_OWNER_DRIFT",
+        "TEST_EVIDENCE",
+        "VIDEO_OWNER_DRIFT"
+      ]
+    }
+  ],
+  "pass": false
+}

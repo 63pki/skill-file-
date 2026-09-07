@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "candidateId": "CANDIDATE_ID",
+  "candidateClass": "STRUCTURAL_PRODUCTION_CANDIDATE",
+  "sourceArchive": "ai-visual-director-production-v7.8.0-release-5.zip",
+  "sourceArchiveSha256": "",
+  "baselineRelease": "7.6.0",
+  "baselineManifest": "release/V7_6_0_RELEASE_4_BASELINE_HASHES.json",
+  "regressionCatalog": "R1-R650",
+  "sourceSuiteCount": 22,
+  "freshExtractionSuiteCount": 22,
+  "gates": [],
+  "liveEvidence": {
+    "liveCrossModelReplay": "NOT_RUN",
+    "nanoOmniABGeneration": "NOT_RUN",
+    "completeProductionPilot": "NOT_RUN",
+    "beginnerOperatorPilot": "NOT_RUN",
+    "audienceComprehensionReview": "NOT_RUN",
+    "externalEvidenceClaimed": false
+  },
+  "candidateVerdict": "PENDING",
+  "promotionEligible": false,
+  "limitations": [
+    "Live evidence has not been executed."
+  ]
+}

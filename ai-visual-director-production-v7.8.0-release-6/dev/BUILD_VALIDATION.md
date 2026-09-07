@@ -1,0 +1,38 @@
+# V7.8.0 Production Candidate Build Validation
+
+- Base release: V7.6.0 Release 4 preserved; earlier compatibility retained
+- Scope: structural production-candidate qualification and promotion boundary
+- Canonical release metadata: `release/RELEASE.json`
+- Upgrade-compatibility baseline hashes: `release/V7_6_0_RELEASE_4_BASELINE_HASHES.json` — **NOT SHIPPED in this archive**. `validators/validate_upgrade_compatibility.py` therefore returns `CANDIDATE_BASELINE_MISSING`, and `validate_candidate_readiness.py` reports `CANDIDATE_BLOCKED`. Restore that file from the V7.6.0 Release 4 archive; it cannot be regenerated from a 7.8.0 tree without fabricating provenance.
+- Contract schemas: project and routing
+- Legacy `repair` input: normalized to canonical `repairAction`
+- Character-lock type errors: fail with structured diagnostics; no Python crash
+- Portable Reference scripts required: false
+- Portable Reference deterministic verification: NOT_AVAILABLE
+- Portable Reference instruction compliance: NOT_VERIFIED
+- Unsupported hosts: fail closed as UNSUPPORTED_EXECUTION
+- Mandatory portable context: core + profile + triggered owners/adapters only
+- Active base modes: A photoreal/commercial, B animation, C motion graphics, D hybrid compositing
+- Supplemental owners: factual, localization, architecture, UGC, cinematic scene
+- Specialist audiences: children, expert, vulnerable, accessibility, multilingual, regulated
+- Unknown mode/production/audience triggers: fail closed
+- Live tracks: cross-model, Nano Banana Pro/Omni Flash A-B, production pilot, beginner operator, audience comprehension
+- Distribution live status: all NOT_RUN
+- Simulation and dry runs: tooling only; cannot advance status
+- Evidence package manifest: self-excluding SHA-256 inventory
+- Candidate class: STRUCTURAL_PRODUCTION_CANDIDATE
+- Candidate promotion eligibility: false while live evidence is NOT_RUN
+- Security/privacy preflight: required
+- V7.6.0 upgrade compatibility: required
+- Rollback template: required and honestly unexecuted
+- Executable bundled suite: 1 (`dev/run_v780_release6_tests.py`, 14 checks). The remaining R1–R650 rows are manual behavioural checklists, not automated tests.
+- Regression range source: canonical release manifest, R1–R650 (verified present and gapless by `validators/validate_release_consistency.py`)
+- Test results: external-directory capable
+- Clean-extraction validation: required
+- Nano Banana Pro/Gemini Omni Flash ownership: preserved
+- Audio-attachment-only editor policy: preserved
+- Detailed manuals: 52 preserved
+- Live cross-model replay: NOT_RUN
+- Nano Banana Pro/Omni Flash A-B generation: NOT_RUN
+- Complete production pilot: NOT_RUN
+- External evidence claimed: false

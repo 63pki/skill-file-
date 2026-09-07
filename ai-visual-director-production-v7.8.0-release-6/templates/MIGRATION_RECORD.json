@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "migrationId": "MIGRATION_ID",
+  "fromVersion": "7.6.0",
+  "toVersion": "7.8.0",
+  "status": "NOT_RUN",
+  "sourceArchiveSha256": "",
+  "targetArchiveSha256": "",
+  "projectsEvaluated": [],
+  "breakingChanges": [],
+  "compatibilityFindings": [],
+  "rollbackPlanPath": "templates/ROLLBACK_PLAN.json",
+  "migrationVerdict": "NOT_RUN",
+  "limitations": []
+}

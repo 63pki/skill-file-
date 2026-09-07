@@ -1,0 +1,43 @@
+{
+  "version": "7.8.0",
+  "release": "Release 6 \u2014 Universal Omni Prompt Architecture",
+  "phaseName": "Production Candidate",
+  "candidateClass": "STRUCTURAL_PRODUCTION_CANDIDATE",
+  "engineeringMaturity": "STRUCTURALLY_VALIDATED",
+  "operationalMaturity": "CONTROLLED_BETA",
+  "promptOnly": true,
+  "generationStack": {
+    "stillOwner": "NANO_BANANA_PRO",
+    "videoOwner": "GEMINI_OMNI_FLASH",
+    "videoModelIdSnapshot": "gemini-omni-flash-preview",
+    "postOwner": "PLATFORM_NEUTRAL_HANDOFF",
+    "mediaExecution": "NOT_SUPPORTED"
+  },
+  "officialGuideSnapshot": "2026-07-21",
+  "activeModes": [
+    "A_PHOTOREAL_COMMERCIAL",
+    "B_ANIMATION",
+    "C_MOTION_GRAPHICS",
+    "D_HYBRID_COMPOSITING"
+  ],
+  "liveEvidence": {
+    "liveCrossModelReplay": "NOT_RUN",
+    "nanoOmniABGeneration": "NOT_RUN",
+    "completeProductionPilot": "NOT_RUN",
+    "beginnerOperatorPilot": "NOT_RUN",
+    "audienceComprehensionReview": "NOT_RUN",
+    "externalEvidenceClaimed": false
+  },
+  "regressionCatalog": {
+    "firstId": 1,
+    "lastId": 650,
+    "requiredCount": 650
+  },
+  "baselineManifest": "release/V7_6_0_RELEASE_4_BASELINE_HASHES.json",
+  "promotionEligible": false,
+  "removedSurfaces": [
+    "named consumer design guidance",
+    "named consumer editing guidance",
+    "superseded video-model guidance"
+  ]
+}

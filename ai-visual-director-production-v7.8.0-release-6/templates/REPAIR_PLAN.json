@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "7.8.0",
+  "projectId": "PROJECT_ID",
+  "status": "PENDING",
+  "repairs": [
+    {
+      "priority": 1,
+      "severity": "HIGH",
+      "code": "",
+      "gate": "",
+      "artifactId": "",
+      "problem": "",
+      "repairAction": "",
+      "acceptanceCheck": "",
+      "revalidate": ""
+    }
+  ],
+  "advisories": []
+}

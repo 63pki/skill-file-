@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "7.8.0",
+  "projectId": "PROJECT_ID",
+  "records": [
+    {
+      "type": "visual",
+      "assetId": "ASSET_ID",
+      "version": "v01",
+      "path": "evidence/file.png",
+      "sha256": "",
+      "inspectionDate": "2026-07-19",
+      "inspectionMethod": "human visual inspection",
+      "verdict": "ASSET-PASS",
+      "defects": [],
+      "repairVersion": null,
+      "reinspectionResult": null
+    }
+  ]
+}

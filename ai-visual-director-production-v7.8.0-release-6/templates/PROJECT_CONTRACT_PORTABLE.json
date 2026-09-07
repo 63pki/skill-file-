@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "7.8.0",
+  "projectId": "PORTABLE_PROJECT",
+  "projectVersion": "v01",
+  "deliveryMode": "SINGLE_PASS_BLUEPRINT",
+  "productionIntent": "BLUEPRINT",
+  "mode": "B_ANIMATION",
+  "depth": "STANDARD",
+  "userProfile": "BEGINNER",
+  "audience": {
+    "type": "CHILDREN",
+    "ageRange": "6-9",
+    "humanReviewRequiredForClaims": true
+  },
+  "durationSeconds": 45,
+  "shotBudget": {
+    "min": 6,
+    "max": 10
+  },
+  "hostProfile": {
+    "filesystem": "UNVERIFIED",
+    "codeExecution": "UNVERIFIED",
+    "imageGeneration": "UNVERIFIED",
+    "videoGeneration": "UNVERIFIED",
+    "visualInspection": "UNVERIFIED",
+    "motionInspection": "UNVERIFIED",
+    "audioInspection": "UNVERIFIED",
+    "archiveHash": "UNVERIFIED",
+    "export": "UNVERIFIED",
+    "nanoAccess": "UNVERIFIED",
+    "omniAccess": "UNVERIFIED",
+    "checkedAt": null
+  },
+  "tools": {
+    "stillGeneration": "NANO_BANANA_PRO",
+    "videoGeneration": "GEMINI_OMNI_FLASH",
+    "postSurfaces": [
+      "AUDIO_ATTACHMENT_ONLY"
+    ],
+    "audio": "EXTERNAL_AUDIO_ATTACHMENT",
+    "inspection": "UNASSIGNED",
+    "export": "UNASSIGNED"
+  },
+  "story": {
+    "isNarrative": true,
+    "autonomousOrImpossibleBehavior": true,
+    "worldRule": {
+      "rule": "",
+      "trigger": "",
+      "limit": "",
+      "returnCondition": "",
+      "proofShot": ""
+    },
+    "durableResolution": {
+      "originalProblem": "",
+      "temporaryHelp": "",
+      "permanentChange": "",
+      "helperCanLeave": false,
+      "recurrencePrevented": false,
+      "visualProofShot": ""
+    }
+  },
+  "locks": {
+    "characters": [],
+    "world": {
+      "geography": "",
+      "screenDirection": "",
+      "shadeLightLogic": "",
+      "storyMechanism": "",
+      "endingState": ""
+    },
+    "shotCount": 0,
+    "toolOwnership": {}
+  },
+  "artifactQueue": [
+    {
+      "requirementId": "REQ-STYLE",
+      "artifactId": "STYLE_BIBLE",
+      "sourceAliases": [
+        "Style Bible"
+      ],
+      "minimumChars": 300,
+      "required": true,
+      "dependencies": [],
+      "acceptance": "Project-specific style, palette, shape, composition, exclusions",
+      "failIf": "missing, placeholder, or generic",
+      "repairAction": "Complete missing fields",
+      "artifactType": "STYLE_BIBLE",
+      "gate": "DESIGN",
+      "sourcePath": "deliverables/STYLE_BIBLE.md",
+      "requiredSections": [],
+      "operatorReady": false
+    }
+  ],
+  "evidenceCeiling": "PLAN-PASS",
+  "packageRequired": true,
+  "guideAlignment": {
+    "snapshotDate": "2026-07-19",
+    "maxAgeDays": 90,
+    "status": "REVERIFY"
+  },
+  "assumptions": [],
+  "blockers": [],
+  "currentGate": "DIRECTION",
+  "runtimeLoad": {
+    "required": false,
+    "profile": "PORTABLE_REFERENCE",
+    "phase": "DECLARED",
+    "finalReceiptRequired": false,
+    "challengeResponseRequired": false
+  },
+  "assuranceProfile": "PORTABLE_REFERENCE",
+  "routingContractSha256": "UNVERIFIED",
+  "extractionPolicy": {
+    "projectIndexRequiredForPackages": true,
+    "recursiveDiscovery": false,
+    "recoveryMode": false,
+    "acceptedMetadata": [
+      "HTML_MARKERS",
+      "FENCED_AVD_JSON",
+      "HOST_SIDECAR"
+    ]
+  },
+  "qualityPolicy": {
+    "strictUsability": false,
+    "explicitReferences": true,
+    "semanticReviewRequired": true,
+    "separateVerdicts": true,
+    "noInventedScores": true
+  },
+  "usabilityProfile": {
+    "operatorLevel": "INTERMEDIATE",
+    "disclosure": "COMPACT_FIRST",
+    "compactStatusFirst": true,
+    "forensicReceiptsInPackage": true
+  },
+  "externalEvidencePolicy": {
+    "requiredForExternalClaims": true,
+    "acceptedEvidenceClasses": [
+      "LIVE_EXTERNAL"
+    ],
+    "crossModelMinimumModels": 3,
+    "crossModelMinimumProviders": 2,
+    "blindIndependentRatingsPerABTrial": 2,
+    "pilotRequiredStages": [
+      "BRIEF",
+      "DESIGN",
+      "ANIMATIC",
+      "ASSET",
+      "MOTION",
+      "DELIVERY"
+    ],
+    "absenceBehavior": "NOT_PROVEN_WITHOUT_BLOCKING_PLAN_PASS"
+  },
+  "generationPromptPolicy": {
+    "modeBRequired": true,
+    "nanoBananaFrameworks": [
+      "NB-F1",
+      "NB-F2",
+      "NB-F3",
+      "NB-F4",
+      "NB-F5"
+    ],
+    "omniTasks": [
+      "V-F1",
+      "V-F2",
+      "V-F3",
+      "V-F4",
+      "V-F5"
+    ],
+    "promptLibrariesRequiredWithoutExecution": true,
+    "editorGenerationSubstitution": false,
+    "audioAttachmentGuide": "rules/production/AUDIO_ATTACHMENT.md"
+  },
+  "contractSchema": "schemas/PROJECT_CONTRACT.schema.json",
+  "deliveryPolicy": {
+    "requirePackageManifest": true,
+    "requireProjectIndex": true,
+    "requireMachineStatus": true,
+    "singleConsolidatedPackage": true,
+    "allowLooseResponse": false,
+    "forbidTemporaryFiles": true
+  },
+  "compliancePolicy": {
+    "instructionReceiptRequired": true,
+    "orderedStepsRequired": [
+      "ROUTE",
+      "LOAD",
+      "CONTRACT",
+      "EXECUTE",
+      "EXTRACT",
+      "VALIDATE",
+      "PACKAGE",
+      "REPORT"
+    ],
+    "rejectIdentityOverride": true,
+    "rejectSystemOverride": true,
+    "cleanZipRequiredForRelease": true,
+    "cognitiveAttentionClaimAllowed": false
+  },
+  "productionTriggers": []
+}

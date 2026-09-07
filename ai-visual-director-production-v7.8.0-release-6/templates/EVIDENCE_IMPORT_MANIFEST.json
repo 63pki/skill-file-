@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "campaignId": "CAMPAIGN_ID",
+  "root": ".",
+  "hashAlgorithm": "SHA-256",
+  "excludedPaths": [
+    "EVIDENCE_IMPORT_MANIFEST.json"
+  ],
+  "files": []
+}

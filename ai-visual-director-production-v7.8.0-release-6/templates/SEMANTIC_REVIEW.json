@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "7.4.0",
+  "projectId": "PROJECT_ID",
+  "reviewType": "MODEL_REVIEWED",
+  "reviewer": "",
+  "reviewedAt": "",
+  "requiredDimensions": [
+    "causality",
+    "originality",
+    "coherence",
+    "composition",
+    "modeCraft",
+    "audienceComprehension",
+    "soundRhythm",
+    "feasibility",
+    "continuity",
+    "evidenceIntegrity"
+  ],
+  "dimensions": [
+    {
+      "id": "causality",
+      "weight": 15,
+      "status": "NOT_REVIEWED",
+      "score": null,
+      "evidence": [],
+      "defect": "",
+      "highestLeverageRepair": "",
+      "uncertainty": "Required evidence unavailable or review pending.",
+      "evidenceExample": {
+        "artifactId": "",
+        "artifactSha256": "",
+        "excerpt": "",
+        "evidenceId": ""
+      }
+    },
+    {
+      "id": "originality",
+      "weight": 15,
+      "status": "NOT_REVIEWED",
+      "score": null,
+      "evidence": [],
+      "defect": "",
+      "highestLeverageRepair": "",
+      "uncertainty": "Required evidence unavailable or review pending.",
+      "evidenceExample": {
+        "artifactId": "",
+        "artifactSha256": "",
+        "excerpt": "",
+        "evidenceId": ""
+      }
+    },
+    {
+      "id": "coherence",
+      "weight": 12,
+      "status": "NOT_REVIEWED",
+      "score": null,
+      "evidence": [],
+      "defect": "",
+      "highestLeverageRepair": "",
+      "uncertainty": "Required evidence unavailable or review pending.",
+      "evidenceExample": {
+        "artifactId": "",
+        "artifactSha256": "",
+        "excerpt": "",
+        "evidenceId": ""
+      }
+    },
+    {
+      "id": "composition",
+      "weight": 10,
+      "status": "NOT_REVIEWED",
+      "score": null,
+      "evidence": [],
+      "defect": "",
+      "highestLeverageRepair": "",
+      "uncertainty": "Required evidence unavailable or review pending.",
+      "evidenceExample": {
+        "artifactId": "",
+        "artifactSha256": "",
+        "excerpt": "",
+        "evidenceId": ""
+      }
+    },
+    {
+      "id": "modeCraft",
+      "weight": 12,
+      "status": "NOT_REVIEWED",
+      "score": null,
+      "evidence": [],
+      "defect": "",
+      "highestLeverageRepair": "",
+      "uncertainty": "Required evidence unavailable or review pending.",
+      "evidenceExample": {
+        "artifactId": "",
+        "artifactSha256": "",
+        "excerpt": "",
+        "evidenceId": ""
+      }
+    },
+    {
+      "id": "audienceComprehension",
+      "weight": 10,
+      "status": "NOT_REVIEWED",
+      "score": null,
+      "evidence": [],
+      "defect": "",
+      "highestLeverageRepair": "",
+      "uncertainty": "Required evidence unavailable or review pending.",
+      "evidenceExample": {
+        "artifactId": "",
+        "artifactSha256": "",
+        "excerpt": "",
+        "evidenceId": ""
+      }
+    },
+    {
+      "id": "soundRhythm",
+      "weight": 8,
+      "status": "NOT_REVIEWED",
+      "score": null,
+      "evidence": [],
+      "defect": "",
+      "highestLeverageRepair": "",
+      "uncertainty": "Required evidence unavailable or review pending.",
+      "evidenceExample": {
+        "artifactId": "",
+        "artifactSha256": "",
+        "excerpt": "",
+        "evidenceId": ""
+      }
+    },
+    {
+      "id": "feasibility",
+      "weight": 8,
+      "status": "NOT_REVIEWED",
+      "score": null,
+      "evidence": [],
+      "defect": "",
+      "highestLeverageRepair": "",
+      "uncertainty": "Required evidence unavailable or review pending.",
+      "evidenceExample": {
+        "artifactId": "",
+        "artifactSha256": "",
+        "excerpt": "",
+        "evidenceId": ""
+      }
+    },
+    {
+      "id": "continuity",
+      "weight": 7,
+      "status": "NOT_REVIEWED",
+      "score": null,
+      "evidence": [],
+      "defect": "",
+      "highestLeverageRepair": "",
+      "uncertainty": "Required evidence unavailable or review pending.",
+      "evidenceExample": {
+        "artifactId": "",
+        "artifactSha256": "",
+        "excerpt": "",
+        "evidenceId": ""
+      }
+    },
+    {
+      "id": "evidenceIntegrity",
+      "weight": 3,
+      "status": "NOT_REVIEWED",
+      "score": null,
+      "evidence": [],
+      "defect": "",
+      "highestLeverageRepair": "",
+      "uncertainty": "Required evidence unavailable or review pending.",
+      "evidenceExample": {
+        "artifactId": "",
+        "artifactSha256": "",
+        "excerpt": "",
+        "evidenceId": ""
+      }
+    }
+  ],
+  "weightedScore": null,
+  "verdict": "PENDING",
+  "proofBoundary": "Model/human quality judgment; separate from deterministic conformance and live audience proof.",
+  "strongestRejectedAlternative": "",
+  "mostGenericRemainingElement": "",
+  "highestLeverageRepair": "",
+  "uncertainty": "Required evidence unavailable or review pending."
+}

@@ -1,0 +1,155 @@
+{
+  "suite": "V7.8.0-RELEASE-6",
+  "pass": true,
+  "checks": [
+    {
+      "name": "runtime-manifest-rebuild",
+      "pass": true,
+      "stdout": "{\n  \"manifestFiles\": 34,\n  \"version\": \"7.8.0\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "forbidden-residue",
+      "pass": true,
+      "stdout": "{\n  \"validator\": \"V7.8.0-FORBIDDEN-RESIDUE\",\n  \"pass\": true,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "release-consistency",
+      "pass": true,
+      "stdout": "{\n  \"validator\": \"V7.8.0-RELEASE-CONSISTENCY\",\n  \"pass\": true,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "python-compile",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "name": "cross-mode-adapters",
+      "pass": true,
+      "missing": []
+    },
+    {
+      "name": "cross-mode-routing-parity",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "name": "cross-mode-prompt-validation",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "name": "canonical-owner-rejection",
+      "pass": true,
+      "errors": [
+        {
+          "code": "STILL_OWNER_DRIFT",
+          "message": "UNASSIGNED"
+        },
+        {
+          "code": "VIDEO_OWNER_DRIFT",
+          "message": "UNASSIGNED"
+        }
+      ]
+    },
+    {
+      "name": "shot-burden-blocker",
+      "pass": true,
+      "errors": [
+        {
+          "code": "SHOT_BURDEN_OVERLOAD",
+          "message": "SH-01: majorBeats=3, activeClasses=3",
+          "shotId": "SH-01",
+          "counts": {
+            "subjectActions": 2,
+            "cameraChanges": 1,
+            "sceneChanges": 0,
+            "transformations": 0,
+            "textEvents": 1,
+            "dialogueTurns": 0,
+            "contacts": 0,
+            "occlusions": 0,
+            "endStateChanges": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "status-conflict-blocker",
+      "pass": true,
+      "errors": [
+        {
+          "code": "PACKAGE_STATUS_CONFLICT",
+          "field": "validator",
+          "values": [
+            "PASS",
+            "PENDING"
+          ],
+          "records": [
+            {
+              "path": "STATUS.txt",
+              "value": "PENDING"
+            },
+            {
+              "path": "validation/STATUS.txt",
+              "value": "PASS"
+            },
+            {
+              "path": "validation/VALIDATION_RESULT.json",
+              "value": "PASS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "validator-evidence-packaging",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "name": "omni-limitations-enforced",
+      "pass": true,
+      "missing": []
+    },
+    {
+      "name": "resolution-ceiling-enforced",
+      "pass": true,
+      "missing": []
+    },
+    {
+      "name": "edit-budget-enforced",
+      "pass": true,
+      "missing": []
+    },
+    {
+      "name": "resolution-flag-at-r0-r1",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "regression-fixture-coverage",
+      "pass": true,
+      "fixtures": [
+        "chat1",
+        "chat2",
+        "chat3"
+      ],
+      "failures": []
+    },
+    {
+      "name": "candidate-gate-composition",
+      "pass": true,
+      "stdout": "{\n  \"validator\": \"V7.8.0-PRODUCTION-CANDIDATE\",\n  \"pass\": true,\n  \"errors\": [],\n  \"candidateVerdict\": \"STRUCTURAL_CANDIDATE_PASS\",\n  \"promotionEligible\": false,\n  \"promotionBlockers\": [\n    \"Five live-evidence tracks remain NOT_RUN.\"\n  ],\n  \"proofBoundary\": \"Candidate issuance confirms deterministic structural gates only. It does not establish live provider performance, media quality, audience comprehension, operator success, rights, security of external systems, or production promotion.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "next-protocol-authority-agreement",
+      "pass": true,
+      "failures": []
+    }
+  ],
+  "proofBoundary": "Structural and deterministic checks only; media and human evidence remain NOT_RUN."
+}
