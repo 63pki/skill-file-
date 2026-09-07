@@ -23,9 +23,29 @@ Usage:
     python3 dev/build_distributions.py [--outdir dist] [--zip]
 """
 from pathlib import Path
-import argparse, hashlib, json, shutil, sys
+import argparse, hashlib, json, shutil, sys, zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+# Archives must be byte-reproducible so a published SHA-256 can be verified by
+# anyone who rebuilds from this commit. shutil.make_archive embeds each file's
+# real mtime, so the same payload produced a different archive on every build.
+# Entries are sorted and stamped with a fixed epoch instead.
+FIXED_ZIP_DATE = (1980, 1, 1, 0, 0, 0)
+
+
+def build_zip(source_dir: Path, archive_path: Path, base_dir: str) -> Path:
+    """Write a deterministic zip: sorted entries, fixed timestamps, fixed perms."""
+    entries = sorted(p for p in source_dir.rglob('*') if p.is_file())
+    with zipfile.ZipFile(archive_path, 'w', zipfile.ZIP_DEFLATED) as z:
+        for p in entries:
+            rel = p.relative_to(source_dir).as_posix()
+            info = zipfile.ZipInfo(f'{base_dir}/{rel}', date_time=FIXED_ZIP_DATE)
+            # 0o644 -> regular file, rw-r--r--; independent of the build host's umask.
+            info.external_attr = (0o644 & 0xFFFF) << 16
+            info.compress_type = zipfile.ZIP_DEFLATED
+            z.writestr(info, p.read_bytes())
+    return archive_path
 
 # Prefix rules, evaluated in order; first match wins.
 PORTABLE_CORE = [
@@ -144,7 +164,7 @@ def build(outdir: Path, make_zip: bool):
 
         entry = {'files': len(rows), 'bytes': sum(r['bytes'] for r in rows)}
         if make_zip:
-            archive = shutil.make_archive(str(outdir / name), 'zip', root_dir=str(outdir), base_dir=name)
+            archive = build_zip(target, outdir / f'{name}.zip', name)
             entry['zip'] = Path(archive).name
             entry['zipBytes'] = Path(archive).stat().st_size
             entry['zipSha256'] = sha(Path(archive))

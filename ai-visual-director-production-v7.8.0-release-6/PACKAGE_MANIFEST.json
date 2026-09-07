@@ -258,8 +258,8 @@
     },
     {
       "path": "dev/build_distributions.py",
-      "bytes": 9080,
-      "sha256": "e9ceab927c79df376a4142262f2c4aa92d64c7bf5f9fb2035dba6c85cc1e5604"
+      "bytes": 10124,
+      "sha256": "3fb45eb4754948acbee973dca1efed4937f1ab5cd1ed25f3cdf08c5ea3f55a63"
     },
     {
       "path": "dev/extract_upgrade_baseline.py",
