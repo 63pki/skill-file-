@@ -1,0 +1,146 @@
+name: package-verification
+
+# Runs the package's own gates on every change. This exists because a validator
+# that was wired into no runner once shipped an assertion that could never pass
+# (requiredRegressionLastId != 610 against a policy declaring 650, plus a key
+# that did not exist). Nothing executed it, so nothing caught it. These steps
+# execute it.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  # Never write .pyc into the package. Running any validator imports its
+  # siblings, and the resulting __pycache__ pollutes PACKAGE_MANIFEST.json and
+  # the release-consistency audit. See dev/UPDATE_WORKFLOW.md.
+  PYTHONDONTWRITEBYTECODE: "1"
+  PACKAGE: ai-visual-director-production-v7.8.0-release-6
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Every Python file parses
+        working-directory: ${{ env.PACKAGE }}
+        run: |
+          fail=0
+          n=0
+          for f in $(find . -name '*.py' -not -path '*/__pycache__/*' | sort); do
+            n=$((n+1))
+            python3 -c "import pathlib,sys; compile(pathlib.Path(sys.argv[1]).read_text(), sys.argv[1], 'exec')" "$f" \
+              || { echo "PARSE FAIL: $f"; fail=1; }
+          done
+          echo "parsed $n files"
+          exit $fail
+
+      # Binding order is load-bearing: the suite writes
+      # dev/V7_8_0_RELEASE_6_RESULTS.json, so the manifest must be built last.
+      - name: Bundled suite
+        working-directory: ${{ env.PACKAGE }}
+        run: |
+          python3 dev/run_v780_release6_tests.py | tee /tmp/suite.json
+          python3 -c "
+          import json,sys
+          d=json.load(open('/tmp/suite.json'))
+          bad=[c['name'] for c in d['checks'] if not c['pass']]
+          print(f\"checks={len(d['checks'])} pass={d['pass']} failed={bad}\")
+          sys.exit(0 if d['pass'] else 1)
+          "
+
+      - name: Release gates
+        working-directory: ${{ env.PACKAGE }}
+        run: |
+          set -e
+          for v in validate_release_consistency \
+                   validate_upgrade_compatibility \
+                   validate_candidate_readiness \
+                   validate_candidate_security \
+                   validate_forbidden_residue \
+                   validate_status_singularity; do
+            echo "--- $v"
+            python3 "validators/$v.py" .
+          done
+
+      - name: Candidate verdict must not regress
+        working-directory: ${{ env.PACKAGE }}
+        run: |
+          python3 validators/validate_candidate_readiness.py . > /tmp/cand.json
+          python3 -c "
+          import json,sys
+          v=json.load(open('/tmp/cand.json'))['candidateVerdict']
+          print('verdict:',v)
+          sys.exit(0 if v=='STRUCTURAL_CANDIDATE_PASS' else 1)
+          "
+
+      - name: Official-guide snapshot not stale
+        working-directory: ${{ env.PACKAGE }}
+        run: python3 validators/check_guide_staleness.py templates/PROJECT_CONTRACT.json
+
+      - name: Manifest matches disk (0 hash mismatches)
+        working-directory: ${{ env.PACKAGE }}
+        run: |
+          python3 -c "
+          import json,hashlib,pathlib,sys
+          m=json.loads(pathlib.Path('PACKAGE_MANIFEST.json').read_text())
+          files=m.get('files',m)
+          items=files.items() if isinstance(files,dict) else [(f['path'],f) for f in files]
+          bad=[]
+          for rel,meta in items:
+              p=pathlib.Path(rel)
+              want=meta['sha256'] if isinstance(meta,dict) else meta
+              if not p.is_file(): bad.append(('MISSING',rel)); continue
+              if hashlib.sha256(p.read_bytes()).hexdigest()!=want: bad.append(('HASH',rel))
+          print(f'entries={len(list(items))} mismatches={len(bad)}')
+          [print('  ',b) for b in bad[:10]]
+          sys.exit(1 if bad else 0)
+          "
+
+      - name: Distributions build and match declared counts
+        run: |
+          python3 "$PACKAGE/dev/build_distributions.py" --zip > /tmp/dist.json
+          python3 -c "
+          import json,pathlib,sys,zipfile
+          d=json.load(open('/tmp/dist.json'))
+          exp={'portable-core':153,'validation-sdk':139,'combined':245,'cumulative':246}
+          bad=[]
+          for name,e in exp.items():
+              got=d['distributions'][name]['files']
+              z=pathlib.Path('dist')/f'{name}.zip'
+              inz=sum(1 for n in zipfile.ZipFile(z).namelist() if not n.endswith('/'))
+              # each archive also carries its own DISTRIBUTION_MANIFEST.json
+              if got!=e or inz!=e+1: bad.append((name,got,inz,e))
+          print('distribution counts:',{k:v['files'] for k,v in d['distributions'].items()})
+          [print('  MISMATCH',b) for b in bad]
+          sys.exit(1 if bad else 0)
+          "
+
+      - name: portable-core ships no Python
+        run: |
+          n=$(find dist/portable-core -name '*.py' | wc -l)
+          echo "python files in portable-core: $n"
+          test "$n" -eq 0
+
+      # The rebuild must be idempotent. A dirty tree means a generated artifact
+      # was committed out of sync with its source.
+      - name: Rebuild is idempotent (tree stays clean)
+        run: |
+          git diff --exit-code || {
+            echo "Generated artifacts are out of sync. Rebuild in binding order:"
+            echo "  suite -> audit -> build_package_manifest.py"
+            exit 1
+          }
+
+      - name: No bytecode committed
+        run: |
+          n=$(git ls-files | grep -c '__pycache__\|\.pyc$' || true)
+          echo "tracked bytecode files: $n"
+          test "$n" -eq 0
