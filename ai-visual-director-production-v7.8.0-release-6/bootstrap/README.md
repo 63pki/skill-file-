@@ -1,4 +1,4 @@
-# V7.4 Phase D Assurance Bootstrap
+# V7.8.0 Release 6 Assurance Bootstrap
 
 ## Verified Runtime
 

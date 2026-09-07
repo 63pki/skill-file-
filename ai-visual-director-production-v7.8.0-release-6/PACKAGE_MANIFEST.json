@@ -13,8 +13,8 @@
     },
     {
       "path": "DISTRIBUTIONS.md",
-      "bytes": 688,
-      "sha256": "0a7f867f86bff206bb90318f7d92579814c9553f96fa213d9b69c017fc9b40a3"
+      "bytes": 1845,
+      "sha256": "c4df5524ebc8af0e72ff1ed51e1f29f514980c10d86bd289d0dedec5ab485b06"
     },
     {
       "path": "QUICKSTART.md",
@@ -93,8 +93,8 @@
     },
     {
       "path": "adapters/hermes/AGENTS.md",
-      "bytes": 1199,
-      "sha256": "8cc4512dd57d6068385ea95ec0e146717a1d5e950ba703c762497fbe1fbfe9da"
+      "bytes": 1203,
+      "sha256": "7cc44909e946e51585de407336aa0e08fda5c193230a82f3a00095bacc53b030"
     },
     {
       "path": "adapters/hermes/MIGRATION.md",
@@ -108,8 +108,8 @@
     },
     {
       "path": "bootstrap/README.md",
-      "bytes": 1143,
-      "sha256": "5a3b4164235d69799f1ab6c668cabefbc0ab95ab1444733c4514bf505bdf7568"
+      "bytes": 1147,
+      "sha256": "1beea58c9eecec3b556db8cb1b4dc77d178aa586252de5d6f87a05111bd0821e"
     },
     {
       "path": "bootstrap/bootstrap_runtime.py",
@@ -148,8 +148,8 @@
     },
     {
       "path": "dev/BUILD_VALIDATION.md",
-      "bytes": 2715,
-      "sha256": "ff66d67556920b2545e2167f40186fad88a2a3c3a3bf0ae5623932eabb275178"
+      "bytes": 2899,
+      "sha256": "750acbd053557f104cdda0d51bbb6e97980e435bc488050e2eccd55ba3db6484"
     },
     {
       "path": "dev/COMPLETE_PACKAGE_AUDIT.json",
@@ -163,8 +163,8 @@
     },
     {
       "path": "dev/CONSOLIDATION_TESTS.md",
-      "bytes": 1020,
-      "sha256": "1de1f458abe4a6ef71f421616b87e51105a1262af6979303a5e4e46fd8db94dd"
+      "bytes": 1454,
+      "sha256": "97da75273eb6c67ef609e29b439e04b777bab2aebf91e7d511d1bdb98be53e40"
     },
     {
       "path": "dev/CROSS_MODEL_TESTS.md",
@@ -228,8 +228,8 @@
     },
     {
       "path": "dev/V7_2_TESTS.md",
-      "bytes": 1383,
-      "sha256": "ddc71b7fd2c3b18063cc5ba3be98810c13a1091a11b6ce134c1f631f5e8fb1be"
+      "bytes": 1829,
+      "sha256": "7917a61d36b0da9bb4ed204c2ad9f88aaecb66235e22c775771431e051bc9ff3"
     },
     {
       "path": "dev/V7_3_1_BOOTSTRAP.md",
@@ -593,8 +593,8 @@
     },
     {
       "path": "rules/detailed/README.md",
-      "bytes": 497,
-      "sha256": "d0b7009047f1be43c76bb9872bf3869d9de8fb97b5c7f0f080750f7c4c683676"
+      "bytes": 918,
+      "sha256": "127d42132dd57a9a6447ffea9a7e383982ee654a9c80dffb7d9c9b5939ec2e8e"
     },
     {
       "path": "rules/detailed/optional/00_optional_library_index.md",

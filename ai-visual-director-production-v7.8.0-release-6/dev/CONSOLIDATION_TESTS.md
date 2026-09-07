@@ -1,5 +1,11 @@
 # V7.0 Consolidation Tests
 
+> **HISTORICAL — provenance record, not a current test plan.** This document is retained as
+> evidence of the V7.0 consolidation work. It is not executed, and its assertions describe
+> the V7.0 tree rather than V7.8.0 Release 6. The single bundled runner that executes the
+> current suite is `dev/run_v780_release6_tests.py`; results land in
+> `dev/V7_8_0_RELEASE_6_RESULTS.json`. Do not cite the checks below as current coverage.
+
 1. SKILL.md remains compact enough to function as a mandatory kernel.
 2. Production runtime requires one read target: `rules/RUNTIME.md`.
 3. RUNTIME has exactly five top-level Bundle headings.

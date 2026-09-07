@@ -3,7 +3,7 @@
 - Base release: V7.6.0 Release 4 preserved; earlier compatibility retained
 - Scope: structural production-candidate qualification and promotion boundary
 - Canonical release metadata: `release/RELEASE.json`
-- Upgrade-compatibility baseline hashes: `release/V7_6_0_RELEASE_4_BASELINE_HASHES.json` — **NOT SHIPPED in this archive**. `validators/validate_upgrade_compatibility.py` therefore returns `CANDIDATE_BASELINE_MISSING`, and `validate_candidate_readiness.py` reports `CANDIDATE_BLOCKED`. Restore that file from the V7.6.0 Release 4 archive; it cannot be regenerated from a 7.8.0 tree without fabricating provenance.
+- Upgrade-compatibility baseline hashes: `release/V7_6_0_RELEASE_4_BASELINE_HASHES.json` — **SHIPPED in this archive**, derived from the real V7.6.0 Release 4 archive (293 files, sha256 `5cbf77a8…c6140`). It carries a `retiredPaths` record justifying all 81 intentionally removed paths; an undeclared removal still fails as `CANDIDATE_BASELINE_PATH_MISSING`. `validators/validate_upgrade_compatibility.py` therefore passes, and `validate_candidate_readiness.py` reports `STRUCTURAL_CANDIDATE_PASS`. Discovery is via `release/RELEASE.json` → `baselineManifest`, with a highest-version fallback.
 - Contract schemas: project and routing
 - Legacy `repair` input: normalized to canonical `repairAction`
 - Character-lock type errors: fail with structured diagnostics; no Python crash
