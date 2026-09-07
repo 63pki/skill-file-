@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "ratingId": "RATING_ID",
+  "trialId": "TRIAL_ID",
+  "raterId": "PSEUDONYMOUS_RATER_ID",
+  "reviewerRole": "INDEPENDENT_REVIEWER",
+  "relationshipToOperator": "NONE",
+  "reviewSessionId": "SESSION_ID",
+  "reviewedAt": "",
+  "verdict": "PASS|REVISE",
+  "evidenceExcerpt": "",
+  "uncertainty": "",
+  "blind": true,
+  "independent": true,
+  "variantSeen": "",
+  "hypothesisVisible": false,
+  "conflictDeclared": false
+}

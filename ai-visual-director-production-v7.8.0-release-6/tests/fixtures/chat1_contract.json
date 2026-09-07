@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "7.8.0",
+  "projectId": "MILO_CHAT1",
+  "projectVersion": "v01",
+  "deliveryMode": "SINGLE_PASS_BLUEPRINT",
+  "productionIntent": "BLUEPRINT",
+  "mode": "B_ANIMATION",
+  "depth": "STANDARD",
+  "userProfile": "BEGINNER",
+  "durationSeconds": 45,
+  "shotBudget": {
+    "min": 6,
+    "max": 10
+  },
+  "audience": {
+    "type": "GENERAL_FAMILY",
+    "ageRange": "ALL_AGES",
+    "humanReviewRequiredForClaims": false
+  },
+  "tools": {
+    "stillGeneration": "NANO_BANANA_PRO",
+    "videoGeneration": "GEMINI_OMNI_FLASH",
+    "postSurfaces": [
+      "platform-neutral design surface",
+      "platform-neutral editing surface"
+    ],
+    "audio": "EXTERNAL_OR_UNASSIGNED",
+    "inspection": "HOST_OR_HUMAN",
+    "export": "HOST_IF_AVAILABLE"
+  },
+  "story": {
+    "isNarrative": true,
+    "autonomousOrImpossibleBehavior": true,
+    "worldRule": "",
+    "temporaryHelp": "shadow shades plant",
+    "durableResolution": "durable protection remains",
+    "finalProof": ""
+  },
+  "locks": {
+    "characters": [
+      {
+        "assetId": "MILO",
+        "parts": {
+          "arms": 0,
+          "legs": 0,
+          "eyes": 2
+        },
+        "face": "YES",
+        "speech": "NO"
+      },
+      {
+        "assetId": "SHADOW",
+        "parts": {
+          "arms": 0,
+          "legs": 0,
+          "eyes": 0
+        },
+        "face": "NO",
+        "speech": "NO"
+      }
+    ],
+    "world": {
+      "geography": "windowsill and garden wall, camera-left sun",
+      "shadeLightLogic": "shade only where an occluder stands between sun and leaf"
+    },
+    "shotCount": 8
+  },
+  "artifactQueue": [
+    {
+      "artifactId": "STYLE_BIBLE",
+      "required": true,
+      "gate": "DESIGN",
+      "acceptance": "Names family, silhouette rule, line, shading, palette, and forbidden drift.",
+      "repairAction": "Rewrite the Style Bible with the missing construction rule, then revalidate."
+    },
+    {
+      "artifactId": "ASSET_REGISTRY",
+      "required": true,
+      "gate": "DESIGN",
+      "acceptance": "Lists every recurring asset with stable ID, version, and reference role.",
+      "repairAction": "Add the missing asset rows and re-run the registry check."
+    },
+    {
+      "artifactId": "STORYBOARD",
+      "required": true,
+      "gate": "ANIMATIC",
+      "acceptance": "Every shot has time, story function, frame, camera, audio, and reference IDs.",
+      "repairAction": "Add the missing storyboard field to the named shot row."
+    },
+    {
+      "artifactId": "VOICE_PLAN",
+      "required": true,
+      "gate": "ANIMATIC",
+      "acceptance": "Every spoken line has word count, rate, pauses, and an allocated window.",
+      "repairAction": "Recount the line and re-fit it inside the shot window."
+    },
+    {
+      "artifactId": "ANIMATION_PROMPTS",
+      "required": true,
+      "gate": "ASSET",
+      "acceptance": "Every prompt names its reference IDs, one beat, acceptance, and one-variable repair.",
+      "repairAction": "Repair the flagged prompt with one changed variable and revalidate."
+    },
+    {
+      "artifactId": "ASSEMBLY_PLAN",
+      "required": true,
+      "gate": "DELIVERY",
+      "acceptance": "Track map, clip order, timecodes, and caption plan are complete.",
+      "repairAction": "Complete the missing assembly field and revalidate."
+    }
+  ],
+  "evidence": {
+    "visual": "NONE",
+    "motion": "NONE",
+    "audio": "NONE",
+    "humanReview": "NONE"
+  },
+  "evidenceCeiling": "PLAN-PASS",
+  "packageRequired": false,
+  "assumptions": [],
+  "blockers": []
+}

@@ -1,0 +1,7 @@
+{
+  "schemaVersion": "7.8.0",
+  "operatorLevel": "BEGINNER|INTERMEDIATE|EXPERT",
+  "disclosure": "COMPACT_FIRST|STANDARD|FORENSIC",
+  "compactStatusFirst": true,
+  "forensicReceiptsInPackage": true
+}

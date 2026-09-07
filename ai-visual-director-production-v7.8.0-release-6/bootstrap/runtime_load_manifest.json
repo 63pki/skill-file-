@@ -1,0 +1,272 @@
+{
+  "schemaVersion": "7.8.0",
+  "packageVersion": "7.8.0",
+  "hashAlgorithm": "SHA-256",
+  "proofBoundary": "Integrity and selection, not private attention or media execution.",
+  "profiles": {
+    "SUBSTANTIAL": [
+      "SKILL.md",
+      "rules/CORE_CONTROLLER.md",
+      "rules/RUNTIME.md"
+    ],
+    "QUICK_SHOT": [
+      "SKILL.md",
+      "rules/CORE_CONTROLLER.md"
+    ]
+  },
+  "audienceTriggers": {
+    "GENERAL": [
+      "rules/production/AUDIENCE_SUITABILITY.md"
+    ],
+    "CHILDREN": [
+      "rules/production/AUDIENCE_SUITABILITY.md",
+      "rules/audience/CHILDREN_6_9.md"
+    ],
+    "CHILDREN_6_9": [
+      "rules/production/AUDIENCE_SUITABILITY.md",
+      "rules/audience/CHILDREN_6_9.md"
+    ],
+    "EXPERT": [
+      "rules/production/AUDIENCE_SUITABILITY.md",
+      "rules/audience/EXPERT_TECHNICAL.md"
+    ],
+    "VULNERABLE": [
+      "rules/production/AUDIENCE_SUITABILITY.md",
+      "rules/audience/VULNERABLE_AUDIENCES.md"
+    ],
+    "ACCESSIBILITY": [
+      "rules/production/AUDIENCE_SUITABILITY.md",
+      "rules/audience/ACCESSIBILITY.md"
+    ],
+    "MULTILINGUAL": [
+      "rules/production/AUDIENCE_SUITABILITY.md",
+      "rules/audience/MULTILINGUAL.md"
+    ],
+    "REGULATED": [
+      "rules/production/AUDIENCE_SUITABILITY.md",
+      "rules/audience/REGULATED_CLAIMS.md"
+    ]
+  },
+  "modeTriggers": {
+    "A_PHOTOREAL_COMMERCIAL": [
+      "rules/production/MODE_A_PHOTOREAL_COMMERCIAL.md",
+      "adapters/generation/NANO_BANANA_PRO.md",
+      "adapters/generation/GEMINI_OMNI_FLASH.md",
+      "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md",
+      "rules/production/POST_PRODUCTION_HANDOFF.md",
+      "rules/production/AUDIO_CAPTION_HANDOFF.md",
+      "adapters/generation/modes/MODE_A_NANO_BANANA_PRO.md",
+      "adapters/generation/modes/MODE_A_OMNI_FLASH.md"
+    ],
+    "B_ANIMATION": [
+      "rules/production/2D_ANIMATION.md",
+      "adapters/generation/NANO_BANANA_PRO.md",
+      "adapters/generation/GEMINI_OMNI_FLASH.md",
+      "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md",
+      "rules/production/POST_PRODUCTION_HANDOFF.md",
+      "rules/production/AUDIO_CAPTION_HANDOFF.md",
+      "adapters/generation/modes/MODE_B_NANO_BANANA_PRO.md",
+      "adapters/generation/modes/MODE_B_OMNI_FLASH.md"
+    ],
+    "C_MOTION_GRAPHICS": [
+      "rules/production/MODE_C_MOTION_GRAPHICS.md",
+      "adapters/generation/NANO_BANANA_PRO.md",
+      "adapters/generation/GEMINI_OMNI_FLASH.md",
+      "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md",
+      "rules/production/POST_PRODUCTION_HANDOFF.md",
+      "rules/production/AUDIO_CAPTION_HANDOFF.md",
+      "adapters/generation/modes/MODE_C_NANO_BANANA_PRO.md",
+      "adapters/generation/modes/MODE_C_OMNI_FLASH.md",
+      "rules/production/EDITABLE_TEXT_UI_HANDOFF.md"
+    ],
+    "D_HYBRID_COMPOSITING": [
+      "rules/production/MODE_D_HYBRID_COMPOSITING.md",
+      "adapters/generation/NANO_BANANA_PRO.md",
+      "adapters/generation/GEMINI_OMNI_FLASH.md",
+      "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md",
+      "rules/production/POST_PRODUCTION_HANDOFF.md",
+      "rules/production/AUDIO_CAPTION_HANDOFF.md",
+      "adapters/generation/modes/MODE_D_NANO_BANANA_PRO.md",
+      "adapters/generation/modes/MODE_D_OMNI_FLASH.md",
+      "rules/production/COMPOSITING_HANDOFF.md"
+    ]
+  },
+  "productionTriggers": {
+    "FACTUAL_DOCUMENTARY": [
+      "rules/production/FACTUAL_DOCUMENTARY.md"
+    ],
+    "LOCALIZATION": [
+      "rules/production/LOCALIZATION.md"
+    ],
+    "ARCHITECTURAL_CONTINUITY": [
+      "rules/production/ARCHITECTURAL_CONTINUITY.md"
+    ],
+    "UGC_ADVERTISING": [
+      "rules/production/UGC_ADVERTISING.md"
+    ],
+    "CINEMATIC_SCENE": [
+      "rules/production/CINEMATIC_SCENE.md"
+    ]
+  },
+  "toolTriggers": {
+    "NANO_BANANA_PRO": [
+      "adapters/generation/NANO_BANANA_PRO.md"
+    ],
+    "GEMINI_OMNI_FLASH": [
+      "adapters/generation/GEMINI_OMNI_FLASH.md"
+    ],
+    "PLATFORM_NEUTRAL_HANDOFF": [
+      "rules/production/POST_PRODUCTION_HANDOFF.md"
+    ]
+  },
+  "combinationTriggers": [
+    {
+      "owners": [
+        "NANO_BANANA_PRO",
+        "GEMINI_OMNI_FLASH"
+      ],
+      "files": [
+        "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md"
+      ]
+    }
+  ],
+  "customToolPolicy": "Unmapped owners are prohibited in the canonical prompt-only build.",
+  "files": {
+    "SKILL.md": {
+      "sha256": "4f75e4940bd204ab272b7766a296d83e6a0a01b657c0f28d0d3500ebc9e5e8c8",
+      "bytes": 4634
+    },
+    "rules/CORE_CONTROLLER.md": {
+      "sha256": "858129739ad33aa9cb49f14f655608f1ee87eadde5410925134bc91f0b7ef0d6",
+      "bytes": 1444
+    },
+    "rules/RUNTIME.md": {
+      "sha256": "bf5cdf7f68c058f1b2eca016d23e377324f51cbabc3af4545d379dacbd06bb3a",
+      "bytes": 8455
+    },
+    "rules/production/AUDIENCE_SUITABILITY.md": {
+      "sha256": "4c07377f4ef3a4c1aeebf88d9b534a487c9d5b8c2cec32bab39e60f4bba8b225",
+      "bytes": 840
+    },
+    "rules/audience/CHILDREN_6_9.md": {
+      "sha256": "b17c4f88f8809b81d5bbe9fc71a8aa5d5bc88efb8affd62551dbc298e2f4ee3e",
+      "bytes": 788
+    },
+    "rules/audience/EXPERT_TECHNICAL.md": {
+      "sha256": "a17e49988c01105fa3656a5eb9d53ca1eea03725cc22dfc386890f3cb26e6cfb",
+      "bytes": 635
+    },
+    "rules/audience/VULNERABLE_AUDIENCES.md": {
+      "sha256": "b97e15981d793dfea5aa7fe35cc979d5236a9086f26ab6da5dc86bee6c2b3557",
+      "bytes": 614
+    },
+    "rules/audience/ACCESSIBILITY.md": {
+      "sha256": "21e89e369b19a4f03336777346a91da832b40ef3650acc16cbb65c5a3f492b2a",
+      "bytes": 648
+    },
+    "rules/audience/MULTILINGUAL.md": {
+      "sha256": "f9e9e0f057a8f8f117de9e1cad6d4453d5f93d151b4fd1b7b6354083b7f75e7c",
+      "bytes": 638
+    },
+    "rules/audience/REGULATED_CLAIMS.md": {
+      "sha256": "7d9b6c05b246165ec0bfa6f3ccf5b41c5759e3e81f7e09761e394e5e735fca59",
+      "bytes": 648
+    },
+    "rules/production/MODE_A_PHOTOREAL_COMMERCIAL.md": {
+      "sha256": "eeb016c022ece5f1b42adfc7ac0757c684d7a592954188e315e77eec162ba7fa",
+      "bytes": 501
+    },
+    "adapters/generation/NANO_BANANA_PRO.md": {
+      "sha256": "f985a1c3972402f2eef058d76a71db539eb52ca653fac0e10d4053bfe48daeb1",
+      "bytes": 1174
+    },
+    "adapters/generation/GEMINI_OMNI_FLASH.md": {
+      "sha256": "bb45d6d2b2013c55d8eafc9b6d409233d8a64c0c20c0246b4f16589d252ec351",
+      "bytes": 1154
+    },
+    "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md": {
+      "sha256": "e61fe4bfaa8fb44005191f4345d7d49b78dc5172e2d6023d653feff79ea3b299",
+      "bytes": 920
+    },
+    "rules/production/POST_PRODUCTION_HANDOFF.md": {
+      "sha256": "526658b378c35a23a95420be9ccc489f3c81f83de6f4859d78e6c0f7674ed77f",
+      "bytes": 321
+    },
+    "rules/production/AUDIO_CAPTION_HANDOFF.md": {
+      "sha256": "84364a0c6958ec0684fe9b376991601c4466acfef35e00ea495614b623bc417c",
+      "bytes": 323
+    },
+    "adapters/generation/modes/MODE_A_NANO_BANANA_PRO.md": {
+      "sha256": "28c5349c8570ee6d91cd24662fc4235b6c81008d2dff4439d8bb4b906527e48f",
+      "bytes": 309
+    },
+    "adapters/generation/modes/MODE_A_OMNI_FLASH.md": {
+      "sha256": "cac040f426aba6d18bfe0b2c6aa6c3043bdebb94f78b8749f0934ba5746a8b6f",
+      "bytes": 269
+    },
+    "rules/production/2D_ANIMATION.md": {
+      "sha256": "8de32220036aae17fa9202ea41657ce7eec9a41bbe8306703791c9e200c009da",
+      "bytes": 621
+    },
+    "adapters/generation/modes/MODE_B_NANO_BANANA_PRO.md": {
+      "sha256": "423759e3533499e0b21a3082e229f9a87504f14c7f5b6f45098b248128363e35",
+      "bytes": 239
+    },
+    "adapters/generation/modes/MODE_B_OMNI_FLASH.md": {
+      "sha256": "b3bcabced1d1ba29dd9ff9c0635d415b374cdb63fd186151a8226e485ae6727c",
+      "bytes": 261
+    },
+    "rules/production/MODE_C_MOTION_GRAPHICS.md": {
+      "sha256": "6eccf98d82d7d24b78e59b58bad14dd66855d00b16dd124295f202d1d0885db0",
+      "bytes": 596
+    },
+    "adapters/generation/modes/MODE_C_NANO_BANANA_PRO.md": {
+      "sha256": "6c9d78602eeede0a7ec90b0f344de1e4fc2247e830cb568c7120f9a4e4e66af1",
+      "bytes": 225
+    },
+    "adapters/generation/modes/MODE_C_OMNI_FLASH.md": {
+      "sha256": "d2bc3452dad3770c84a47360e329c55489a46291c4378e168a0d12d3b7b8625f",
+      "bytes": 249
+    },
+    "rules/production/EDITABLE_TEXT_UI_HANDOFF.md": {
+      "sha256": "184826fed5e791ceb7f4184d8aa0d12e875e5123f3d31c01543e1d9a4f0845ec",
+      "bytes": 311
+    },
+    "rules/production/MODE_D_HYBRID_COMPOSITING.md": {
+      "sha256": "c759f1ddab93412c2d4b5f4ad7231f14ed22d6d9f9988b0f02358ad0ba6fd169",
+      "bytes": 573
+    },
+    "adapters/generation/modes/MODE_D_NANO_BANANA_PRO.md": {
+      "sha256": "0c78fdb2925582e72f87ef34ea157cc6f81f2e0735d379204f19b92d0ebcfec2",
+      "bytes": 240
+    },
+    "adapters/generation/modes/MODE_D_OMNI_FLASH.md": {
+      "sha256": "a54a6d4d9a5c94b0d6904ab112684ff5feeaf1d4361d74a62678ce97e681cbf1",
+      "bytes": 271
+    },
+    "rules/production/COMPOSITING_HANDOFF.md": {
+      "sha256": "18e32c3a294b435e98d55a0bc332a103a21a75be7ac2297653c60c739d07ddc1",
+      "bytes": 380
+    },
+    "rules/production/FACTUAL_DOCUMENTARY.md": {
+      "sha256": "96f9955033e78821ba40682de8c9e708bf2748235eccc9c3ae5b81b1f615788a",
+      "bytes": 1191
+    },
+    "rules/production/LOCALIZATION.md": {
+      "sha256": "7e402ed149033448f59d8b13d040e851a28704c01ab2c317a757559a0a26750b",
+      "bytes": 1141
+    },
+    "rules/production/ARCHITECTURAL_CONTINUITY.md": {
+      "sha256": "8e2de3ca46681cd267ff212356d2d5681380747b580c69edc693681a1ccdf265",
+      "bytes": 1135
+    },
+    "rules/production/UGC_ADVERTISING.md": {
+      "sha256": "f415dc0f19f029e596bdd06b0027c59e61587526a7b1a9707e2e69942a70178d",
+      "bytes": 1156
+    },
+    "rules/production/CINEMATIC_SCENE.md": {
+      "sha256": "bbfd7d13b5350994f9fae2ce3408b453bcb154d157badb34dbd02ae2de108ac3",
+      "bytes": 1105
+    }
+  }
+}

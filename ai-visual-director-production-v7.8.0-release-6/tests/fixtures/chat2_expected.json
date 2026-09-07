@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "7.8.0",
+  "fixture": "V7.1 Milo run 2 — dropped artifact and missing world rule; timing, ownership, and locks are all correct",
+  "expectedErrorCodes": [
+    "MISSING_ARTIFACT",
+    "WORLD_RULE_FIELD"
+  ],
+  "forbiddenErrorCodes": [
+    "SHOT_TOTAL",
+    "LOCK_DRIFT",
+    "POST_AS_GENERATOR",
+    "TOOL_ROLE_DRIFT",
+    "VOICE_WINDOW",
+    "CONTRACT_FIELD",
+    "CONTRACT_SCHEMA_ERROR"
+  ]
+}

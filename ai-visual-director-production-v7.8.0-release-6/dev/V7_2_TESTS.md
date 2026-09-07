@@ -1,0 +1,23 @@
+# V7.2 Deterministic Execution Tests
+
+> **HISTORICAL — provenance record, not a current test plan.** Retained as evidence of the
+> V7.2 deterministic-execution work. Its fixtures are still real and still run, but they now
+> run through the single bundled suite: `python3 dev/run_v780_release6_tests.py` (see the
+> `regression-fixture-coverage` check below). The standalone `run_v72_tests.py` this document
+> once implied was retired at Release 6 and never shipped in this archive.
+>
+> *Adjacent spec (not part of this package):* this treatment follows **INV-10 (K05)**,
+> "Retired names appear only as structured metadata values under `dev/provenance/`", from
+> the separate v10 capability-rebuild kernel (`10.0.0-rc1-capability-complete`,
+> `production_final: false`) — see also its locked decision "Historical material/provenance
+> is metadata-only, never active authority." That invariant registry belongs to the v10
+> lineage and is **not** ported into V7.8.0 Release 6; it is cited here only as the doctrine
+> this banner conforms to.
+
+The three V7.1 Milo runs are encoded as failure fixtures. They verify tool substitution, missing artifacts/world rules, anatomy/face drift, and timing contradictions. These fixtures are concise evidence records, not claimed full-model replays.
+
+The fixtures are executed by the bundled release suite: `python3 dev/run_v780_release6_tests.py` runs the `regression-fixture-coverage` check, which feeds every `tests/fixtures/*_contract.json` / `*_output.json` pair through `validators/validate_project.py` and asserts that the error codes declared in the matching `*_expected.json` are produced (and that the declared `forbiddenErrorCodes` are not). There is no separate `run_v72_tests.py`; that runner was consolidated into the release suite and this reference previously pointed at a file that did not ship.
+
+Each `*_expected.json` declares `expectedErrorCodes` (defect classes the fixture must still trigger) and `forbiddenErrorCodes` (defects the fixture must not accidentally trigger). Fixtures are pinned to `schemaVersion` 7.8.0: if the contract schema advances again, the fixtures must be migrated in the same change, or the validator short-circuits on `CONTRACT_FIELD` and the suite silently stops testing anything.
+
+A live replay still requires exact prompts, model/runtime capture, complete outputs, and media evidence where applicable.

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "7.8.0",
+  "routingId": "ROUTE_ID",
+  "projectClass": "SUBSTANTIAL",
+  "assuranceProfile": "VERIFIED_RUNTIME",
+  "mode": "B_ANIMATION",
+  "deliveryMode": "SINGLE_PASS_BLUEPRINT",
+  "requestedOutputClass": "BLUEPRINT",
+  "audienceTriggers": [
+    "CHILDREN_6_9"
+  ],
+  "tools": {
+    "stillGeneration": "NANO_BANANA_PRO",
+    "videoGeneration": "GEMINI_OMNI_FLASH",
+    "postSurfaces": [
+      "AUDIO_ATTACHMENT_ONLY"
+    ],
+    "audio": "EXTERNAL_AUDIO_ATTACHMENT",
+    "inspection": "UNASSIGNED",
+    "export": "UNASSIGNED"
+  },
+  "host": {
+    "codeExecution": "UNVERIFIED",
+    "contextInjection": "UNVERIFIED",
+    "receiptRetention": "UNVERIFIED"
+  },
+  "customRules": [],
+  "assumptions": [],
+  "generationPromptPolicy": {
+    "modeBRequired": true,
+    "nanoBananaFrameworks": [
+      "NB-F1",
+      "NB-F2",
+      "NB-F3",
+      "NB-F4",
+      "NB-F5"
+    ],
+    "omniTasks": [
+      "V-F1",
+      "V-F2",
+      "V-F3",
+      "V-F4",
+      "V-F5"
+    ],
+    "promptLibrariesRequiredWithoutExecution": true,
+    "editorGenerationSubstitution": false,
+    "audioAttachmentGuide": "rules/production/AUDIO_ATTACHMENT.md"
+  },
+  "contractSchema": "schemas/ROUTING_CONTRACT.schema.json",
+  "productionTriggers": []
+}

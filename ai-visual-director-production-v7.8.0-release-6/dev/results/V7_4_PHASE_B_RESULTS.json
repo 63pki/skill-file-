@@ -1,0 +1,51 @@
+{
+  "release": "7.4.0-phase-d",
+  "scope": "artifact schemas, anti-filler, gate ownership, indexed/multi-format extraction, evidence and claim checks",
+  "results": [
+    {
+      "case": "schema_positive",
+      "pass": false
+    },
+    {
+      "case": "missing_required_section",
+      "pass": true
+    },
+    {
+      "case": "repeated_filler",
+      "pass": true
+    },
+    {
+      "case": "fenced_artifact",
+      "pass": false
+    },
+    {
+      "case": "unsupported_claim",
+      "pass": true
+    },
+    {
+      "case": "planning_language_safe",
+      "pass": true
+    },
+    {
+      "case": "duplicate_conflict",
+      "pass": true
+    },
+    {
+      "case": "gate_derived_scope",
+      "pass": true
+    },
+    {
+      "case": "html_evidence_extract",
+      "pass": true
+    },
+    {
+      "case": "indexed_package_sidecar",
+      "pass": true
+    },
+    {
+      "case": "project_index_required",
+      "pass": true
+    }
+  ],
+  "pass": false
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "7.8.0",
+  "profiles": {
+    "VERIFIED_RUNTIME": {
+      "requires": [
+        "coreReadable",
+        "structuredOutput",
+        "filesystem",
+        "codeExecution",
+        "hashing",
+        "persistentArtifacts"
+      ],
+      "missingBehavior": "TRY_PORTABLE_REFERENCE"
+    },
+    "PORTABLE_REFERENCE": {
+      "requires": [
+        "coreReadable",
+        "structuredOutput",
+        "selectedOwnerReadable",
+        "limitationsDisclosable"
+      ],
+      "forbidsClaims": [
+        "cryptographic runtime verified",
+        "deterministic validator passed",
+        "instruction compliance proven"
+      ],
+      "missingBehavior": "UNSUPPORTED_EXECUTION"
+    },
+    "UNSUPPORTED_EXECUTION": {
+      "requires": [],
+      "status": "BLOCKED",
+      "message": "The host cannot load the core workflow or produce an honest structured result."
+    }
+  },
+  "selectionOrder": [
+    "VERIFIED_RUNTIME",
+    "PORTABLE_REFERENCE",
+    "UNSUPPORTED_EXECUTION"
+  ]
+}

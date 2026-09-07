@@ -1,0 +1,150 @@
+{
+  "projectId": "MILO_CHAT1",
+  "artifactsPresent": [
+    "STYLE_BIBLE",
+    "STORYBOARD",
+    "VOICE_PLAN",
+    "ANIMATION_PROMPTS",
+    "ASSEMBLY_PLAN"
+  ],
+  "artifacts": [
+    {
+      "artifactId": "STYLE_BIBLE",
+      "body": "Family: flat 2D vector. Shape language: rounded single-volume body, no limbs. Line: 2px uniform warm-black outline. Shading: two-step cel shadow, no gradient. Palette: leaf green, terracotta pot, ash shadow. Forbidden drift: no added limbs, no photoreal shading.",
+      "bodyChars": 300
+    },
+    {
+      "artifactId": "STORYBOARD",
+      "body": "S1 0-5s orient: Milo on the windowsill, sun camera-left. S2 5-11s problem: leaf edge curling. S3 11-18s arrival: SHADOW drifts in from frame-right. S4 18-25s relief: leaf flattens under shade. S5 25-32s risk: sun tracks, shade slips. S6 32-38s decision: Milo tips the pot. S7 38-41s action: pot rolls behind the wall. S8 41-45s payoff: wide, pot behind wall, leaves intact.",
+      "bodyChars": 402
+    },
+    {
+      "artifactId": "VOICE_PLAN",
+      "body": "No spoken dialogue. Narration is off-camera and reserved for post; timing is carried by the cue sheet.",
+      "bodyChars": 106
+    },
+    {
+      "artifactId": "ANIMATION_PROMPTS",
+      "body": "Use MILO v01 and SHADOW v01 as on-model sources. Preserve silhouette, proportions, outline, and palette. Staging: Milo frame-left, shadow entering frame-right. Action: one drift. Camera: locked. Timing: held. Audio: room tone only.",
+      "bodyChars": 231
+    },
+    {
+      "artifactId": "ASSEMBLY_PLAN",
+      "body": "V1 main picture S1-S8. V2 shade overlay. A1 room tone. A2 score bed, ducked under no speech. Captions: not required, no dialogue. Export: verified destination settings.",
+      "bodyChars": 173
+    }
+  ],
+  "shots": [
+    {
+      "id": "S1",
+      "durationSeconds": 5,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S2",
+      "durationSeconds": 6,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S3",
+      "durationSeconds": 7,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S4",
+      "durationSeconds": 7,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S5",
+      "durationSeconds": 7,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S6",
+      "durationSeconds": 6,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S7",
+      "durationSeconds": 3,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S8",
+      "durationSeconds": 4,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    }
+  ],
+  "lockUses": [
+    {
+      "assetId": "MILO",
+      "parts": {
+        "arms": 2,
+        "legs": 0,
+        "eyes": 2
+      },
+      "face": "YES",
+      "speech": "NO"
+    },
+    {
+      "assetId": "SHADOW",
+      "parts": {
+        "arms": 0,
+        "legs": 0,
+        "eyes": 2
+      },
+      "face": "YES",
+      "speech": "NO"
+    }
+  ],
+  "story": {
+    "worldRule": "",
+    "durableResolution": {
+      "originalProblem": "Milo's leaf scorches in the direct afternoon sun",
+      "temporaryHelp": "the shadow drifts across and shades the leaf",
+      "permanentChange": "Milo tips the pot behind the garden wall so the wall casts the shade",
+      "visualProofShot": "S8 wide: pot behind the wall, leaves uncurled, sun still high",
+      "recurrencePrevented": true
+    },
+    "finalProof": ""
+  },
+  "toolUse": {
+    "stillGeneration": "platform-neutral design surface",
+    "videoGeneration": "UNASSIGNED",
+    "postSurfaces": [
+      "platform-neutral design surface",
+      "platform-neutral editing surface"
+    ]
+  },
+  "statusMetadata": {
+    "maturity": "PLAN_PASS",
+    "media": "NOT_GENERATED",
+    "delivery": "SINGLE_PASS_BLUEPRINT"
+  },
+  "evidence": {
+    "visual": [],
+    "motion": [],
+    "audio": [],
+    "humanReview": []
+  },
+  "maturity": "PLAN-PASS",
+  "claims": [],
+  "packageFiles": []
+}

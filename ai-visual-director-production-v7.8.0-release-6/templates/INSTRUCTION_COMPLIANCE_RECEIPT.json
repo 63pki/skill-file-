@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "projectId": "PROJECT_ID",
+  "model": {
+    "provider": "FILL_REQUIRED",
+    "name": "FILL_REQUIRED",
+    "version": "FILL_REQUIRED"
+  },
+  "userWorkflowAuthorized": true,
+  "agentIdentityChanged": false,
+  "systemOverrideAttempted": false,
+  "untrustedInstructionsExecuted": false,
+  "runtimeManifestSha256": "c27dd766a3224f73e30786503f1b7277d3208bb7dc8b7d0fd14b5a6d49cf4e8e",
+  "selectedFiles": [
+    {
+      "path": "SKILL.md",
+      "sha256": "4b5b103cfcd66cc16075e4d37d006e4f2c1187bf4c47bfee6203ddfa4dd732a0",
+      "status": "PENDING"
+    },
+    {
+      "path": "rules/CORE_CONTROLLER.md",
+      "sha256": "09386e44ab44f476e4f9a41de04e05b7ca88f5089a8f5232654ba578ce79cfb4",
+      "status": "PENDING"
+    },
+    {
+      "path": "rules/RUNTIME.md",
+      "sha256": "6da951134d420fda275e2677e57270efd364e2a9065980e12b0b3e465f62b9fb",
+      "status": "PENDING"
+    },
+    {
+      "path": "rules/production/AUDIENCE_SUITABILITY.md",
+      "sha256": "4c07377f4ef3a4c1aeebf88d9b534a487c9d5b8c2cec32bab39e60f4bba8b225",
+      "status": "PENDING"
+    },
+    {
+      "path": "rules/audience/CHILDREN_6_9.md",
+      "sha256": "b17c4f88f8809b81d5bbe9fc71a8aa5d5bc88efb8affd62551dbc298e2f4ee3e",
+      "status": "PENDING"
+    },
+    {
+      "path": "rules/production/2D_ANIMATION.md",
+      "sha256": "01c911f3eaf90b2b741e9d983b91df52874ebdb5244ab183acf1fdc5194085fb",
+      "status": "PENDING"
+    },
+    {
+      "path": "adapters/generation/NANO_BANANA_PRO.md",
+      "sha256": "9efa457882400b295ef660c2409d6c47e555b7d9132813af8db79d4f02312103",
+      "status": "PENDING"
+    },
+    {
+      "path": "adapters/generation/GEMINI_OMNI_FLASH.md",
+      "sha256": "7f77c8a121415f7a7a3045a5240e03dafcdbc3c0bb4eca179cdd6187a4fa46d2",
+      "status": "PENDING"
+    },
+    {
+      "path": "adapters/generation/NANO_BANANA_PRO_OMNI_FLASH_PIPELINE.md",
+      "sha256": "089f774fa972d3777ff22008b2b13b0136f86ccf406ed95164db3daa266f9d08",
+      "status": "PENDING"
+    },
+    {
+      "path": "rules/production/AUDIO_ATTACHMENT.md",
+      "sha256": "c1a3883972d4af2231853869272f186aa87b80c18dc8c8f9689031d15d36b3e3",
+      "status": "PENDING"
+    }
+  ],
+  "orderedSteps": [
+    {
+      "id": "ROUTE",
+      "status": "PENDING",
+      "artifact": ""
+    },
+    {
+      "id": "LOAD",
+      "status": "PENDING",
+      "artifact": ""
+    },
+    {
+      "id": "CONTRACT",
+      "status": "PENDING",
+      "artifact": ""
+    },
+    {
+      "id": "EXECUTE",
+      "status": "PENDING",
+      "artifact": ""
+    },
+    {
+      "id": "EXTRACT",
+      "status": "PENDING",
+      "artifact": ""
+    },
+    {
+      "id": "VALIDATE",
+      "status": "PENDING",
+      "artifact": ""
+    },
+    {
+      "id": "PACKAGE",
+      "status": "PENDING",
+      "artifact": ""
+    },
+    {
+      "id": "REPORT",
+      "status": "PENDING",
+      "artifact": ""
+    }
+  ],
+  "cognitiveAttentionProven": false,
+  "proofBoundary": "Declaration template. PENDING is not compliance; set LOADED/COMPLETE only after observable execution."
+}

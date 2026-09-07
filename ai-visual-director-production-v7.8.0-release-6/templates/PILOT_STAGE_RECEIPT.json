@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "pilotId": "PILOT_ID",
+  "projectId": "PROJECT_ID",
+  "stage": "BRIEF|DESIGN|ANIMATIC|ASSET|MOTION|DELIVERY",
+  "stageVersion": "v01",
+  "startedAt": "",
+  "completedAt": "",
+  "previousStageReceiptSha256": "",
+  "inputs": [],
+  "outputs": [],
+  "validatorResultPath": "",
+  "validatorResultSha256": "",
+  "verdict": "PASS|REVISE|BLOCKED",
+  "evidenceClass": "LIVE_EXTERNAL|SIMULATED_TEST|DRY_RUN",
+  "limitations": []
+}

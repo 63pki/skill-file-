@@ -1,0 +1,55 @@
+{
+  "release": "7.4.0-phase-d",
+  "scope": "progressive disclosure, operator readiness, explicit references, decision trace, evidence-bound semantic review, repair plans",
+  "results": [
+    {
+      "case": "operator_ready_positive",
+      "pass": true
+    },
+    {
+      "case": "acceptance_required",
+      "pass": true
+    },
+    {
+      "case": "repair_required",
+      "pass": true
+    },
+    {
+      "case": "steps_required",
+      "pass": true
+    },
+    {
+      "case": "reference_resolution",
+      "pass": true
+    },
+    {
+      "case": "vague_reference",
+      "pass": true
+    },
+    {
+      "case": "decision_trace",
+      "pass": true
+    },
+    {
+      "case": "operator_profile_enum",
+      "pass": true
+    },
+    {
+      "case": "semantic_evidence_positive",
+      "pass": true
+    },
+    {
+      "case": "no_invented_score",
+      "pass": true
+    },
+    {
+      "case": "semantic_evidence_required",
+      "pass": true
+    },
+    {
+      "case": "actionable_repair_plan",
+      "pass": true
+    }
+  ],
+  "pass": true
+}

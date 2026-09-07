@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/PROJECT_INDEX.schema.json",
+  "title": "AI Visual Director Project Index",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "projectId",
+    "artifacts"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "projectId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifactRoot": {
+      "type": "string"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "artifactId",
+          "sourcePath"
+        ],
+        "properties": {
+          "artifactId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "artifactType": {
+            "type": "string"
+          },
+          "gate": {
+            "type": "string"
+          },
+          "sourcePath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceSha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sourceAliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sourceSelector": {
+            "type": "object",
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "AUTO",
+                  "ARTIFACT_MARKER",
+                  "HEADING",
+                  "RANGE"
+                ]
+              },
+              "value": {
+                "type": "string"
+              },
+              "start": {
+                "type": "string"
+              },
+              "end": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "evidenceRecordPath": {
+      "type": "string"
+    },
+    "allowRecoveryDiscovery": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

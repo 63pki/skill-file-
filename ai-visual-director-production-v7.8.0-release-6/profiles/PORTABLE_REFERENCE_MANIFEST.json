@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "7.8.0",
+  "profile": "PORTABLE_REFERENCE",
+  "requiresScripts": false,
+  "requiresFilesystem": false,
+  "requiresHashes": false,
+  "requiresPersistentState": false,
+  "maturityCeiling": "PLAN-PASS",
+  "requiredOrder": [
+    "SKILL.md",
+    "rules/CORE_CONTROLLER.md",
+    "profiles/PORTABLE_REFERENCE.md",
+    "TRIGGERED_PRODUCTION_OWNER",
+    "TRIGGERED_AUDIENCE_OWNER_IF_ANY",
+    "TRIGGERED_ADAPTERS",
+    "PROJECT_BRIEF",
+    "PORTABLE_EXECUTION_RECORD"
+  ],
+  "requiredStatus": {
+    "assurance": "PORTABLE_REFERENCE",
+    "deterministicRuntimeVerification": "NOT_AVAILABLE",
+    "instructionCompliance": "NOT_VERIFIED",
+    "mediaEvidence": "NOT_RUN",
+    "externalEvidenceClaimed": false
+  },
+  "allowedClaims": [
+    "planning completed",
+    "prompt library authored",
+    "portable self-check completed"
+  ],
+  "prohibitedClaims": [
+    "cryptographic runtime verified",
+    "deterministic validator passed",
+    "instruction compliance proven",
+    "media generated without execution",
+    "media inspected without inspection",
+    "audience comprehension proven",
+    "release ready without evidence"
+  ]
+}

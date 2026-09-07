@@ -1,0 +1,56 @@
+{
+  "release": "7.4.0",
+  "syntheticOnly": true,
+  "liveEvidenceProduced": false,
+  "results": [
+    {
+      "case": "not-run honest",
+      "pass": true
+    },
+    {
+      "case": "prompt file hash",
+      "pass": true
+    },
+    {
+      "case": "unknown rating trial",
+      "pass": true
+    },
+    {
+      "case": "duplicate rating id",
+      "pass": true
+    },
+    {
+      "case": "comparable repeated runs",
+      "pass": true
+    },
+    {
+      "case": "run floor enforced",
+      "pass": true
+    },
+    {
+      "case": "controlled ab",
+      "pass": true
+    },
+    {
+      "case": "ab control mismatch",
+      "pass": true
+    },
+    {
+      "case": "hash-bound semantic pass",
+      "pass": true
+    },
+    {
+      "case": "semantic excerpt binding",
+      "pass": true
+    },
+    {
+      "case": "critical floor",
+      "pass": true
+    },
+    {
+      "case": "expanded claim scanning",
+      "pass": true
+    }
+  ],
+  "pass": true
+}

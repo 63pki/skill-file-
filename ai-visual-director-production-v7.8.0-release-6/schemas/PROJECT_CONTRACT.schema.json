@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/PROJECT_CONTRACT.schema.json",
+  "title": "AI Visual Director Project Contract",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "projectId",
+    "deliveryMode",
+    "productionIntent",
+    "mode",
+    "tools",
+    "story",
+    "locks",
+    "artifactQueue",
+    "evidenceCeiling"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string"
+    },
+    "projectId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "deliveryMode": {
+      "enum": [
+        "GUIDED_PRODUCTION",
+        "SINGLE_PASS_BLUEPRINT",
+        "FINISHED_PRODUCTION"
+      ]
+    },
+    "tools": {
+      "type": "object",
+      "required": [
+        "stillGeneration",
+        "videoGeneration",
+        "postSurfaces"
+      ],
+      "properties": {
+        "stillGeneration": {
+          "type": "string"
+        },
+        "videoGeneration": {
+          "type": "string"
+        },
+        "postSurfaces": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "story": {
+      "type": "object"
+    },
+    "locks": {
+      "type": "object",
+      "required": [
+        "characters",
+        "world"
+      ],
+      "properties": {
+        "characters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/characterLock"
+          }
+        },
+        "world": {
+          "type": "object"
+        }
+      }
+    },
+    "artifactQueue": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifactSpec"
+      }
+    },
+    "evidenceCeiling": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "characterLock": {
+      "type": "object",
+      "required": [
+        "assetId"
+      ],
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "artifactSpec": {
+      "type": "object",
+      "required": [
+        "artifactId",
+        "required",
+        "acceptance",
+        "repairAction"
+      ],
+      "properties": {
+        "artifactId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "acceptance": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repairAction": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourcePath": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

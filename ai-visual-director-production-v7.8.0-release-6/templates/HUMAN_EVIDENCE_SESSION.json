@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "sessionId": "SESSION_ID",
+  "track": "BEGINNER_OPERATOR|AUDIENCE_COMPREHENSION",
+  "projectId": "PROJECT_ID",
+  "projectVersion": "v01",
+  "skillArchiveSha256": "",
+  "operatorOrReviewerId": "PSEUDONYMOUS_ID",
+  "independent": true,
+  "relationshipToAuthor": "NONE",
+  "evidenceClass": "LIVE_EXTERNAL|SIMULATED_TEST|DRY_RUN",
+  "startedAt": "",
+  "completedAt": "",
+  "completed": false,
+  "recordPath": "",
+  "recordSha256": "",
+  "beginner": {
+    "selfDeclaredBeginner": false,
+    "taskCompleted": false,
+    "repairCycles": 0,
+    "durationMinutes": null,
+    "blockingErrors": [],
+    "unsupportedClaims": []
+  },
+  "audience": {
+    "ageBand": "",
+    "caregiverConsentRecorded": false,
+    "privacySafe": true,
+    "questionsAsked": [],
+    "responsesRecordedWithoutUnnecessaryPII": true,
+    "comprehensionVerdict": "NOT_REVIEWED|PASS|REVISE"
+  }
+}

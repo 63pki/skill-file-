@@ -1,0 +1,135 @@
+{
+  "projectId": "MILO_CHAT2",
+  "artifactsPresent": [
+    "STYLE_BIBLE",
+    "STORYBOARD",
+    "VOICE_PLAN",
+    "ANIMATION_PROMPTS",
+    "ASSEMBLY_PLAN"
+  ],
+  "artifacts": [
+    {
+      "artifactId": "STYLE_BIBLE",
+      "body": "Family: flat 2D vector. Shape language: rounded single-volume body, no limbs. Line: 2px uniform warm-black outline. Shading: two-step cel shadow, no gradient. Palette: leaf green, terracotta pot, ash shadow. Forbidden drift: no added limbs, no photoreal shading.",
+      "bodyChars": 300
+    },
+    {
+      "artifactId": "STORYBOARD",
+      "body": "S1 0-4s orient: Milo on the windowsill. S2 4-8s detail: dry soil. S3 8-13s problem: leaf edge curling. S4 13-18s arrival: SHADOW enters frame-right. S5 18-23s relief: leaf flattens. S6 23-28s bond: Milo tilts toward the shade. S7 28-34s risk: sun tracks, shade slips. S8 34-39s decision: Milo tips the pot. S9 39-45s payoff: wide, pot behind the wall.",
+      "bodyChars": 401
+    },
+    {
+      "artifactId": "VOICE_PLAN",
+      "body": "No spoken dialogue. Narration is off-camera and reserved for post; timing is carried by the cue sheet.",
+      "bodyChars": 106
+    },
+    {
+      "artifactId": "ANIMATION_PROMPTS",
+      "body": "Use MILO v01 and SHADOW v01 as on-model sources. Preserve silhouette, proportions, outline, and palette. Staging: Milo frame-left, shadow entering frame-right. Action: one drift. Camera: locked. Timing: held. Audio: room tone only.",
+      "bodyChars": 231
+    },
+    {
+      "artifactId": "ASSEMBLY_PLAN",
+      "body": "V1 main picture S1-S9. V2 shade overlay. A1 room tone. A2 score bed. Captions: not required, no dialogue. Export: verified destination settings.",
+      "bodyChars": 152
+    }
+  ],
+  "shots": [
+    {
+      "id": "S1",
+      "durationSeconds": 4,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S2",
+      "durationSeconds": 4,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S3",
+      "durationSeconds": 5,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S4",
+      "durationSeconds": 5,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S5",
+      "durationSeconds": 5,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S6",
+      "durationSeconds": 5,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S7",
+      "durationSeconds": 6,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S8",
+      "durationSeconds": 5,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    },
+    {
+      "id": "S9",
+      "durationSeconds": 6,
+      "narrationWords": 0,
+      "estimatedWpm": 120,
+      "requiredPauseSeconds": 0
+    }
+  ],
+  "lockUses": [],
+  "story": {
+    "worldRule": "",
+    "durableResolution": {
+      "originalProblem": "Milo's leaf scorches in the direct afternoon sun",
+      "temporaryHelp": "the shadow drifts across and shades the leaf",
+      "permanentChange": "Milo tips the pot behind the garden wall so the wall casts the shade",
+      "visualProofShot": "S9 wide: pot behind the wall, leaves uncurled, sun still high",
+      "recurrencePrevented": true
+    },
+    "finalProof": ""
+  },
+  "toolUse": {
+    "stillGeneration": "UNASSIGNED",
+    "videoGeneration": "UNASSIGNED",
+    "postSurfaces": [
+      "platform-neutral editing surface"
+    ]
+  },
+  "statusMetadata": {
+    "maturity": "PLAN_PASS",
+    "media": "NOT_GENERATED",
+    "delivery": "SINGLE_PASS_BLUEPRINT"
+  },
+  "evidence": {
+    "visual": [],
+    "motion": [],
+    "audio": [],
+    "humanReview": []
+  },
+  "maturity": "PLAN-PASS",
+  "claims": [],
+  "packageFiles": []
+}

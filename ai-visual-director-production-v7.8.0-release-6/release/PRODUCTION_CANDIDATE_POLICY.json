@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "7.8.0",
+  "release": "7.8.0",
+  "candidateClass": "STRUCTURAL_PRODUCTION_CANDIDATE",
+  "candidateIssueRequirements": [
+    "ACTIVE_RELEASE_CONSISTENCY",
+    "R1_R650_REGRESSION_CATALOG",
+    "RUNTIME_MANIFEST_INTEGRITY",
+    "FORBIDDEN_RESIDUE_ZERO",
+    "UNIVERSAL_OWNER_PARITY",
+    "STATUS_SINGULARITY",
+    "VALIDATOR_EVIDENCE_PACKAGED",
+    "CLEAN_ZIP_AND_DETACHED_CHECKSUM",
+    "HONEST_EVIDENCE_STATUS"
+  ],
+  "promotionRequirements": [
+    "liveCrossModelReplay=PASS",
+    "nanoOmniABGeneration=PASS",
+    "completeProductionPilot=PASS",
+    "beginnerOperatorPilot=PASS",
+    "audienceComprehensionReview=PASS",
+    "externalEvidenceClaimed=true"
+  ],
+  "candidateCanIssueWithLiveEvidenceNotRun": true,
+  "productionPromotionCanIssueWithLiveEvidenceNotRun": false,
+  "requiredDetailedManualCount": 52,
+  "requiredRegressionLastId": 650,
+  "requiredChecksumAlgorithm": "SHA-256"
+}

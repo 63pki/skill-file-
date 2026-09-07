@@ -1,0 +1,20 @@
+{
+  "filesRead": 243,
+  "utf8Files": 243,
+  "bytesRead": 642318,
+  "linesRead": 13394,
+  "jsonFiles": 49,
+  "jsonErrors": [],
+  "pythonFiles": 46,
+  "pythonErrors": [],
+  "forbiddenNames": [],
+  "forbiddenContent": [],
+  "detailedManualsRecursive": 52,
+  "modeAdapters": 8,
+  "excludedFromSelfCount": [
+    "dev/COMPLETE_PACKAGE_AUDIT.json",
+    "PACKAGE_MANIFEST.json"
+  ],
+  "note": "Excludes PACKAGE_MANIFEST.json (self-excluding, built last) and this audit file itself (its own size cannot be self-consistent).",
+  "pass": true
+}

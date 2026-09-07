@@ -1,0 +1,12 @@
+{
+  "version": "7.8.0",
+  "release": "Release 6",
+  "regressions": "R1-R650",
+  "activeGenerationOwners": [
+    "NANO_BANANA_PRO",
+    "GEMINI_OMNI_FLASH"
+  ],
+  "promptOnly": true,
+  "officialGuideSnapshot": "2026-07-21",
+  "liveEvidence": "NOT_RUN"
+}

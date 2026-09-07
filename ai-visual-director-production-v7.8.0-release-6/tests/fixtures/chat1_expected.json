@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "7.8.0",
+  "fixture": "V7.1 Milo run 1 — post surface used as a generator, anatomy drift, missing world rule, dropped artifact",
+  "expectedErrorCodes": [
+    "MISSING_ARTIFACT",
+    "POST_AS_GENERATOR",
+    "TOOL_ROLE_DRIFT",
+    "WORLD_RULE_FIELD",
+    "LOCK_DRIFT"
+  ],
+  "forbiddenErrorCodes": [
+    "SHOT_TOTAL",
+    "CONTRACT_FIELD",
+    "CONTRACT_SCHEMA_ERROR",
+    "VOICE_WINDOW"
+  ]
+}

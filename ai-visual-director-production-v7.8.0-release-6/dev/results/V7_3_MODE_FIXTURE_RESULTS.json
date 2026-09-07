@@ -1,0 +1,57 @@
+{
+  "release": "7.4.0-phase-d",
+  "scope": "positive non-Milo mode/package fixtures and malformed input",
+  "results": [
+    {
+      "case": "product_quickshot",
+      "mode": "A_PHOTOREAL",
+      "pass": true,
+      "codes": []
+    },
+    {
+      "case": "2d_animation",
+      "mode": "B_ANIMATION",
+      "pass": false,
+      "codes": [
+        "STILL_OWNER_DRIFT",
+        "VIDEO_OWNER_DRIFT"
+      ]
+    },
+    {
+      "case": "motion_graphics",
+      "mode": "C_MOTION_GRAPHICS",
+      "pass": false,
+      "codes": [
+        "STILL_OWNER_DRIFT",
+        "VIDEO_OWNER_DRIFT"
+      ]
+    },
+    {
+      "case": "hybrid_composite",
+      "mode": "D_HYBRID",
+      "pass": true,
+      "codes": []
+    },
+    {
+      "case": "faceless_documentary",
+      "mode": "D_HYBRID",
+      "pass": true,
+      "codes": []
+    },
+    {
+      "case": "localization_package",
+      "mode": "C_MOTION_GRAPHICS",
+      "pass": false,
+      "codes": [
+        "STILL_OWNER_DRIFT",
+        "VIDEO_OWNER_DRIFT"
+      ]
+    },
+    {
+      "case": "malformed_marker",
+      "mode": "A_PHOTOREAL",
+      "pass": true
+    }
+  ],
+  "pass": false
+}

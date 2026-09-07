@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "7.8.0",
+  "projectId": "PROJECT_ID",
+  "artifactRoot": "deliverables",
+  "artifacts": [
+    {
+      "artifactId": "STYLE_BIBLE",
+      "artifactType": "STYLE_BIBLE",
+      "gate": "DESIGN",
+      "sourcePath": "deliverables/STYLE_BIBLE.md",
+      "sourceSha256": null,
+      "sourceAliases": [
+        "Style Bible"
+      ],
+      "sourceSelector": {
+        "type": "AUTO"
+      }
+    }
+  ],
+  "evidenceRecordPath": "evidence/EVIDENCE_RECORD.json",
+  "allowRecoveryDiscovery": false
+}
