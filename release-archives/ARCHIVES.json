@@ -1,0 +1,26 @@
+{
+  "source": "github.com/63pki/skill-file- branch main",
+  "mergeCommit": "520bf6eb5b10564cd70d99d772efd7e77453c773",
+  "builtFrom": "fresh clone of merged main; deterministic archive writer (sorted entries, fixed 1980-01-01 epoch, 0o644)",
+  "reproducibility": "verified: two independent builds from the same clone are byte-identical",
+  "canonical": "cumulative.zip",
+  "archives": {
+    "combined.zip": {
+      "sha256": "bf746ce9e3f31e47d3e7b050817a8852ee402bf63e6d5c50aca410ddef5cb60f",
+      "bytes": 362027
+    },
+    "cumulative.zip": {
+      "sha256": "fe5b1b3ea0a1dda8b810c21aa943de958d67814e68a69b117191cf1222bff37c",
+      "bytes": 377703
+    },
+    "portable-core.zip": {
+      "sha256": "58d3032433bdc0b57326c735cd960f3a2ed52d49264db3ceaf93572a38504b54",
+      "bytes": 176254
+    },
+    "validation-sdk.zip": {
+      "sha256": "476275d18bf23a8221de9aa65f392072f5b2b6ad35d6da7fe51e12d8ac753b08",
+      "bytes": 225106
+    }
+  },
+  "verifyCommand": "sha256sum *.zip  # then extract cumulative.zip and run dev/run_v780_release6_tests.py and validators/validate_candidate_readiness.py ."
+}
