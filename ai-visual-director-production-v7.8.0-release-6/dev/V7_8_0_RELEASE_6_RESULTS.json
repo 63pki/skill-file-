@@ -149,6 +149,16 @@
       "name": "next-protocol-authority-agreement",
       "pass": true,
       "failures": []
+    },
+    {
+      "name": "official-guide-snapshot-agreement",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "name": "no-inert-guide-alignment-status",
+      "pass": true,
+      "failures": []
     }
   ],
   "proofBoundary": "Structural and deterministic checks only; media and human evidence remain NOT_RUN."

@@ -253,8 +253,8 @@
     },
     {
       "path": "dev/V7_8_0_RELEASE_6_RESULTS.json",
-      "bytes": 4000,
-      "sha256": "ae8aa4354a57b1bdc00e602cff8930c939961ed7ff1ad0d3ef8f3c44d36f2d25"
+      "bytes": 4208,
+      "sha256": "81ef82370bcb40476b40e17f69d498c10e10a544296f6c675826b761d60d72ea"
     },
     {
       "path": "dev/build_distributions.py",
@@ -293,8 +293,8 @@
     },
     {
       "path": "dev/run_v780_release6_tests.py",
-      "bytes": 11931,
-      "sha256": "c4c8623a1e9c25236bb230471d8b930b1ca255f71e73ef7cde55a2000f85d5ca"
+      "bytes": 14391,
+      "sha256": "7adb7c186bb2d215d0a9d3ddacd9b3e87cab98ce4a92d14cca4a0c5d9b80dad8"
     },
     {
       "path": "exports/README.md",
@@ -908,13 +908,13 @@
     },
     {
       "path": "templates/PROJECT_CONTRACT.json",
-      "bytes": 5368,
-      "sha256": "67df5e91c893f1b836d7b65ec789778865a8d86770773ba4c762ccd427cc6576"
+      "bytes": 5342,
+      "sha256": "2307a6712fa403cbf10b9e5a5ba67c3e95f11c8ad7d58421f496ee6277e1e00f"
     },
     {
       "path": "templates/PROJECT_CONTRACT_PORTABLE.json",
-      "bytes": 5083,
-      "sha256": "a85163c00267f14eb3a5871ebe3b1516c8ab77cdaa92b7854adab76eebe61473"
+      "bytes": 5057,
+      "sha256": "b38851f25d640af20f77bb8861f5ae01ffa0b1cdd3c7785ba0d94d3a88cd3988"
     },
     {
       "path": "templates/PROJECT_EXECUTION_CONTRACT.md",

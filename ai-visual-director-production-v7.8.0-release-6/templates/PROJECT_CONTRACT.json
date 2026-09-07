@@ -104,9 +104,8 @@
   "evidenceCeiling": "PLAN-PASS",
   "packageRequired": true,
   "guideAlignment": {
-    "snapshotDate": "2026-07-19",
-    "maxAgeDays": 90,
-    "status": "REVERIFY"
+    "snapshotDate": "2026-07-21",
+    "maxAgeDays": 90
   },
   "assumptions": [],
   "blockers": [],

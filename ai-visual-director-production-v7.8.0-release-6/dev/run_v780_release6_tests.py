@@ -4,6 +4,7 @@ import subprocess
 import sys
 import json
 import py_compile
+import re
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -247,6 +248,47 @@ agreement = {
 }
 bad_agreement = [name for name, broken in agreement.items() if broken]
 record("next-protocol-authority-agreement", not bad_agreement, failures=bad_agreement)
+
+# The official-guide snapshot date is asserted in many places. It once split:
+# release/RELEASE.json and the alignment doc said 2026-07-21 while both project
+# contract templates said 2026-07-19, and the staleness gate reads the templates,
+# so the gate silently measured against the wrong date. Assert one date everywhere.
+SNAPSHOT_DATE_RX = re.compile(r"20\d{2}-\d{2}-\d{2}")
+canonical_snapshot = json.loads((ROOT / "release/RELEASE.json").read_text())["officialGuideSnapshot"]
+snapshot_sites = {
+    "release/RELEASE.json officialGuideSnapshot": canonical_snapshot,
+    "dev/MANIFEST.json officialGuideSnapshot": json.loads(
+        (ROOT / "dev/MANIFEST.json").read_text())["officialGuideSnapshot"],
+    "templates/PROJECT_CONTRACT.json guideAlignment.snapshotDate": json.loads(
+        (ROOT / "templates/PROJECT_CONTRACT.json").read_text())["guideAlignment"]["snapshotDate"],
+    "templates/PROJECT_CONTRACT_PORTABLE.json guideAlignment.snapshotDate": json.loads(
+        (ROOT / "templates/PROJECT_CONTRACT_PORTABLE.json").read_text())["guideAlignment"]["snapshotDate"],
+    "rules/RUNTIME.md snapshot": (SNAPSHOT_DATE_RX.search(
+        (ROOT / "rules/RUNTIME.md").read_text()) or [None, None])[0]
+    if SNAPSHOT_DATE_RX.search((ROOT / "rules/RUNTIME.md").read_text()) else None,
+    "dev/OFFICIAL_PROMPT_GUIDE_ALIGNMENT.md title": (SNAPSHOT_DATE_RX.search(
+        (ROOT / "dev/OFFICIAL_PROMPT_GUIDE_ALIGNMENT.md").read_text().splitlines()[0]) or [None, None])[0]
+    if SNAPSHOT_DATE_RX.search((ROOT / "dev/OFFICIAL_PROMPT_GUIDE_ALIGNMENT.md").read_text().splitlines()[0]) else None,
+}
+snapshot_drift = {
+    site: found for site, found in snapshot_sites.items()
+    if found is not None and found != canonical_snapshot
+}
+record(
+    "official-guide-snapshot-agreement",
+    not snapshot_drift,
+    failures=[f"{site}={found} != RELEASE.json={canonical_snapshot}"
+              for site, found in snapshot_drift.items()],
+)
+
+# The contract templates must not carry a stale derived guideAlignment.status.
+# No code reads that field; check_guide_staleness.py computes CURRENT/REVERIFY
+# from snapshotDate and maxAgeDays. A stored copy can only drift and mislead.
+stale_status = [
+    t for t in ("templates/PROJECT_CONTRACT.json", "templates/PROJECT_CONTRACT_PORTABLE.json")
+    if "status" in json.loads((ROOT / t).read_text()).get("guideAlignment", {})
+]
+record("no-inert-guide-alignment-status", not stale_status, failures=stale_status)
 
 out = {
     "suite": "V7.8.0-RELEASE-6",
