@@ -1,0 +1,14 @@
+{
+  "clip_id": "SMOKE_FIXTURE",
+  "source": "build/fixture_16x9.mp4",
+  "start": 1.0,
+  "end": 13.0,
+  "framing": "auto",
+  "hook": "SYNTHETIC TEST HOOK",
+  "logo": "build/fixture_logo.png",
+  "captions": [
+    {"text": "FIXTURE CAPTION ONE", "t0": 1.6, "t1": 3.4},
+    {"text": "SECOND CUE LINE", "t0": 6.0, "t1": 8.2},
+    {"text": "TAIL CUE", "t0": 10.0, "t1": 11.6}
+  ]
+}

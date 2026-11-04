@@ -1,0 +1,5 @@
+# The sandbox has no system ffmpeg; imageio-ffmpeg ships a static build with
+# libx264 + libass + loudnorm + ebur128, which is what this engine needs.
+imageio-ffmpeg>=0.5.1
+numpy>=1.24
+pillow>=10.0

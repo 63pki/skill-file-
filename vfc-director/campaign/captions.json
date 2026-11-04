@@ -1,0 +1,27 @@
+{
+  "campaign": "SEGA - Virtua Fighter Crossroads: Lionel Rafale",
+  "source_brief": "campaign/BRIEF_SOURCE.txt",
+  "launch_date": "2026-10-29",
+  "required_block_verbatim": [
+    "A city you've never seen",
+    "A story you've never heard",
+    "A totally new Virtua Fighter",
+    "",
+    "Experience a rich, cinematic single-player adventure with immersive narrative-driven gameplay, and the series' trademark thrilling VS battles! <ACCOUNT_TAG>",
+    "<FTC_DISCLOSURE_ON_OWN_LINE>"
+  ],
+  "optional_approved_copy": "A mysterious young martial artist named Lionel Rafale has arrived in the city of Vilasapara. A highly skilled fighter capable of outclassing Cielo in a street fight, he is a force to be reckoned with. But what is his true reason for coming to this city?",
+  "account_tags": {
+    "tiktok": "@VFCROSSROADS",
+    "instagram": "@VFCROSSROADS",
+    "youtube_shorts": "@SEGA_West"
+  },
+  "ftc_disclosures_accepted": ["#Ad", "#Advertisement", "#Sponsored"],
+  "ftc_default": "#Ad",
+  "notes": [
+    "Caption must be used word for word. Do not shorten, reword, or add claims.",
+    "Account tag goes immediately after the caption text.",
+    "FTC disclosure goes on its own line, right after the account tag.",
+    "On YouTube Shorts the tag is @SEGA_West instead of @VFCROSSROADS."
+  ]
+}

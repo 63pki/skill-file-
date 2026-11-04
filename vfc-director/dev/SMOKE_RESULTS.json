@@ -1,0 +1,258 @@
+{
+  "passed": 49,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "ffmpeg has libx264",
+      "pass": true,
+      "detail": "ffmpeg version n9.0.2-17-g2a571b6068-20260930 Copyright (c) 2000-2026 the FFmpeg developers"
+    },
+    {
+      "name": "filter available: ass",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "filter available: crop",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "filter available: overlay",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "filter available: loudnorm",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "filter available: ebur128",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "filter available: boxblur",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "filter available: split",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "fixture is 16:9 1080p",
+      "pass": true,
+      "detail": "1920x1080"
+    },
+    {
+      "name": "fixture duration measured",
+      "pass": true,
+      "detail": "15.0"
+    },
+    {
+      "name": "fixture frame count measured by decoding",
+      "pass": true,
+      "detail": "450"
+    },
+    {
+      "name": "fixture has audio",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "analysis found cuts",
+      "pass": true,
+      "detail": "2"
+    },
+    {
+      "name": "analysis decoded audio",
+      "pass": true,
+      "detail": "15.0"
+    },
+    {
+      "name": "analysis found transients",
+      "pass": true,
+      "detail": "36"
+    },
+    {
+      "name": "framing audit is computed",
+      "pass": true,
+      "detail": "{'chosen': '3x4_glass_card', 'rule': '9:16 locked when retained saliency >= 0.75 (subject truncation < 25%); 3:4 only if it gains >= 0.05 retention; else 9:16 punch-pan', 'retention_9x16': 0.3536, 'best_3x4_retention': 0.5165, 'measured_delta': 0.1629}"
+    },
+    {
+      "name": "9:16 horizontal field is 31.6%",
+      "pass": true,
+      "detail": "31.6"
+    },
+    {
+      "name": "plan window is 10.0 s",
+      "pass": true,
+      "detail": "10.0"
+    },
+    {
+      "name": "plan gates all true",
+      "pass": true,
+      "detail": "{'duration_min_10s': True, 'logo_required': True, 'on_screen_text_required': True, 'source_only_audio': True, 'has_hook': True, 'captions_present': True}"
+    },
+    {
+      "name": "pan keyframes are even pixels",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "caption anchors inside safe zone",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "caption density under 220 wpm",
+      "pass": true,
+      "detail": "[166.7, 125.0]"
+    },
+    {
+      "name": "under-10s window is refused",
+      "pass": true,
+      "detail": "ValueError: clip window is 8.00s; the campaign hard gate requires >= 10.0s"
+    },
+    {
+      "name": "text fits canvas: SYNTHETIC TEST HOOK",
+      "pass": true,
+      "detail": "715px at 76px"
+    },
+    {
+      "name": "text fits canvas: A totally new Virtua Fig",
+      "pass": true,
+      "detail": "853px at 76px"
+    },
+    {
+      "name": "text fits canvas: Lionel Rafale vs Cielo",
+      "pass": true,
+      "detail": "677px at 76px"
+    },
+    {
+      "name": "text fits canvas: In Virtua Fighter Crossr",
+      "pass": true,
+      "detail": "709px at 76px"
+    },
+    {
+      "name": "graph splits the trimmed stream",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "logo overlay repeats instead of truncating",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "logo is a second input",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "audio is source-only (no synth inputs)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "canonical caption passes its own validator",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reworded caption is rejected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "missing FTC disclosure is rejected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "wrong platform tag is rejected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "YT caption uses @SEGA_West",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "hype copy is rejected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "master is 1080x1920",
+      "pass": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "master duration matches plan",
+      "pass": true,
+      "detail": "10.0"
+    },
+    {
+      "name": "master frame count is ~300",
+      "pass": true,
+      "detail": "300"
+    },
+    {
+      "name": "master is yuv420p",
+      "pass": true,
+      "detail": "yuv420p"
+    },
+    {
+      "name": "master is H.264 High",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "master is faststart",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "integrated loudness -14.0 +/- 0.5 LUFS",
+      "pass": true,
+      "detail": "-14.0"
+    },
+    {
+      "name": "true peak under -1.0 dBTP",
+      "pass": true,
+      "detail": "-5.4"
+    },
+    {
+      "name": "single audio stream",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "QA finds no black frames",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "QA finds no stuck freezes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "delivery compliance 10/10",
+      "pass": true,
+      "detail": "[]"
+    }
+  ],
+  "master": {
+    "path": "/home/user/skill-file-/vfc-director/build/SMOKE_TEST_MASTER.mp4",
+    "duration_s": 10.0,
+    "frames": 300,
+    "lufs": -14.0,
+    "true_peak": -5.4
+  }
+}

@@ -1,0 +1,14 @@
+# generated artifacts — never commit media or renders
+build/
+out/
+dist/
+__pycache__/
+*.pyc
+*.mp4
+*.mov
+*.wav
+*.m4a
+*.jpg
+*.png
+!docs/**
+.DS_Store

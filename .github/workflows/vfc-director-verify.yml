@@ -1,0 +1,55 @@
+name: vfc-director-verify
+
+# Runs the engine's own gates on every change to the package. The suite exists
+# because five real defects shipped past "it looks right": an untrimmed
+# filtergraph branch, a single-frame logo overlay, a loudness pass measured
+# before the high-pass, a text fitter that overflowed the canvas, and an
+# escaped \N rendered literally on screen.
+on:
+  push:
+    branches: [main, 'arena/**']
+    paths: ['vfc-director/**', '.github/workflows/vfc-director-verify.yml']
+  pull_request:
+    paths: ['vfc-director/**']
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: vfc-director
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Environment must carry the encoders and filters we rely on
+        run: python3 -m engine.cli doctor
+
+      - name: Every Python file parses
+        run: |
+          fail=0
+          for f in $(find . -name '*.py' -not -path './build/*' | sort); do
+            python3 -c "import pathlib,sys; compile(pathlib.Path(sys.argv[1]).read_text(), sys.argv[1], 'exec')" "$f" \
+              || { echo "PARSE FAIL: $f"; fail=1; }
+          done
+          exit $fail
+
+      - name: Engine suite (structure + full encode)
+        run: python3 dev/smoke_test.py
+
+      - name: Caption hard gates
+        run: |
+          python3 -m engine.cli captions --platform tiktok --outdir /tmp/caps > /tmp/cap.json
+          python3 -c "
+          import json,sys
+          r=json.load(open('/tmp/cap.json'))[0]
+          print('caption pass:', r['pass'], r['errors'])
+          sys.exit(0 if r['pass'] else 1)
+          "

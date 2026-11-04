@@ -1,0 +1,22 @@
+{
+  "source_url": "https://f.io/V0QTpG9W",
+  "attempted_at": "2026-11-04T23:52:16Z",
+  "attempts": [
+    {
+      "url": "https://f.io/V0QTpG9W",
+      "http_status": null,
+      "error": "URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>",
+      "note": "unreachable",
+      "method": "direct_https_get"
+    },
+    {
+      "method": "terminal_failure_protocol",
+      "status": "FAILED_OFFLINE",
+      "instruction": "All acquisition paths failed. Per the campaign whitelist rules no substitute footage may be used; supply the official file directly (sandbox upload) or run this package where egress to the campaign host is permitted."
+    }
+  ],
+  "resolved": false,
+  "final": {
+    "status": "FAILED_OFFLINE"
+  }
+}

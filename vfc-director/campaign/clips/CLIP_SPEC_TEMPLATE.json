@@ -1,0 +1,17 @@
+{
+  "_comment": [
+    "Authoring surface for one deliverable clip. Copy, fill in from the Phase 3",
+    "moment log, and run: python3 -m engine.cli build --spec <this file>.",
+    "start/end MUST come from the verified transcript/timecode audit of the",
+    "official trailer. Never guess them: a render is only allowed to cut from",
+    "the original full-fidelity file."
+  ],
+  "clip_id": "VFC_CLIP1_LIONEL_REVEAL",
+  "source": "campaign/assets_raw/VFC_LIONEL_TRAILER.mp4",
+  "start": null,
+  "end": null,
+  "framing": "auto",
+  "hook": null,
+  "logo": "campaign/assets_raw/VFC_OFFICIAL_LOGO.png",
+  "captions": []
+}
