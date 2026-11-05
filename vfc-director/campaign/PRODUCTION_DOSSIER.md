@@ -4,12 +4,12 @@
 **Execution engine:** FFmpeg n9.0.2 (static, libx264 + libass + loudnorm + ebur128), driven by
 `engine/` with byte-level verification at every gate.
 
-> **Status in one line:** Phase 1 is complete and signed. Phase 2 is blocked at the network
-> boundary — the campaign's official content folder answered `TLS/SSL connection closed` from this
-> sandbox, and the campaign forbids every substitute source. The full render chain (Phases 3–7)
-> is built, executed and verified against a **synthetic fixture**, and will populate every table
-> below the moment the official file is present. No timecode, dialogue line, or score in this
-> dossier is invented.
+> **Status in one line:** Phase 1 is complete and signed. Phase 2 is half-cleared — the **official
+> logo is in hand and verified** (1600×847 RGBA, sha256 pinned, compositing at 5.57:1 worst-case
+> contrast), while the **trailer itself is still refused at the network boundary** and the campaign
+> forbids every substitute source. The full render chain (Phases 3–7) is built, executed and
+> verified against a **synthetic fixture**, and will populate every remaining table the moment the
+> official file is present. No timecode, dialogue line, or score in this dossier is invented.
 
 ---
 
@@ -77,7 +77,7 @@ binaries are behind the blocked host.
 | Asset ID | Filename | Format/Codec | Resolution | Frame Rate | Duration | Audio | Ingestion Integrity |
 |---|---|---|---|---|---|---|---|
 | RAW-01 | *(pending)* `VFC_LIONEL_TRAILER.mp4` | — | — | — | — | — | **FAILED_OFFLINE** |
-| RAW-02 | *(pending)* `VFC_OFFICIAL_LOGO.png` | — | — | — | — | — | **FAILED_OFFLINE** |
+| RAW-02 | `VFC_OFFICIAL_LOGO.png` | PNG / RGBA (straight alpha) | 1600×847 | n/a (still) | n/a | none | **VERIFIED_ORIGINAL** · 129,408 B · sha256 `34b571be…54cf` · alpha 57.5 % fully transparent |
 
 These rows are left blank **by design**. Filling them with plausible values is exactly the
 fabrication the campaign (and the directive's anti-hallucination law) forbids. `engine/probe.py`
@@ -92,6 +92,20 @@ pipeline. **It is not campaign footage and cannot be shipped.**
 | Asset ID | Filename | Format/Codec | Resolution | Frame Rate | Duration | Audio Tracks | Ingestion Integrity |
 |---|---|---|---|---|---|---|---|
 | SYN-00 | fixture_16x9.mp4 | H.264 / AAC | 1920×1080 | 30.0 | 15.000 s | Stereo 48 kHz | SYNTHETIC_TEST_FIXTURE (non-shippable) |
+
+The official logo has since been supplied directly by the campaign owner and is now installed at
+`campaign/assets_raw/VFC_OFFICIAL_LOGO.png` (tracked, so renders are reproducible). It is a true
+RGBA file with genuine transparency — corners at alpha 0, 57.5 % of pixels fully transparent — so it
+composites without a black box. A soft dark plate (`SCRIM_ALPHA 158/255`) is generated under it,
+and the watermark's legibility is now a measured gate rather than an opinion:
+
+| Sample | Plate luminance | Contrast vs white | Verdict |
+|---|---|---|---|
+| t = 0.24 s (brightest plate) | 0.1384 | **5.57 : 1** | pass (≥ 4.5) |
+| t = 3.00 s | 0.1377 | 5.59 : 1 | pass |
+| t = 6.00 s | 0.0058 | 18.83 : 1 | pass |
+| t = 9.00 s | 0.0665 | 9.01 : 1 | pass |
+| t = 11.76 s | 0.0754 | 8.37 : 1 | pass |
 
 **Gate check:** raw-duration confirmed by decoding (450 frames). Final renders cut directly from the
 original file at CRF 18 — no intermediate transcode exists anywhere in the graph.
@@ -150,12 +164,14 @@ Executed end-to-end on the fixture (identical code path to the real deliverable)
   caps hook measured 997 px at 76 px, ratio 0.69 — the old character-count fitter overflowed the
   canvas and was replaced), glass-dark outline for >4.5:1 contrast, spatial anchors in the
   collarbone zone and upper-centre, 1–4 words per burst, 220 WPM ceiling enforced.
-- Logo: top-left at (48, 292), inside the safe band, `eof_action=repeat`.
+- Logo: top-left at (48, 286), 220×116 from the real 1600×847 file, on a generated 158/255 scrim,
+  `eof_action=repeat` for the full duration.
 - Audio: source only → `highpass=f=80` → two-pass `loudnorm`.
 - Encode: H.264 High 4.2, yuv420p, CRF 18, `+faststart`, AAC 192 kbps / 48 kHz.
 
 **Measured on the fixture master:** 10.000 s, 300 frames, 1080×1920, yuv420p, H.264 High, faststart,
-**−14.0 LUFS** integrated, **−5.4 dBTP**, one audio stream, zero black frames, zero stuck freezes.
+**−14.0 LUFS** integrated, **−5.4 dBTP**, one audio stream, zero black frames, zero stuck freezes,
+worst-case watermark contrast **5.57 : 1**.
 
 ---
 
@@ -170,10 +186,11 @@ machine (`qa.scorecard()` returns `requires_human_signoff` with the exported evi
 | Temporal Pacing & Rhythm | ≥ 9.0 / 10.0 | *requires human sign-off* — 50%/85% frames exported | — | — | PENDING (asset blocked) |
 | Caption Precision & Safe Zone | 10.0 / 10.0 | **10.0** — anchors inside safe band, ≤220 WPM, pixel-fit verified | — | — | PASS (mechanism proven) |
 | Audio Engineering & Loudness | ≥ 9.5 / 10.0 @ −14 LUFS | **10.0** — −14.0 LUFS, −5.4 dBTP, single source stream | — | — | PASS (mechanism proven) |
-| Campaign Compliance Matrix | 10.0 / 10.0 | **10.0** — 15/15 mechanical gates | — | — | PASS (mechanism proven) |
+| Campaign Compliance Matrix | 10.0 / 10.0 | **10.0** — 16/16 mechanical gates | — | — | PASS (mechanism proven) |
+| Logo legibility (WCAG) | ≥ 4.5 : 1 | **5.57 : 1** worst case, real logo | — | — | PASS (official logo verified) |
 | Syllable-sync / caption accuracy | 0 drift | *requires transcription or human* — not fabricated | — | — | PENDING |
 
-Fixture suite: **49 / 49 checks pass** (`dev/SMOKE_RESULTS.json`).
+Fixture suite: **53 / 53 checks pass** (`dev/SMOKE_RESULTS.json`).
 
 ---
 
@@ -188,6 +205,6 @@ Fixture suite: **49 / 49 checks pass** (`dev/SMOKE_RESULTS.json`).
 | Delivery manifest (SHA-256, QA, gates) | `build/<CLIP_ID>/DELIVERY_MANIFEST.json` | Generated automatically |
 | Dual-nest canvas + lossless slice commands | `python3 -m engine.cli slice --canvas …` | Available if a single-canvas env is used |
 
-**Single blocker:** supply the official trailer MP4 + logo PNG (upload them here, or run
-`campaign/RUNBOOK.md` in an environment with egress to the Frame.io share). Everything downstream is
-one command.
+**Single blocker:** the official trailer MP4. The logo is already installed and gated; supply the
+trailer (upload it here, or run `campaign/RUNBOOK.md` where Frame.io is reachable) and everything
+downstream is one command.

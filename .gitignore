@@ -12,3 +12,5 @@ __pycache__/
 *.png
 !docs/**
 .DS_Store
+!vfc-director/campaign/assets_raw/*.png
+!vfc-director/campaign/assets_raw/*.jpg

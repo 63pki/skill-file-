@@ -118,6 +118,20 @@ def main(fast: bool = False) -> int:
     check("logo is a second input", len(extras) == 1)
     check("audio is source-only (no synth inputs)", graph.count("[0:a]") == 1)
 
+    # ------------------------------------- campaign logo (if it is present)
+    campaign_logo = os.path.join(PKG, "campaign", "assets_raw", "VFC_OFFICIAL_LOGO.png")
+    if os.path.isfile(campaign_logo):
+        lw, lh = render.logo_geometry(campaign_logo, 220)
+        check("official logo geometry read from the file", lw == 220 and 100 < lh < 130,
+              f"{lw}x{lh}")
+        p2 = dict(p)
+        p2["logo"] = {"file": campaign_logo, "box": {"x": 48, "y": 286, "w": 220, "scrim": True}}
+        scrim = render.make_scrim(os.path.join(BUILD, "smoke_scrim.png"), lw, lh)
+        check("scrim rendered", os.path.isfile(scrim) and os.path.getsize(scrim) > 500)
+        g2, extras2 = render.build_filtergraph(p2, "/tmp/x.ass", campaign_logo, scrim)
+        check("logo + scrim are two extra inputs", len(extras2) == 2, str(extras2))
+        check("scrim composites before the logo", g2.index("[sc]") < g2.index("[lg]"))
+
     # -------------------------------------------------------------- captions
     good = compliance.build_caption("tiktok")
     check("canonical caption passes its own validator",

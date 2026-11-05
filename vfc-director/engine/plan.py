@@ -21,7 +21,7 @@ CANVAS_3x4 = {"w": 1080, "h": 1440, "card_y": 240}
 SAFE = {"top": 260, "bottom": 420, "right": 140}
 
 ANCHORS = {
-    "hook": (540, 430),        # upper-centre, below the 260px platform band
+    "hook": (540, 520),        # upper-centre, below the 260px band and the logo lockup
     "caption": (540, 1330),    # collarbone zone, above the 420px bottom band
     "badge": (900, 300),       # upper-right, clear of the 140px right rail
 }
@@ -172,7 +172,8 @@ def build_clip_plan(*, source: str, analysis: dict, clip_id: str, start: float, 
                            "eq_brightness": -0.35} if framing == "3x4_glass_card" else None,
         },
         "typography": {"cues": cues, "hook_style": "HOOK", "active_hook_text": hook},
-        "logo": {"file": logo, "box": logo_box or {"x": 48, "y": 292, "w": 220}},
+        "logo": {"file": logo,
+                 "box": logo_box or {"x": 48, "y": 286, "w": 220, "scrim": True}},
         "audio": {
             "source_stream": "0:a:0" if info.audio else None,
             "added_music": False,

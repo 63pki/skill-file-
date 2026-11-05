@@ -169,7 +169,48 @@ def _quote(expr: str) -> str:
     return "'" + expr.replace("'", "") + "'"
 
 
-def build_filtergraph(plan: dict, ass_path: str, logo_path: str | None) -> tuple[str, list[str]]:
+def logo_geometry(logo_path: str, target_width: int) -> tuple[int, int]:
+    """Real pixel height for the requested overlay width, from the file itself."""
+    try:
+        from PIL import Image
+
+        with Image.open(logo_path) as im:
+            w, h = im.size
+        return target_width, max(2, int(round(target_width * h / w)))
+    except Exception:
+        return target_width, max(2, int(round(target_width * 0.55)))
+
+
+SCRIM_PAD = 30      # canvas padding around the wordmark
+SCRIM_MARGIN = 14   # solid plate margin beyond the wordmark box
+SCRIM_ALPHA = 158   # 0.62 - the floor that keeps white text above 4.5:1
+SCRIM_BLUR = 6
+
+
+def make_scrim(path: str, w: int, h: int, alpha: int = SCRIM_ALPHA) -> str:
+    """Rounded, feathered dark plate that sits exactly behind the watermark.
+
+    The plate must extend past the wordmark, otherwise there is no background
+    left to measure and the legs of the wordmark sit on raw footage. The first
+    implementation drew the plate inside a blurred canvas and then offset it by
+    the overlay position, so the sample ring landed on the video and the gate
+    read 1.64:1. Geometry is now explicit: canvas = wordmark + 2*PAD, plate =
+    wordmark + 2*MARGIN, overlay at (x-PAD, y-PAD).
+    """
+    from PIL import Image, ImageDraw, ImageFilter
+
+    img = Image.new("RGBA", (w + 2 * SCRIM_PAD, h + 2 * SCRIM_PAD), (0, 0, 0, 0))
+    ImageDraw.Draw(img).rounded_rectangle(
+        (SCRIM_PAD - SCRIM_MARGIN, SCRIM_PAD - SCRIM_MARGIN,
+         SCRIM_PAD + w + SCRIM_MARGIN, SCRIM_PAD + h + SCRIM_MARGIN),
+        radius=24, fill=(0, 0, 0, alpha),
+    )
+    img.filter(ImageFilter.GaussianBlur(SCRIM_BLUR)).save(path)
+    return path
+
+
+def build_filtergraph(plan: dict, ass_path: str, logo_path: str | None,
+                      scrim_path: str | None = None) -> tuple[str, list[str]]:
     fr = plan["framing"]
     win = plan["window"]
     canvas = fr["canvas"]
@@ -224,8 +265,16 @@ def build_filtergraph(plan: dict, ass_path: str, logo_path: str | None) -> tuple
 
     if logo_path:
         box = plan["logo"]["box"]
+        idx = 1
+        if scrim_path:
+            inputs.append(scrim_path)
+            parts.append(f"[{idx}:v]format=rgba[sc]")
+            parts.append(f"{current}[sc]overlay={box['x'] - SCRIM_PAD}:{box['y'] - SCRIM_PAD}:"
+                         f"format=auto:eof_action=repeat[scrimmed]")
+            current = "[scrimmed]"
+            idx += 1
         inputs.append(logo_path)
-        parts.append(f"[1:v]scale={box['w']}:-2:flags=lanczos,format=rgba[lg]")
+        parts.append(f"[{idx}:v]scale={box['w']}:-2:flags=lanczos,format=rgba[lg]")
         # eof_action=repeat holds the single-frame watermark for the whole clip.
         # shortest=1 here would end the programme at frame 1 (measured defect).
         parts.append(f"{current}[lg]overlay={box['x']}:{box['y']}:format=auto:"
@@ -257,8 +306,14 @@ def render(plan: dict, out_path: str, workdir: str, *, logo_path: str | None = N
     ass_path = os.path.join(workdir, f"{plan['clip_id']}.ass")
     build_ass(plan, ass_path, font=font)
 
+    scrim_path = None
+    if logo_path and plan["logo"]["box"].get("scrim", True):
+        lw, lh = logo_geometry(logo_path, plan["logo"]["box"]["w"])
+        scrim_path = make_scrim(os.path.join(workdir, f"{plan['clip_id']}_scrim.png"), lw, lh)
+
     graph, logo_inputs = build_filtergraph(plan, os.path.abspath(ass_path),
-                                           os.path.abspath(logo_path) if logo_path else None)
+                                           os.path.abspath(logo_path) if logo_path else None,
+                                           os.path.abspath(scrim_path) if scrim_path else None)
 
     # ---- pass 1: measure the exact audio window we will ship ---------------
     win = plan["window"]

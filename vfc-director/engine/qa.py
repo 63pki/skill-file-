@@ -90,6 +90,57 @@ def cover_score(path: str, t: float) -> dict:
             "brightness": round(bright, 4), "score": round(score, 3)}
 
 
+def _rel_luminance(rgb):
+    """WCAG 2.x relative luminance for sRGB 0-255 triples."""
+    import numpy as np
+
+    c = np.asarray(rgb, dtype=np.float64) / 255.0
+    c = np.where(c <= 0.04045, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
+    return 0.2126 * c[..., 0] + 0.7152 * c[..., 1] + 0.0722 * c[..., 2]
+
+
+def logo_contrast(master: str, plan: dict, samples=(0.02, 0.25, 0.5, 0.75, 0.98),
+                  threshold: float = 4.5) -> dict:
+    """Measure the watermark's real legibility against the real footage.
+
+    The logo is white and orange; what matters is the plate behind it. For each
+    sample we crop the exact overlay box out of the encoded master, take the
+    background pixels (the dark plate the scrim creates) and compute the WCAG
+    contrast ratio of white text over them. Below 4.5:1 the watermark fails the
+    brief's "high-quality post" bar, whatever it looks like on a still.
+    """
+    import numpy as np
+    from PIL import Image
+
+    from . import render as render_mod
+
+    box = plan["logo"]["box"]
+    lw, lh = render_mod.logo_geometry(plan["logo"]["file"], box["w"])
+    duration = ff.probe(master, count_frames=False).duration_s
+    ring = 10   # inside the 14 px solid plate margin, outside the wordmark
+    rows = []
+    for frac in samples:
+        t = max(0.0, min(duration * frac, duration - 0.05))
+        tmp = f"/tmp/vfc_logo_{int(frac * 100)}.png"
+        ff.extract_frame(master, t, tmp)
+        with Image.open(tmp) as im:
+            full = np.asarray(im.convert("RGB"), dtype=np.uint8)
+        x0, y0 = max(0, box["x"] - ring), max(0, box["y"] - ring)
+        x1, y1 = min(full.shape[1], box["x"] + lw + ring), min(full.shape[0], box["y"] + lh + ring)
+        patch = full[y0:y1, x0:x1].copy()
+        # blank out the logo itself: what remains is the plate that sits behind it
+        patch[box["y"] - y0:box["y"] - y0 + lh, box["x"] - x0:box["x"] - x0 + lw] = 0
+        mask = patch.sum(axis=2) > 0
+        lum = _rel_luminance(patch[mask])
+        bg = float(lum.mean()) if lum.size else 0.0
+        rows.append({"t": round(t, 3), "plate_luminance": round(bg, 4),
+                     "contrast_vs_white": round(1.05 / (bg + 0.05), 2),
+                     "pixels_sampled": int(mask.sum())})
+    worst = min(r["contrast_vs_white"] for r in rows)
+    return {"samples": rows, "worst_contrast": worst, "threshold": threshold,
+            "pass": worst >= threshold}
+
+
 def verify(master: str, plan: dict, outdir: str) -> dict:
     info = ff.probe(master, count_frames=True)
     vid, aud = info.video, info.audio
@@ -99,6 +150,7 @@ def verify(master: str, plan: dict, outdir: str) -> dict:
     freeze = freeze_frames(master)
     cover_t = plan.get("qa_cover_time")
     frames = extract_diagnostics(master, outdir, canvas, info.duration_s, cover_t)
+    logo = logo_contrast(master, plan) if plan.get("logo", {}).get("file") else None
 
     expected_dur = plan["window"]["duration"]
     checks = {
@@ -113,6 +165,7 @@ def verify(master: str, plan: dict, outdir: str) -> dict:
         "no_black_frames": black["black_segments"] == 0,
         "no_stuck_freezes": freeze["freeze_segments"] == 0,
         "faststart": _has_faststart(master),
+        "logo_contrast_wcag_4_5": bool(logo and logo["pass"]),
     }
 
     report = {
@@ -122,6 +175,7 @@ def verify(master: str, plan: dict, outdir: str) -> dict:
         "blackdetect": black,
         "freezedetect": freeze,
         "frames": frames,
+        "logo_contrast": logo,
         "checks": checks,
         "measured": {
             "duration_s": info.duration_s,

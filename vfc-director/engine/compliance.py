@@ -125,6 +125,7 @@ def validate_plan(plan: dict) -> dict:
 def validate_delivery(master: str, plan: dict, qa_report: dict) -> dict:
     checks = dict(qa_report["checks"])
     checks["logo_watermark_present"] = bool(plan["logo"]["file"])
+    checks["logo_legibility_wcag"] = bool(qa_report.get("logo_contrast", {}).get("pass"))
     checks["on_screen_text_present"] = bool(
         plan["typography"]["cues"] or plan["typography"].get("active_hook_text"))
     checks["no_added_music_or_sfx"] = (plan["audio"]["added_music"] is False

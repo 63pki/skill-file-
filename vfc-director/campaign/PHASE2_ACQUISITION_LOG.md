@@ -65,6 +65,22 @@ The out-of-sandbox page fetcher can read the share *metadata* but not the media:
 **Therefore the trailer cannot be downloaded from here by any method.** The file must enter the
 session as an upload (or via a host on the allowlist).
 
+### Update — the official logo has arrived (2026-11-05)
+
+`snake_logo_w.png` was supplied directly by the campaign owner and is installed as
+`campaign/assets_raw/VFC_OFFICIAL_LOGO.png`:
+
+| Property | Value |
+|---|---|
+| Format | PNG, RGBA with straight alpha |
+| Dimensions | 1600 × 847 |
+| Size | 129,408 bytes |
+| SHA-256 | `34b571be41659fbc864fe37551984d880cf94b91f397a4f932e4a14991c854cf` |
+| Transparency | genuine — 57.5 % of pixels at alpha 0, corners clean |
+| Use | 220 px wide overlay at (48, 286) on a generated 158/255 scrim |
+
+RAW-02 is therefore **VERIFIED_ORIGINAL**. RAW-01 (the trailer) remains the only open asset.
+
 ### Fastest unblock
 1. Attach the trailer MP4 to the conversation (and the logo PNG). It lands in the session workspace
    and the whole of Phase 2–7 runs from it immediately.

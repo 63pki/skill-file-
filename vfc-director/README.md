@@ -19,7 +19,7 @@ dev/        make_fixture.py (synthetic, non-shippable) · smoke_test.py · SMOKE
 | Phase | State |
 |---|---|
 | 1 — campaign deconstruction & compliance gateway | **Complete, signed** — 17 rules captured, 10 enforced as executable gates (the rest are publishing-side) |
-| 2 — asset acquisition & integrity audit | **BLOCKED** — Frame.io egress refused from this sandbox; `FAILED_OFFLINE` logged, nothing substituted |
+| 2 — asset acquisition & integrity audit | **PARTIAL** — logo received, verified (1600×847 RGBA, sha256 pinned) and compositing at 5.57:1 worst-case contrast; trailer still `FAILED_OFFLINE` |
 | 3–7 — analysis, blueprint, render, QA, delivery | **Built and executed end-to-end on a labelled synthetic fixture**; every table auto-populates on the real file |
 
 The single open item is the official trailer MP4 (+ logo PNG). Upload it, or run
@@ -27,23 +27,26 @@ The single open item is the official trailer MP4 (+ logo PNG). Upload it, or run
 
 ## Proven, not asserted
 
-`python3 dev/smoke_test.py` — **49/49 checks pass**, including a full encode:
+`python3 dev/smoke_test.py` — **53/53 checks pass**, including a full encode:
 
 ```
 master  10.000 s · 300 frames · 1080x1920 · yuv420p · H.264 High 4.2 · faststart
 audio   -14.0 LUFS integrated · -5.4 dBTP true peak · single source stream
 QA      0 black frames · 0 stuck freezes · caption anchors inside safe band · <=220 WPM
-gates   15/15 mechanical campaign gates · delivery compliance 10.0/10.0
+logo    5.57:1 worst-case WCAG contrast behind the official wordmark
+gates   16/16 mechanical campaign gates · delivery compliance 10.0/10.0
 ```
 
-Five defects were found and fixed by that suite during the build, each now pinned by an assertion:
+Six defects were found and fixed by that suite during the build, each now pinned by an assertion:
 
 1. a filtergraph branch that re-read the **untrimmed** source — 15.0 s out of a 12.0 s plan;
 2. a logo overlay with `shortest=1` that truncated the whole master to **one held frame**;
 3. loudness measured *before* the 80 Hz high-pass — master landed at **−18.7 LUFS** instead of −14.0;
 4. a character-count text fitter that **overflowed the 1080 px canvas** (a caps hook measures 997 px
    at 76 px — ratio 0.69, not the assumed 0.58);
-5. `\N` line breaks escaped by the text sanitiser and **rendered literally on screen**.
+5. `\N` line breaks escaped by the text sanitiser and **rendered literally on screen**;
+6. a watermark scrim offset from its own logo box, leaving the legs of the wordmark on raw footage
+   and the legibility gate measuring the video behind it (**1.64 : 1** — failed, then fixed to 5.57 : 1).
 
 ## Install & run
 

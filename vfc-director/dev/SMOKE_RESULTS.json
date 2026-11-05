@@ -1,5 +1,5 @@
 {
-  "passed": 49,
+  "passed": 53,
   "failed": 0,
   "checks": [
     {
@@ -154,6 +154,26 @@
     },
     {
       "name": "audio is source-only (no synth inputs)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "official logo geometry read from the file",
+      "pass": true,
+      "detail": "220x116"
+    },
+    {
+      "name": "scrim rendered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "logo + scrim are two extra inputs",
+      "pass": true,
+      "detail": "['/home/user/skill-file-/vfc-director/build/smoke_scrim.png', '/home/user/skill-file-/vfc-director/campaign/assets_raw/VFC_OFFICIAL_LOGO.png']"
+    },
+    {
+      "name": "scrim composites before the logo",
       "pass": true,
       "detail": ""
     },
