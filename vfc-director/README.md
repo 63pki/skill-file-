@@ -18,7 +18,7 @@ dev/        make_fixture.py (synthetic, non-shippable) · smoke_test.py · SMOKE
 
 | Phase | State |
 |---|---|
-| 1 — campaign deconstruction & compliance gateway | **Complete, signed** (17 rules encoded as executable gates) |
+| 1 — campaign deconstruction & compliance gateway | **Complete, signed** — 17 rules captured, 10 enforced as executable gates (the rest are publishing-side) |
 | 2 — asset acquisition & integrity audit | **BLOCKED** — Frame.io egress refused from this sandbox; `FAILED_OFFLINE` logged, nothing substituted |
 | 3–7 — analysis, blueprint, render, QA, delivery | **Built and executed end-to-end on a labelled synthetic fixture**; every table auto-populates on the real file |
 
