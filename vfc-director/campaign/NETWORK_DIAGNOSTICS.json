@@ -1,0 +1,70 @@
+{
+  "recorded_at": "2026-11-05T00:04:50Z",
+  "conclusion": "Egress is allowlisted by host/TLS-SNI. TCP/443 connects to every campaign host, then the handshake is closed immediately after Client Hello for all TLS versions and HTTP/1.1. Only github.com, codeload.github.com, api.github.com, registry.npmjs.org, pypi.org and files.pythonhosted.org answer.",
+  "http_attempts": [
+    {
+      "url": "https://f.io/V0QTpG9W",
+      "flags": [],
+      "http_code": "000",
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to f.io:443"
+    },
+    {
+      "url": "https://next.frame.io/share/5cb2f221-b950-4a63-b0d0-c25530ba5a3e",
+      "flags": [],
+      "http_code": "000",
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to next.frame.io:443"
+    },
+    {
+      "url": "https://api.frame.io/v2/assets/55cafaa1-af3f-44bd-a900-e2e5b12fc74a",
+      "flags": [],
+      "http_code": "000",
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to api.frame.io:443"
+    },
+    {
+      "url": "https://dl.dropboxusercontent.com",
+      "flags": [],
+      "http_code": "000",
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to dl.dropboxusercontent.com:443"
+    },
+    {
+      "url": "https://www.youtube.com",
+      "flags": [],
+      "http_code": "000",
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.youtube.com:443"
+    },
+    {
+      "url": "https://f.io/V0QTpG9W",
+      "flags": [
+        "--tlsv1.2",
+        "--tls-max",
+        "1.2"
+      ],
+      "http_code": "000",
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to f.io:443"
+    },
+    {
+      "url": "https://f.io/V0QTpG9W",
+      "flags": [
+        "--http1.1"
+      ],
+      "http_code": "000",
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to f.io:443"
+    },
+    {
+      "url": "https://f.io/V0QTpG9W",
+      "flags": [
+        "-k"
+      ],
+      "http_code": "000",
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to f.io:443"
+    }
+  ],
+  "openssl_s_client": "error:0A000126:SSL routines:ssl3_read_n:unexpected eof while reading",
+  "python_ssl": "SSLZeroReturnError: TLS/SSL connection has been closed (EOF)",
+  "frame_io_api_with_out_of_sandbox_fetcher": {
+    "share_v2": "404 Not found",
+    "assets_v2": "401 Not Authorized - asset exists but requires a Frame.io session token"
+  },
+  "allowlisted_control": "https://github.com -> HTTP 200 (proves the network stack itself works)",
+  "ffmpeg": "ffmpeg version n9.0.2-17-g2a571b6068-20260930 Copyright (c) 2000-2026 the FFmpeg developers"
+}

@@ -36,6 +36,42 @@ Any workaround — a reupload, a mirror, a "close enough" clip — violates a ha
 provenance. Per the terminal-failure protocol the engine records the failure, keeps every remaining
 gate intact, and waits for the authorised file rather than inventing footage.
 
+## Re-test requested after delivery (2026-11-05) — still refused
+
+The campaign owner asked for a second attempt. The block is at the network boundary of this
+sandbox, not at Frame.io, and it is reproducible across every transport variant:
+
+| Test | Result |
+|---|---|
+| `curl https://f.io/V0QTpG9W` | TCP **connects** (`Trying 100.55.187.38:443 → Connected`), then `OpenSSL SSL_connect: SSL_ERROR_SYSCALL` |
+| `curl --tlsv1.2 --tls-max 1.2` | `000` — closed after Client Hello |
+| `curl --http1.1` | `000` |
+| `curl -k` (cert validation off) | `000` — so it is not a certificate problem |
+| `openssl s_client -connect f.io:443 -servername f.io` | `error:0A000126: SSL routines: ssl3_read_n: unexpected eof while reading` |
+| Python `ssl.wrap_socket(server_hostname="f.io")` | `SSLZeroReturnError: TLS/SSL connection has been closed (EOF)` |
+| `next.frame.io`, `api.frame.io`, `dl.dropboxusercontent.com`, `www.youtube.com` | `000` |
+| **control:** `https://github.com` | **HTTP 200** — the network stack itself is healthy |
+
+A connection that is accepted at TCP and then closed immediately after the TLS Client Hello, for
+every TLS version, is an SNI/host allowlist in the egress proxy. Raw evidence:
+`NETWORK_DIAGNOSTICS.json`.
+
+The out-of-sandbox page fetcher can read the share *metadata* but not the media:
+
+- `GET /v2/shares/5cb2f221-…` → `404 Not found`
+- `GET /v2/assets/55cafaa1-…` → `401 Not Authorized` — the asset exists, but downloading it needs a
+  Frame.io session token, which is not available to this environment.
+
+**Therefore the trailer cannot be downloaded from here by any method.** The file must enter the
+session as an upload (or via a host on the allowlist).
+
+### Fastest unblock
+1. Attach the trailer MP4 to the conversation (and the logo PNG). It lands in the session workspace
+   and the whole of Phase 2–7 runs from it immediately.
+2. If the logo PNG is genuinely not in the folder, say so — the engine will then use the campaign's
+   own logo extracted from the trailer's end-card *only if* the brief permits it; otherwise the
+   watermark gate stays open and no master can ship.
+
 ## How to clear this in one step
 
 **Option A — upload here (no egress needed):** attach the official trailer MP4 (and the logo PNG if
