@@ -1,0 +1,4 @@
+# Runtime deps for pipeline/ (Pillow drives all spatial typography).
+# FFmpeg itself is provided by the imageio-ffmpeg wheel on hosts without a system build.
+pillow>=10.0
+imageio-ffmpeg>=0.4

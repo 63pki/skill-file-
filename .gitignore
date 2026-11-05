@@ -1,0 +1,7 @@
+# Regenerable render internals (premaster, overlay PLNs, per-frame QA stills)
+out/_work/
+out/qa_frames/
+*.pyc
+__pycache__/
+# PREVIS engine-proof renders (regenerate: python -m pipeline.smoke_test)
+out/*.mp4

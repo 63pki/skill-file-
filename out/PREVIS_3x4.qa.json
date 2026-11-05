@@ -1,0 +1,98 @@
+{
+  "file": "out/PREVIS_pipeline_3x4.mp4",
+  "media": {
+    "path": "out/PREVIS_pipeline_3x4.mp4",
+    "exists": true,
+    "duration_s": 12.0,
+    "width": 1080,
+    "height": 1440,
+    "fps": 30.0,
+    "vcodec": "h264 (High) (avc1 / 0x31637661)",
+    "pix_fmt": "yuv420p",
+    "acodec": "aac",
+    "sample_rate": 48000,
+    "channels": "mono",
+    "audio_tracks": 1,
+    "size_bytes": 7341374,
+    "integrity": "VERIFIED_ORIGINAL",
+    "notes": []
+  },
+  "loudness": {
+    "integrated_lufs": -14.1,
+    "lra": 0.0,
+    "true_peak_dbtp": -9.7
+  },
+  "black_frames": [],
+  "frames": {
+    "frame0": "out/qa_frames/3x4/qa_frame0.jpg",
+    "t1.0s": "out/qa_frames/3x4/qa_t1.0s.jpg",
+    "t50pct": "out/qa_frames/3x4/qa_t50pct.jpg",
+    "t85pct": "out/qa_frames/3x4/qa_t85pct.jpg",
+    "tend": "out/qa_frames/3x4/qa_tend.jpg"
+  },
+  "safe_zone_violations": [],
+  "ccm_failures": [],
+  "checks": [
+    {
+      "metric": "Canvas dimensions",
+      "pass": true,
+      "measured": "1080x1440",
+      "threshold": "1080x1440"
+    },
+    {
+      "metric": "Duration floor (>=10s)",
+      "pass": true,
+      "measured": "12.0s",
+      "threshold": ">= 10.0s"
+    },
+    {
+      "metric": "Integrated loudness",
+      "pass": true,
+      "measured": "-14.1 LUFS",
+      "threshold": "-14.0 \u00b10.5 LUFS"
+    },
+    {
+      "metric": "True peak ceiling",
+      "pass": true,
+      "measured": "-9.7 dBTP",
+      "threshold": "<= -1.0 dBTP"
+    },
+    {
+      "metric": "Pixel format",
+      "pass": true,
+      "measured": "yuv420p",
+      "threshold": "yuv420p"
+    },
+    {
+      "metric": "Audio stream present",
+      "pass": true,
+      "measured": "1 track(s)",
+      "threshold": ">=1 (official trailer audio only)"
+    },
+    {
+      "metric": "No black frames",
+      "pass": true,
+      "measured": "0 detected",
+      "threshold": "0"
+    },
+    {
+      "metric": "Safe-zone clearance",
+      "pass": true,
+      "measured": "clear",
+      "threshold": "0 violations"
+    },
+    {
+      "metric": "On-screen text present",
+      "pass": true,
+      "measured": "4 burst(s)",
+      "threshold": ">=1 mandatory"
+    },
+    {
+      "metric": "Campaign text compliance",
+      "pass": true,
+      "measured": "clean",
+      "threshold": "0 violations"
+    }
+  ],
+  "PASS": true
+}

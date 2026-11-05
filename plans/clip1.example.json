@@ -1,0 +1,14 @@
+{
+  "_comment": "Phase 4/5 edit plan. Segments are real source in/out points measured from RAW-01 with pipeline.probe. Caption text must pass campaign.validate_onscreen_text; hook evidence flag must be satisfied by the footage in THIS clip.",
+  "logo": true,
+  "aspect": "9:16",
+  "mode": "crop",
+  "hook_evidence": ["reveal", "cielo"],
+  "segments": [[0.0, 3.2]],
+  "captions": [
+    {"t0": 0.0,  "t1": 1.2, "text": "Cielo Has Competition"},
+    {"t0": 1.2,  "t1": 3.2, "text": "Meet Lionel Rafale"}
+  ],
+  "badges": [],
+  "color_snap": null
+}
