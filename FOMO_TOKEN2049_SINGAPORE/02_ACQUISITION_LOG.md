@@ -78,3 +78,35 @@ Any ONE of the following restores a full run:
    allowlisted to github.com/codeload.github.com/api.github.com/registry.npmjs.org/pypi.org/files.pythonhosted.org), OR
 4. Place the files at ./raw_footage/ or ./assets/ in the repo workspace.
 Then re-run Phases 2–8; everything else (strategy, report skeleton, social copy) is already staged in this folder.
+
+## 2.8 DIRECTIVE RE-ATTEMPT (user-supplied acquisition directive, 2026-11-08, same session)
+Executed every method in the user's "CRITICAL SOURCE FOOTAGE ACQUISITION DIRECTIVE":
+
+| # | Method (verbatim intent) | Result (measured) |
+|---|---|---|
+| 1a | `pip install gdown` + `gdown.download(id='1nFBKUSczqlAJqlXT0qWAv-FRsjPWwvG5')` | gdown 6.5.1 installed in /tmp venv. Download failed: `SSLError ... Max retries exceeded with url: /uc?id=1nFBKUSczqlAJqlXT0qWAv-FRsjPWwvG5 (SSLZeroReturnError(6, 'TLS/SSL connection has been closed'))` — drive.google.com is unreachable from this sandbox (SNI blocked / TLS EOF). |
+| 1b | gdown against the exact brief URL (drive.usercontent.google.com/download?id=...&at=...) | Same class of failure: `SSLError ... SSLZeroReturnError(6, ...)` on drive.usercontent.google.com. |
+| 1c | Bash curl confirm-token flow (`/uc?export=download&id=...`, grep confirm cookie, `/uc?export=download&confirm=...&id=...`) | `http=000 size=0 curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to drive.google.com:443`. confirm cookie empty. No file written. |
+| 1d | Direct-curl to brief's signed usercontent URL (implied by 1a/1b/2) | drive.usercontent.google.com -> HTTP 000 (curl exit 35). Cannot fetch the brief's download link. |
+| 2 | WeTransfer "resolve redirect → extract TRANSFER_ID/SECURITY_HASH → POST wetransfer.com/api/v4/transfers/{id}/download → stream DIRECT_URL" | `curl -sI -L https://we.tl/t-hDf4xL0CphfNLFyi` returned no Location header (host unreachable, HTTP 000, exit 35). TRANSFER_ID and SECURITY_HASH not resolvable; downstream API POST returned `http=000`. Host allowlist does not include we.tl/wetransfer.com. |
+| 3 | Frame.io public share endpoint | N/A — the brief contains NO Frame.io link. Not attempted (nothing to resolve; inventing a share id is forbidden). |
+| 4 | HTML-trap / ffprobe integrity gate | Inapplicable: 0 bytes acquired from any route. No artifact exists to probe; no VERIFIED_DECODABLE status can be claimed. |
+
+Drive connector (authorized route) follow-ups after this directive:
+- `get_file` on source B: parent folders NOT visible to this account; owner sonsoukwoo@gmail.com; size unchanged at 2,639,522,976 B.
+- `search mimeType='video/mp4'` (incl. shared drives): 10 results, all third parties' finished clips/drafts (unrelated campaigns: VFCR/T-series/C-series/V-series/B1 drafts, ~6–21 MB each). No raw TOKEN2049 footage, no proxy/rendition of source B. 0 matches for 'Erlanger'/'Week In The Life'/'Murad'/'Memecoins'.
+- Conclusion: no transferable copy of source B exists in reach of the connected account or this sandbox.
+
+## 2.9 NETWORK REALITY (measured this session)
+Egress probes (curl -I, 8 s timeout): youtube.com 000(exit 35) · drive.google.com 000(exit 35) ·
+drive.usercontent.google.com 000(exit 35) · www.googleapis.com 000 · we.tl 000(exit 35) ·
+wetransfer.com 000(exit 35) · www.wetransfer.com 000(exit 35).
+Reachable: pypi.org / files.pythonhosted.org (imageio-ffmpeg 68 MB wheel OK; gdown 6.5.1 OK),
+github.com/codeload.github.com/api.github.com, registry.npmjs.org.
+This sandbox is allowlisted; the three brief links cannot be fetched by ANY local tool (gdown, curl,
+python requests) regardless of flags or retries.
+
+## 2.10 FINAL VERDICT AFTER DIRECTIVE RE-ATTEMPT
+Verified decodable sources == 0. AQ-00 circuit breaker remains TRIPPED:
+STOP_MISSING_INPUT · ERR_SOURCE_DOWNLOAD_FAILED. Phases 3–8 remain correctly unexecuted;
+no media was synthesised, downscaled, truncated, or substituted.

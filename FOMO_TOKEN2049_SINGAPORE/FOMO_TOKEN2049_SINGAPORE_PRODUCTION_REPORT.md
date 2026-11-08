@@ -96,3 +96,32 @@ Present: `01_BRIEF_DECONSTRUCTION.md` · `02_ACQUISITION_LOG.md` · `qa_telemetr
 Absent (blocked): both `*_MASTER_9x16.mp4`, both `*_COVER.jpg`.
 
 FINAL: STOP_MISSING_INPUT — ERR_SOURCE_DOWNLOAD_FAILED. Files present in this folder: 01_BRIEF_DECONSTRUCTION.md, 02_ACQUISITION_LOG.md, qa_telemetry_manifest.json, FOMO_TOKEN2049_SINGAPORE_PRODUCTION_REPORT.md.
+
+---
+
+## UPDATE 2026-11-08 (addendum) — User's critical acquisition directive executed verbatim
+
+The user supplied a directive prescribing platform-specific acquisition for Drive, WeTransfer and Frame.io.
+It was executed exactly as written. Measured results (full detail: `02_ACQUISITION_LOG.md` §§2.8–2.10):
+
+1. **Google Drive / gdown** — gdown 6.5.1 installed OK (PyPI reachable). Download failed at TLS:
+   `SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF)')` on both `drive.google.com` and the
+   brief's signed `drive.usercontent.google.com` URL. The curl confirm-token flow returned
+   `http=000` / `curl exit 35 (SSL_ERROR_SYSCALL)` with an empty confirm cookie — no bytes written.
+2. **WeTransfer v4 API** — `curl -sI -L https://we.tl/t-hDf4xL0CphfNLFyi` returned no `Location:` header
+   (host unreachable, HTTP 000). `TRANSFER_ID`/`SECURITY_HASH` could not be resolved; the API POST returned
+   `http=000`. Source C remains unacquired.
+3. **Frame.io** — not applicable: the brief contains no Frame.io link (nothing to resolve; no share id was
+   invented).
+4. **Integrity gate (HTML trap / ffprobe)** — inapplicable; 0 bytes acquired on every route.
+5. **Connected-account follow-ups** — Drive search for any `video/mp4` visible to the account
+   (incl. shared drives): only third parties' finished clips from unrelated campaigns; no raw or proxy copy of
+   Source B. Dropbox: 0 matches.
+
+**Environment fact:** this sandbox's egress allowlist covers only github.com, codeload.github.com,
+api.github.com, registry.npmjs.org and pypi.org/files.pythonhosted.org. Every Google/WeTransfer/YouTube host
+returns HTTP 000. This blocks user-side automation methods equally — it is not a tooling choice.
+
+**Stop condition unchanged: STOP_MISSING_INPUT — ERR_SOURCE_DOWNLOAD_FAILED. 0 of 2 clips delivered.**
+The fastest unblock remains: attach the sources to the chat (Source B alone suffices per AQ-06), or drop them at
+`./raw_footage/`, or provide a ≤100 MB rendition/split of Source B, or re-run in an environment with open egress.
