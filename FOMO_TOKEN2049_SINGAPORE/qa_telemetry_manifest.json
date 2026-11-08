@@ -1,0 +1,66 @@
+{
+  "prompt_version": "5.2.0",
+  "campaign": "FOMO_TOKEN2049_SINGAPORE",
+  "stop_condition": "STOP_MISSING_INPUT",
+  "error_code": "ERR_SOURCE_DOWNLOAD_FAILED",
+  "run_date_utc": "2026-11-08",
+  "toolchain": {
+    "ffmpeg": "absent_system_binary; pip_wheel_probe_ok(imageio-ffmpeg-0.8.1)",
+    "ffprobe": "absent_system_binary",
+    "python3": "3.11.2",
+    "node": "v22.22.3",
+    "remotion": "not_run_no_footage",
+    "hyperframes": "not_run_no_footage",
+    "asr": "not_run_no_audio",
+    "segmentation": "not_run",
+    "connectors": {
+      "google_drive": "connected; get_file OK for source B but 2,639,522,976-byte file exceeds transferable size (connector inline cap ~100 MB); sandbox egress to drive.usercontent.google.com blocked (HTTP 000)",
+      "dropbox": "connected; account search 'Frank Chaparro'/'TOKEN2049' = 0 matches"
+    },
+    "network_egress_allowlist": ["github.com", "codeload.github.com", "api.github.com", "registry.npmjs.org", "pypi.org", "files.pythonhosted.org"],
+    "ladder_rungs_used": {}
+  },
+  "brief_overrides": [],
+  "phase_checks": [
+    {
+      "phase": 1,
+      "name": "BRIEF_DECONSTRUCTION",
+      "checks": [
+        {"id": "CCM_COMPLETE", "value": "12/12 rows filled or defaulted with rule links", "threshold": "all rows filled", "pass": true},
+        {"id": "CE-00_WRITTEN", "value": "3-point foundation recorded", "threshold": "present", "pass": true},
+        {"id": "MEASURED_FOOTAGE_METRICS", "value": "NOT_AVAILABLE (0 s acquired)", "threshold": "n/a at Phase 1", "pass": false}
+      ],
+      "status": "PASS_WITH_OVERRIDES",
+      "notes": "Planning-level pass. All downstream decisions tagged as pre-selections, not measurements."
+    },
+    {
+      "phase": 2,
+      "name": "ACQUISITION_INTEGRITY_GATE",
+      "checks": [
+        {"id": "AQ-03_LOCAL_AND_ATTACHMENTS", "value": 0, "threshold": ">=1 decodable source", "pass": false},
+        {"id": "SOURCE_A_YOUTUBE", "value": "HTTP 000 (curl exit 35); no authorized API route/key; yt-dlp not permitted by AQ-03 and host unreachable", "threshold": "verified decodable file", "pass": false},
+        {"id": "SOURCE_B_GOOGLEDRIVE", "value": "exists (video/mp4, 2639522976 bytes, id 1nFBKUSczqlAJqlXT0qWAv-FRsjPWwvG5); bytes NOT transferable (tool cap ~100 MB; sandbox egress to drive.usercontent.google.com HTTP 000)", "threshold": "verified decodable file", "pass": false},
+        {"id": "SOURCE_C_WEEXTRANSFER", "value": "HTTP 000 (curl exit 35); no connector/API for WeTransfer", "threshold": "verified decodable file", "pass": false},
+        {"id": "AQ-04_DECODE_TEST", "value": "INAPPLICABLE (0 files acquired)", "threshold": "VERIFIED_DECODABLE", "pass": false},
+        {"id": "AQ-00_CIRCUIT_BREAKER", "value": "0 verified decodable sources", "threshold": ">=1", "pass": false}
+      ],
+      "status": "FAIL_HALT_CIRCUIT_BREAKER",
+      "notes": "AQ-00/EX-03a halt. STOP_MISSING_INPUT with ERR_SOURCE_DOWNLOAD_FAILED. No synthetic footage produced; no Phase 3-8 fabrication performed."
+    }
+  ],
+  "sources": [
+    {"asset": "SOURCE_A", "name": "Memecoins: Dead or Just Getting Started? (OKX Main Stage, 7 Oct 2026)", "ref": "https://www.youtube.com/watch?v=5qu3Nrk6-Dg", "status": "NOT_ACQUIRED", "error": "ERR_SOURCE_DOWNLOAD_FAILED", "sha256_8": null, "duration_s": null},
+    {"asset": "SOURCE_B", "name": "20261001_OG_16_Frank Chaparro_Se Yong Park_Ansem.mp4", "ref": "drive file id 1nFBKUSczqlAJqlXT0qWAv-FRsjPWwvG5", "status": "EXISTENCE_VERIFIED_BYTES_NOT_ACQUIRED", "error": "ERR_SOURCE_DOWNLOAD_FAILED", "size_bytes": 2639522976, "sha256_8": null, "duration_s": null},
+    {"asset": "SOURCE_C", "name": "Week In The Life of a Tech Startup Founder — Paul Erlanger (trimmed cut)", "ref": "https://we.tl/t-hDf4xL0CphfNLFyi", "status": "NOT_ACQUIRED", "error": "ERR_SOURCE_DOWNLOAD_FAILED", "sha256_8": null, "duration_s": null}
+  ],
+  "clips": [],
+  "deliverables_present": {
+    "FOMO_TOKEN2049_SINGAPORE_CLIP1_MASTER_9x16.mp4": false,
+    "FOMO_TOKEN2049_SINGAPORE_CLIP2_MASTER_9x16.mp4": false,
+    "FOMO_TOKEN2049_SINGAPORE_CLIP1_COVER.jpg": false,
+    "FOMO_TOKEN2049_SINGAPORE_CLIP2_COVER.jpg": false,
+    "qa_telemetry_manifest.json": true,
+    "FOMO_TOKEN2049_SINGAPORE_PRODUCTION_REPORT.md": true
+  },
+  "notes": "Zero clips rendered. EX-01/AQ-00 forbid synthetic substitution for missing campaign footage. All numeric media fields intentionally null (not measured) rather than fabricated; AQ-04 gate never ran because no file was acquired. Foreign-party finished FOMO clips found in a connected Drive deliverables folder were observed and deliberately NOT used (brief §7 no-repost rule; EX-01 provenance)."
+}
